@@ -1,5 +1,43 @@
 <!DOCTYPE html>
 <html lang="es-CL">
+    <!-- HEADER -->
+<header style="
+    background: #1b1b2f; 
+    color: #ffffff; 
+    padding: 15px 20px; 
+    font-family: 'Arial', sans-serif; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 2px solid rgb(191, 189, 202);
+">
+    <!-- Logo o nombre -->
+    <div style="font-weight: bold; font-size: 24px; color: crimson;">
+       
+    </div>
+
+    <!-- Reloj y enlace -->
+    <div style="display: flex; align-items: center; gap: 20px;">
+        <a href="https://www.meteochile.gob.cl/PortalDMC-web/index.xhtml" target="_blank" 
+           style="color: rgb(210, 206, 207); text-decoration: none; font-weight: bold;">
+           Averigua el clima  aqui 
+        </a>
+        <div id="reloj" style="font-size: 18px; color: rgb(224, 216, 217); font-weight: bold;"></div>
+    </div>
+</header>
+
+<script>
+function actualizarReloj() {
+    const ahora = new Date();
+    const horas = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    const segundos = String(ahora.getSeconds()).padStart(2, '0');
+    document.getElementById('reloj').textContent = `${horas}:${minutos}:${segundos}`;
+}
+setInterval(actualizarReloj, 1000);
+actualizarReloj();
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -423,6 +461,25 @@
             color: white;
         }
     </style>
+     
+       <!-- Contenedor del reloj -->
+<div id="reloj" style="font-size: 20px; color: crimson; font-weight: bold;"></div>
+
+<script>
+function actualizarReloj() {
+    const ahora = new Date();
+    const horas = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    const segundos = String(ahora.getSeconds()).padStart(2, '0');
+    document.getElementById('reloj').textContent = `${horas}:${minutos}:${segundos}`;
+}
+
+// Actualizar cada segundo
+setInterval(actualizarReloj, 1000);
+// Mostrar inmediatamente al cargar
+actualizarReloj();
+</script>
+
 </head>
 <body>
 
@@ -934,5 +991,5 @@
         document.addEventListener('DOMContentLoaded', loadNews);
     </script>
 </body>
-</html>
+</html>w
 
