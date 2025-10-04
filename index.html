@@ -3,659 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desoporte CL - Soluciones Tecnológicas</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>💥 DESOPORTE_CL – TU EQUIPO COMO NUEVO 💥</title>
     <style>
-        :root {
-            --electric-gray: #60656F;
-            --primary: #4A6FA5;
-            --accent: #FF6B6B;
-            --light: #F8F9FA;
-            --dark: #343A40;
-        }
-        
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            padding-top: 70px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
         }
-        
-        .navbar {
-            background-color: var(--electric-gray) !important;
-            padding: 12px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-brand, .nav-link {
-            color: white !important;
-            font-weight: 600;
-        }
-        
-        .nav-link:hover {
-            color: var(--accent) !important;
-        }
-        
-        .navbar-toggler {
-            border: none;
-            padding: 4px 8px;
-        }
-        
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, var(--electric-gray), #7D8690);
-            color: white;
-            padding: 100px 0;
+        header {
+            background: crimson;
+            color: #fff;
             text-align: center;
-            border-radius: 0 0 20px 20px;
-            margin-bottom: 30px;
+            padding: 20px 10px;
         }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 40px;
-            font-weight: 700;
-            text-align: center;
+        header h1 {
+            margin: 0;
+            font-size: 2em;
         }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 15px auto;
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
-        
-        .card-dynamic {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: white;
-            height: 100%;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 25px;
+        h2 {
+            color: crimson;
+            margin-top: 0;
         }
-        
-        .card-dynamic:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card-popular {
-            border: 2px solid var(--accent);
-            position: relative;
-        }
-        
-        .card-popular:before {
-            content: 'MÁS POPULAR';
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 1;
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .bg-light-custom {
-            background-color: #f8f9fa;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary:hover {
-            background-color: #3a5a84;
-            border-color: #3a5a84;
-            transform: translateY(-2px);
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-            z-index: 100;
+        .packs {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
-            transition: all 0.3s;
         }
-        
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-        }
-        
-        .coverage-card {
-            background: linear-gradient(rgba(96, 101, 111, 0.9), rgba(96, 101, 111, 0.9));
-            background-size: cover;
-            background-position: center;
-            color: white;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        
-        .client-card {
-            background: white;
+        .pack {
+            border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
+            width: 250px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 120px;
-            height: 100%;
+            background: #fefefe;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
-        
-        .client-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .pack h3 {
+            margin-top: 0;
         }
-        
-        .client-name {
-            font-weight: 600;
-            color: var(--electric-gray);
+        .services {
+            margin: 20px 0;
+        }
+        .service-item {
+            margin-bottom: 15px;
+        }
+        .weather {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #clock {
+            font-weight: bold;
             margin-top: 10px;
-            font-size: 14px;
-        }
-        
-        .client-icon {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        footer {
-            background-color: var(--electric-gray);
-            color: white;
-            padding: 40px 0 20px;
-            margin-top: 50px;
-        }
-        
-        /* Animaciones para las cards */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .card-dynamic {
-            animation: fadeIn 0.6s ease-out;
-        }
-        
-        /* Retrasos para la animación escalonada */
-        .card-dynamic:nth-child(1) { animation-delay: 0.1s; }
-        .card-dynamic:nth-child(2) { animation-delay: 0.2s; }
-        .card-dynamic:nth-child(3) { animation-delay: 0.3s; }
-        .card-dynamic:nth-child(4) { animation-delay: 0.4s; }
-        .card-dynamic:nth-child(5) { animation-delay: 0.5s; }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 80px 0;
-            }
-            
-            .display-3 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .card-popular:before {
-                right: 10px;
-                font-size: 10px;
-                padding: 3px 10px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#inicio">Desoporte CL</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#web">Desarrollo Web</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#clientes">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#zonas">Cobertura</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
+    <header>
+        <h1>💥 DESOPORTE_CL – TU EQUIPO COMO NUEVO 💥</h1>
+        <p>🛠️ ¿Problemas con tu PC o necesitas una WEB profesional? ¡Yo tengo la solución! ⚡</p>
+    </header>
+
+    <div class="container">
+        <div class="weather">
+            <h2>Clima Actual</h2>
+            <div id="weather">Cargando clima...</div>
+        </div>
+
+        <div class="time">
+            <h2>Hora y Fecha</h2>
+            <div id="clock"></div>
+        </div>
+
+        <div class="packs">
+            <div class="pack">
+                <h3>💎 Pack 1 – $10.000</h3>
+                <p>🖥️ Formateo completo</p>
+                <p>📦 Office activado</p>
+                <p>⚡ Optimización del sistema</p>
+            </div>
+            <div class="pack">
+                <h3>💎 Pack 2 – $15.000</h3>
+                <p>Todo Pack 1</p>
+                <p>💻 Limpieza física interna</p>
+                <p>🔧 Reparación de errores comunes</p>
+            </div>
+            <div class="pack">
+                <h3>💎 Pack 3 – $20.000</h3>
+                <p>Todo Pack 2</p>
+                <p>🌐 Instalación y configuración de antivirus</p>
+                <p>🖨️ Configuración de impresoras y escáneres</p>
             </div>
         </div>
-    </nav>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="hero-section">
-        <div class="container">
-            <div class="card-dynamic bg-transparent border-0 text-center text-white">
-                <div class="card-body">
-                    <h1 class="display-3 fw-bold mb-3">Desoporte CL</h1>
-                    <p class="lead mb-4">🛠️ Problemas con tu PC o necesitas una WEB profesional? 🔧 ¡Yo tengo la solución! ⚡</p>
-                    <a href="#contacto" class="btn btn-primary btn-lg shadow">Contáctanos Ahora</a>
-                </div>
-            </div>
+        <div class="services">
+            <h2>Mis Servicios</h2>
+            <div class="service-item">💻 Soporte técnico general</div>
+            <div class="service-item">🛠 Instalación de software</div>
+            <div class="service-item">🔧 Optimización de Windows</div>
+            <div class="service-item">🌐 Desarrollo web</div>
+            <div class="service-item">🖨️ Mantenimiento de impresoras</div>
         </div>
-    </section>
+    </div>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Nuestros Packs de Servicios</h2>
-            <div class="row g-4">
-                <!-- Pack 1 -->
-                <div class="col-md-4">
-                    <div class="card-dynamic">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-laptop service-icon"></i>
-                            <h4 class="card-title fw-bold">Pack Básico</h4>
-                            <h5 class="text-primary fw-bold">$10.000</h5>
-                            <ul class="list-unstyled mt-4">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Formateo completo</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Office activado</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Optimización del sistema</li>
-                            </ul>
-                            <a href="#contacto" class="btn btn-outline-primary mt-3">Solicitar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pack 2 -->
-                <div class="col-md-4">
-                    <div class="card-dynamic">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-desktop service-icon"></i>
-                            <h4 class="card-title fw-bold">Pack Intermedio</h4>
-                            <h5 class="text-primary fw-bold">$15.000</h5>
-                            <ul class="list-unstyled mt-4">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Formateo completo</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Limpieza profunda</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Office activado</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Optimización del sistema</li>
-                            </ul>
-                            <a href="#contacto" class="btn btn-outline-primary mt-3">Solicitar</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pack 3 - Más popular -->
-                <div class="col-md-4">
-                    <div class="card-dynamic card-popular">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-tools service-icon"></i>
-                            <h4 class="card-title fw-bold">Pack Premium</h4>
-                            <h5 class="text-primary fw-bold">$20.000</h5>
-                            <ul class="list-unstyled mt-4">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Formateo completo</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Limpieza profunda</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Office activado</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Optimización avanzada</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Pasta térmica profesional</li>
-                            </ul>
-                            <a href="#contacto" class="btn btn-primary mt-3">Solicitar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICIOS EXTRA -->
-    <section id="extra" class="py-5 bg-light-custom">
-        <div class="container">
-            <h2 class="section-title">Servicios Adicionales</h2>
-            <div class="row g-4">
-                <div class="col-md-3 col-6">
-                    <div class="card-dynamic text-center">
-                        <div class="card-body p-4">
-                            <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
-                            <h5>Ensamblaje y Upgrades</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="card-dynamic text-center">
-                        <div class="card-body p-4">
-                            <i class="fas fa-database fa-3x text-success mb-3"></i>
-                            <h5>Respaldo de Datos</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="card-dynamic text-center">
-                        <div class="card-body p-4">
-                            <i class="fas fa-search fa-3x text-warning mb-3"></i>
-                            <h5>Diagnósticos</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="card-dynamic text-center">
-                        <div class="card-body p-4">
-                            <i class="fas fa-network-wired fa-3x text-info mb-3"></i>
-                            <h5>Redes e Impresoras</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DESARROLLO WEB -->
-    <section id="web" class="py-5">
-        <div class="container">
-            <div class="card-dynamic">
-                <div class="card-body p-5">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <h2 class="section-title text-start">Desarrollo Web Profesional</h2>
-                            <p class="lead">Creamos tu presencia en línea con diseños modernos y funcionales.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Página web corporativa por solo $40.000 CLP</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Diseño responsive adaptado a todos los dispositivos</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Hasta 5 secciones personalizadas</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Formulario de contacto integrado</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Botón flotante de WhatsApp</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Hosting GRATIS incluido</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Soporte técnico profesional</li>
-                            </ul>
-                            <a href="#contacto" class="btn btn-primary mt-3">Solicitar Cotización</a>
-                        </div>
-                        <div class="col-lg-6 d-none d-lg-block">
-                            <img src="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Desarrollo Web" class="img-fluid rounded shadow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLIENTES -->
-    <section id="clientes" class="py-5 bg-light-custom">
-        <div class="container">
-            <h2 class="section-title">Clientes que confiaron en nosotros</h2>
-            <p class="text-center lead mb-5">Empresas e instituciones que han depositado su confianza en nuestros servicios</p>
-            
-            <div class="row g-4">
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-university client-icon"></i>
-                        <div class="client-name">Banco de Chile</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-signal client-icon"></i>
-                        <div class="client-name">Entel</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-industry client-icon"></i>
-                        <div class="client-name">Rosellot</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-mobile-alt client-icon"></i>
-                        <div class="client-name">WOM</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-hard-hat client-icon"></i>
-                        <div class="client-name">MOP</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-balance-scale client-icon"></i>
-                        <div class="client-name">Ministerio Público</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-building client-icon"></i>
-                        <div class="client-name">GST</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-hotel client-icon"></i>
-                        <div class="client-name">Hoteles</div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="client-card">
-                        <i class="fas fa-store client-icon"></i>
-                        <div class="client-name">PYMES</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ZONAS -->
-    <section id="zonas" class="py-5">
-        <div class="container">
-            <div class="card-dynamic coverage-card">
-                <div class="card-body text-center p-5">
-                    <h2 class="section-title text-white">Zonas de Cobertura</h2>
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                            <div class="bg-white text-dark rounded p-4 mb-5">
-                                <h4 class="fw-bold mb-3">Taller en Valparaíso - GRATIS</h4>
-                                <h5 class="mb-3">Servicio a domicilio:</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="list-unstyled">
-                                            <li class="mb-2">Valparaíso <span class="badge bg-primary">+$2.000</span></li>
-                                            <li class="mb-2">Viña del Mar <span class="badge bg-primary">+$3.000</span></li>
-                                            <li class="mb-2">Quilpué <span class="badge bg-primary">+$3.000</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="list-unstyled">
-                                            <li class="mb-2">Concón <span class="badge bg-primary">+$3.000</span></li>
-                                            <li class="mb-2">Villa Alemana <span class="badge bg-primary">+$3.000</span></li>
-                                            <li class="mb-2">Placilla <span class="badge bg-primary">+$3.000</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="py-5 bg-light-custom">
-        <div class="container">
-            <h2 class="section-title">Contáctanos</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card-dynamic">
-                        <div class="card-body p-5">
-                            <form id="contactForm">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label fw-bold">Nombre</label>
-                                    <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold">Correo Electrónico</label>
-                                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="servicio" class="form-label fw-bold">Servicio de Interés</label>
-                                    <select class="form-select form-control-lg" id="servicio" name="servicio">
-                                        <option value="">Selecciona un servicio</option>
-                                        <option value="pack1">Pack Básico - $10.000</option>
-                                        <option value="pack2">Pack Intermedio - $15.000</option>
-                                        <option value="pack3">Pack Premium - $20.000</option>
-                                        <option value="web">Desarrollo Web</option>
-                                        <option value="otro">Otro servicio</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="mensaje" class="form-label fw-bold">Mensaje</label>
-                                    <textarea class="form-control form-control-lg" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Mensaje</button>
-                            </form>
-                            <div class="text-center mt-4">
-                                <p class="mb-1">💬 También puedes contactarnos por WhatsApp</p>
-                                <a href="https://wa.me/56986158491?text=Hola%20quiero%20información" target="_blank" class="btn btn-success">
-                                    <i class="fab fa-whatsapp me-2"></i> +56 9 8615 8491
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Desoporte CL</h5>
-                    <p>Soluciones tecnológicas profesionales para tu negocio y hogar.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>📧 contacto@desoportecl.cl<br>📞 +56 9 8615 8491</p>
-                    <p>© 2023 Desoporte CL. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/56986158491?text=Hola%20quiero%20información" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- JavaScript personalizado -->
     <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Cerrar el menú colapsable en dispositivos móviles
-                    const navbarToggler = document.querySelector('.navbar-toggler');
-                    const navbarNav = document.querySelector('.navbar-collapse');
-                    if (navbarToggler && navbarNav.classList.contains('show')) {
-                        navbarToggler.click();
-                    }
-                    
-                    // Scroll suave al elemento
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Manejo del formulario de contacto
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Aquí normalmente se enviaría el formulario a un servidor
-            // Como no tenemos backend, mostramos un mensaje de éxito
-            alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
-            this.reset();
-        });
-
-        // Animación de las cards al hacer scroll
-        function checkScroll() {
-            const cards = document.querySelectorAll('.card-dynamic');
-            const windowHeight = window.innerHeight;
-            
-            cards.forEach(card => {
-                const position = card.getBoundingClientRect().top;
-                
-                if (position < windowHeight - 100) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }
-            });
+        // Hora y fecha
+        function updateClock() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const timeString = now.toLocaleTimeString();
+            const dateString = now.toLocaleDateString('es-CL', options);
+            document.getElementById('clock').innerHTML = `${dateString} - ${timeString}`;
         }
-        
-        // Inicializar la animación de las cards
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Clima real (sin API, usando una fuente pública)
+        const weatherDiv = document.getElementById('weather');
+        fetch('https://wttr.in/?format=%C+%t+%w')
+            .then(response => response.text())
+            .then(data => {
+                weatherDiv.innerHTML = `🌤️ ${data}`;
+            })
+            .catch(err => weatherDiv.innerHTML = "No se pudo cargar el clima");
     </script>
 </body>
 </html>
