@@ -615,120 +615,334 @@ actualizarReloj();
         </div>
     </section>
 
-     <section id="packs" class="py-5">
+      <section id="packs" class="py-5">
         <div class="container">
             <h2 class="section-title">Packs de Servicios</h2>
-    
-            <!-- PROMOCIÓN ESPECIAL - Agregada aquí -->
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-10">
-                    <div class="pack-card" style="border: 3px solid var(--accent); box-shadow: 0 0 25px rgba(255, 64, 129, 0.4); position: relative;">
-                        <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 10px 30px; border-radius: 25px; font-weight: bold; font-size: 1.1rem; z-index: 1;">
-                            🔥 OFERTA ESPECIAL
+            
+            <div class="row">
+                <!-- Pack Promocional Destacado -->
+                <div class="col-12 mb-5">
+                    <div class="pack-card featured" style="border: 3px solid var(--accent); box-shadow: 0 0 30px rgba(255, 64, 129, 0.5); position: relative; background: linear-gradient(135deg, rgba(26, 35, 126, 0.3), rgba(255, 64, 129, 0.1));">
+                        <div class="featured-badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 12px 35px; border-radius: 25px; font-weight: bold; font-size: 1.2rem; z-index: 10; box-shadow: 0 5px 15px rgba(255, 64, 129, 0.5);">
+                            ⚡ OFERTA ESPECIAL ⚡
                         </div>
                         
-                        <div class="text-center mb-4">
-                            <i class="fas fa-bolt" style="font-size: 3rem; color: var(--neon-blue); margin-bottom: 15px; text-shadow: 0 0 10px rgba(0, 176, 255, 0.5);"></i>
-                            <h3 style="color: var(--neon-blue); font-size: 2rem; font-weight: 700; margin-bottom: 10px;">
-                                FORMATEO EXPRESS $5.000
-                            </h3>
-                            <p style="color: var(--text-gray); font-size: 1.1rem;">
-                                ¡Tu PC como nueva en horas!
-                            </p>
-                        </div>
-
-                        <div class="text-center mb-4">
-                            <div style="font-size: 3rem; font-weight: 800; color: var(--accent); text-shadow: 0 0 15px rgba(255, 64, 129, 0.7);">
-                                $5.000
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h5 style="color: var(--neon-blue); margin-bottom: 15px;">✅ INCLUYE:</h5>
-                                <ul style="color: var(--text-light); padding-left: 20px;">
-                                    <li>Formateo completo del sistema</li>
-                                    <li>Instalación de Windows</li>
-                                    <li>Todos los drivers</li>
-                                    <li>Optimización básica</li>
-                                    <li>Diagnóstico incluido</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 style="color: var(--accent); margin-bottom: 15px;">💼 EXTRAS:</h5>
-                                <ul style="color: var(--text-light); padding-left: 20px;">
-                                    <li>Office: $2.000 adicional</li>
-                                    <li>Antivirus: $1.000 adicional</li>
-                                    <li>Programas específicos: Consultar</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="text-center mt-4">
-                            <div style="background: rgba(255, 64, 129, 0.2); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid var(--accent);">
-                                <p style="color: var(--accent); margin: 0; font-weight: 600;">
-                                    ⏰ ¡Oferta válida solo por esta semana!
-                                </p>
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="pack-header">
+                                    <div class="service-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h3 style="color: var(--neon-blue); font-size: 2.2rem; font-weight: 700; margin-bottom: 10px;">
+                                        Formateo Express
+                                    </h3>
+                                    <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 20px;">
+                                        ¡Tu PC como nueva en pocas horas! Servicio rápido y profesional
+                                    </p>
+                                </div>
+                                
+                                <div class="pack-features-grid">
+                                    <div class="feature-column">
+                                        <h5 style="color: var(--neon-blue); margin-bottom: 15px;">✅ INCLUIDO:</h5>
+                                        <ul style="color: var(--text-light); padding-left: 20px;">
+                                            <li>Formateo completo del sistema</li>
+                                            <li>Instalación de Windows original</li>
+                                            <li>Todos los drivers necesarios</li>
+                                            <li>Optimización básica</li>
+                                            <li>Diagnóstico completo</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-column">
+                                        <h5 style="color: var(--accent); margin-bottom: 15px;">💼 EXTRAS:</h5>
+                                        <ul style="color: var(--text-light); padding-left: 20px;">
+                                            <li><strong>Office: $2.000 adicional</strong></li>
+                                            <li>Antivirus: $1.000 adicional</li>
+                                            <li>Programas específicos</li>
+                                            <li>Configuración personalizada</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <a href="https://wa.me/56986158491?text=Hola,%20quiero%20el%20FORMATEO%20EXPRESS%20de%20$5.000" 
-                               class="btn btn-galactic me-3 mb-2"
-                               target="_blank"
-                               style="padding: 15px 30px; font-size: 1.1rem; font-weight: 600;">
-                               <i class="fab fa-whatsapp me-2"></i>SOLICITAR AHORA
+                            <div class="col-md-4 text-center">
+                                <div class="price-section">
+                                    <div class="pack-price" style="color: var(--accent); font-size: 3.5rem; font-weight: 800; text-shadow: 0 0 20px rgba(255, 64, 129, 0.7);">
+                                        $5.000
+                                    </div>
+                                    <p style="color: var(--text-gray); font-size: 1rem; margin-bottom: 20px;">
+                                        Precio especial por tiempo limitado
+                                    </p>
+                                    
+                                    <div class="offer-alert" style="background: rgba(255, 64, 129, 0.2); padding: 12px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                                        <p style="color: var(--accent); margin: 0; font-weight: 600; font-size: 0.9rem;">
+                                            <i class="fas fa-clock me-2"></i>Oferta válida solo esta semana
+                                        </p>
+                                    </div>
+                                    
+                                    <a href="https://wa.me/56986158491?text=Hola,%20quiero%20el%20FORMATEO%20EXPRESS%20de%20$5.000" 
+                                       class="btn btn-galactic btn-lg"
+                                       target="_blank"
+                                       style="padding: 15px 35px; font-size: 1.1rem; font-weight: 700; width: 100%;">
+                                       <i class="fab fa-whatsapp me-2"></i>SOLICITAR AHORA
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pack Básico -->
+                <div class="col-md-4 mb-4">
+                    <div class="pack-card">
+                        <div class="pack-header text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Pack Básico</h3>
+                            <div class="pack-price">$10.000</div>
+                        </div>
+                        
+                        <div class="pack-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Formateo completo del sistema</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Instalación de Windows</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Activación de Office</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Optimización básica</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Diagnóstico completo</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pack-footer text-center">
+                            <a href="https://wa.me/56986158491?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Básico" 
+                               class="btn btn-galactic"
+                               target="_blank">
+                               <i class="fab fa-whatsapp me-2"></i>Solicitar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pack Avanzado -->
+                <div class="col-md-4 mb-4">
+                    <div class="pack-card">
+                        <div class="pack-header text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Pack Avanzado</h3>
+                            <div class="pack-price">$15.000</div>
+                        </div>
+                        
+                        <div class="pack-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Todo lo del Pack Básico</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Limpieza física interna</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Reparación de errores comunes</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Instalación de antivirus</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Configuración de drivers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pack-footer text-center">
+                            <a href="https://wa.me/56986158491?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Avanzado" 
+                               class="btn btn-galactic"
+                               target="_blank">
+                               <i class="fab fa-whatsapp me-2"></i>Solicitar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pack Premium -->
+                <div class="col-md-4 mb-4">
+                    <div class="pack-card">
+                        <div class="pack-header text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h3>Pack Premium</h3>
+                            <div class="pack-price">$20.000</div>
+                        </div>
+                        
+                        <div class="pack-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Todo lo del Pack Avanzado</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Antivirus premium</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Configuración de impresoras</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Backup de datos importantes</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-check"></i>
+                                <span>Soporte post-servicio</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pack-footer text-center">
+                            <a href="https://wa.me/56986158491?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Premium" 
+                               class="btn btn-galactic"
+                               target="_blank">
+                               <i class="fab fa-whatsapp me-2"></i>Solicitar
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- FIN PROMOCIÓN ESPECIAL -->
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="pack-card">
-                        <h3>Pack Básico</h3>
-                        <div class="pack-price">$10.000</div>
-                        <ul class="pack-features">
-                            <li>Formateo completo del sistema</li>
-                            <li>Instalación de Windows</li>
-                            <li>Activación de Office</li>
-                            <li>Optimización básica</li>
-                            <li>Diagnóstico completo</li>
-                        </ul>
-                        <a href="https://wa.me/56986158491?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Básico" class="btn btn-galactic" target="_blank">Solicitar</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pack-card">
-                        <h3>Pack Avanzado</h3>
-                        <div class="pack-price">$15.000</div>
-                        <ul class="pack-features">
-                            <li>Todo lo del Pack Básico</li>
-                            <li>Limpieza física interna</li>
-                            <li>Reparación de errores comunes</li>
-                            <li>Instalación de antivirus</li>
-                            <li>Configuración de drivers</li>
-                        </ul>
-                        <a href="https://wa.me/56986158491?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Avanzado" class="btn btn-galactic" target="_blank">Solicitar</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pack-card">
-                        <h3>Pack Premium</h3>
-                        <div class="pack-price">$20.000</div>
-                        <ul class="pack-features">
-                            <li>Todo lo del Pack Avanzado</li>
-                            <li>Antivirus premium</li>
-                            <li>Configuración de impresoras</li>
-                            <li>Backup de datos importantes</li>
-                            <li>Soporte post-servicio</li>
-                        </ul>
-                        <a href="https://wa.me/56986158491?text=Hola,%20estoy%20interesado%20en%20el%20Pack%20Premium" class="btn btn-galactic" target="_blank">Solicitar</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
+
+    <style>
+        .pack-card {
+            background: rgba(26, 35, 126, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(124, 77, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pack-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(124, 77, 255, 0.1), transparent);
+            transition: all 0.6s;
+        }
+        
+        .pack-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 176, 255, 0.3);
+        }
+        
+        .pack-card:hover::before {
+            left: 100%;
+        }
+        
+        .pack-header {
+            margin-bottom: 25px;
+        }
+        
+        .pack-header .service-icon {
+            font-size: 2.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 176, 255, 0.5);
+        }
+        
+        .pack-header h3 {
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .pack-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 176, 255, 0.5);
+            margin: 15px 0;
+        }
+        
+        .pack-features {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(124, 77, 255, 0.2);
+            color: var(--text-light);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-check {
+            color: var(--neon-blue);
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .pack-footer {
+            margin-top: 25px;
+        }
+        
+        .pack-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-column h5 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+        
+        .feature-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-column li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pack-features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pack-card.featured .row {
+                flex-direction: column;
+            }
+        }
+    </style>
 
     <section id="noticias" class="py-5">
         <div class="container">
@@ -1092,6 +1306,7 @@ actualizarReloj();
     </script>
 </body>
 </html>
+
 
 
 
