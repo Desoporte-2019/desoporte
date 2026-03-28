@@ -568,10 +568,16 @@
         themeLabel.textContent = 'Modo oscuro';
         plainThemeMeta.setAttribute('content', '#1d4ed8');
       }
-      localStorage.setItem('desoporte-theme', theme);
+      try {
+        localStorage.setItem('desoporte-theme', theme);
+      } catch(e) {}
     }
 
-    const savedTheme = localStorage.getItem('desoporte-theme');
+    let savedTheme = null;
+    try {
+      savedTheme = localStorage.getItem('desoporte-theme');
+    } catch(e) {}
+
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     applyTheme(savedTheme || (prefersLight ? 'light' : 'dark'));
 
