@@ -1,177 +1,1379 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistemas Web que Venden por Ti 24/7 | DESOPORTE</title>
-  <meta name="description" content="Ingeniero en Informática especializado en desarrollo de sistemas, ecommerce y automatización. Convierte tu negocio en una máquina de ventas online.">
-  <link rel="canonical" href="https://desoporte-2019.github.io/desoporte/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta property="og:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
+<meta property="og:image:secure_url" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DESOPORTE.CL - POS, Menú QR, CCTV y Soporte TI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
+<meta name="theme-color" content="#0f172a">
+<title>DESOPORTE.CL | Sistemas POS, Menú QR, Inventario y Soporte TI</title>
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-oTt7V1F1V6V7B3..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f172a'/%3E%3Cpath d='M18 16h15c9 0 15 6 15 16s-6 16-15 16H18V16Zm13.5 8H27v16h4.5c5.4 0 8.7-3.1 8.7-8s-3.3-8-8.7-8Z' fill='%235ea8ff'/%3E%3C/svg%3E" />
 
-  <!-- CSS -->
-  <style>
-    :root {
-      --primary-1: #a50000; /* Carmesí */
-      --primary-2: #ff4d4d;
-      --bg-light: #ffffff;
-      --bg-dark: #111;
-      --text-light: #000;
-      --text-dark: #fff;
-      --transition-speed: 0.3s;
+<style>
+  :root,
+  [data-theme="light"] {
+    --bg:#f8fafc;
+    --surface:#ffffff;
+    --surface-2:#f1f5f9;
+    --surface-3:#e9eef3;
+    --text:#0f172a;
+    --muted:#475569;
+    --faint:#94a3b8;
+    --line:#e2e8f0;
+    --line-strong:#cbd5e1;
+    --primary:#2563eb;
+    --primary-hover:#1d4ed8;
+    --primary-soft:#dbeafe;
+    --success:#16a34a;
+    --warning:#eab308;
+    --radius-sm:.5rem;
+    --radius-md:.9rem;
+    --radius-lg:1.2rem;
+    --radius-xl:1.7rem;
+    --radius-full:999px;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.1);
+    --shadow-md:0 4px 6px -1px rgba(0,0,0,.1);
+    --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);
+    --container:1200px;
+    --header-height:80px;
+    --transition:200ms ease;
+  }
+
+  [data-theme="dark"] {
+    --bg:#0a0c10;
+    --surface:#111827;
+    --surface-2:#1f2937;
+    --surface-3:#2d3a4a;
+    --text:#f9fafb;
+    --muted:#9ca3af;
+    --faint:#6b7280;
+    --line:#1f2937;
+    --line-strong:#374151;
+    --primary:#3b82f6;
+    --primary-hover:#60a5fa;
+    --primary-soft:#1e293b;
+    --success:#22c55e;
+    --warning:#fbbf24;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.3);
+    --shadow-md:0 4px 6px -1px rgba(0,0,0,.4);
+    --shadow-lg:0 10px 15px -3px rgba(0,0,0,.5);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'General Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    transition: background var(--transition), color var(--transition);
+  }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+    background: rgba(var(--bg-rgb), 0.8);
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-family: 'Cabinet Grotesk', sans-serif;
+  }
+
+  .logo-text p {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--primary);
+  }
+
+  .nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .theme-toggle {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 1.2rem;
+    transition: all var(--transition);
+  }
+
+  .theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn {
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--line);
+    color: var(--text);
+    background: transparent;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+
+  .btn-whatsapp:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 4rem 0 2rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content .highlight {
+    color: var(--primary);
+  }
+
+  .hero-content p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .stat span:first-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .stat span:last-child {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: block;
+  }
+
+  .hero-card {
+    background: var(--surface);
+    border-radius: 24px;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Botón menú móvil */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  /* Sección Clientes */
+  .clients-section {
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin: 2rem 0;
+  }
+
+  .clients-section h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .clients-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .client-card {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .client-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--surface-2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 2rem;
+    color: var(--primary);
+    border: 1px solid var(--line);
+  }
+
+  .client-card span {
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .client-card small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Sección Presencia - Maptons */
+  .presencia-section {
+    padding: 4rem 0;
+    background: var(--surface-2);
+    border-radius: 24px;
+    margin: 2rem 0;
+  }
+
+  .presencia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .presencia-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 1.8rem;
+    text-align: center;
+    transition: all var(--transition);
+  }
+
+  .presencia-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .presencia-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    font-size: 2.2rem;
+    color: var(--primary);
+  }
+
+  .presencia-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  .presencia-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .presencia-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-soft);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .maptons-link {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .maptons-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition);
+  }
+
+  .maptons-link a:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    gap: 1rem;
+  }
+
+  /* Sección Soluciones */
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all var(--transition);
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-soft);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .card ul {
+    list-style: none;
+  }
+
+  .card li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card li i {
+    color: var(--primary);
+    font-size: 0.75rem;
+  }
+
+  /* Sección Método */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .step {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+  }
+
+  /* Precios */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .price-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .price-card.featured {
+    border-color: var(--primary);
+    transform: scale(1.02);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .price-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 1rem 0;
+  }
+
+  .price span {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .price-card ul {
+    list-style: none;
+    margin: 1rem 0;
+  }
+
+  .price-card li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Testimonios */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 1.5rem;
+  }
+
+  .testimonial-card p {
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .author-avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--primary-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* FAQ */
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: var(--muted);
+  }
+
+  .faq-item.open .faq-answer {
+    padding: 0 1.5rem 1rem 1.5rem;
+    max-height: 200px;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--surface-2);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .cta-section h2 {
+    margin-bottom: 1rem;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--surface-2);
+    padding: 3rem 0 2rem;
+    margin-top: 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-logo p {
+    color: var(--muted);
+    margin-top: 1rem;
+  }
+
+  .footer h4 {
+    margin-bottom: 1rem;
+  }
+
+  .footer ul {
+    list-style: none;
+  }
+
+  .footer li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: var(--primary);
+  }
+
+  /* WhatsApp Float */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #25D366;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform var(--transition);
+    z-index: 100;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
     }
 
-    [data-theme="dark"] {
-      --bg-color: var(--bg-dark);
-      --text-color: var(--text-dark);
-    }
-    [data-theme="light"] {
-      --bg-color: var(--bg-light);
-      --text-color: var(--text-light);
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; transition: all var(--transition-speed); }
-    body { font-family: Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); scroll-behavior: smooth; }
-    a { color: var(--primary-1); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    header {
-      display:flex; justify-content: space-between; align-items:center;
-      padding:1rem 2rem; background-color: var(--bg-color); position:sticky; top:0; z-index:1000;
-      border-bottom:1px solid #ccc;
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      flex-direction: column;
+      padding: 1rem;
+      gap: 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .logo { font-weight:bold; font-size:1.5rem; color: var(--primary-1); }
-    nav ul { display:flex; gap:1.5rem; list-style:none; }
-    nav ul li a { font-weight:500; }
-    .theme-toggle, .menu-toggle { cursor:pointer; font-size:1.2rem; }
-
-    /* Menu móvil */
-    @media(max-width:768px) {
-      nav ul { position: absolute; top:60px; left:0; right:0; flex-direction:column; background: var(--bg-color); display:none; padding:1rem 2rem; border-top:1px solid #ccc; }
-      nav ul.open { display:flex; }
+    .nav-links.open {
+      display: flex;
     }
 
-    /* Hero Panel */
-    .hero-panel { padding:3rem 2rem; text-align:center; }
-    .hero-panel h1 { font-size:2.5rem; margin-bottom:1rem; color: var(--primary-1); }
-    .hero-panel p { font-size:1.2rem; margin-bottom:2rem; }
+    .nav-links li a {
+      display: block;
+      padding: 0.75rem;
+    }
 
-    .hero-panel-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem; max-width:1000px; margin:0 auto; }
-    .mini-card { background: var(--bg-light); border-radius:8px; padding:1rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:0.3s; }
-    [data-theme="dark"] .mini-card { background: #222; }
-    .mini-card:hover { transform: translateY(-5px); }
-    .mini-card small { display:block; margin-bottom:0.5rem; font-size:0.9rem; color: #666; }
-    .mini-card strong { display:block; font-size:1.5rem; margin-bottom:0.5rem; }
-    .mini-card .ok { display:flex; align-items:center; gap:0.5rem; font-size:0.95rem; color: var(--primary-2); }
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
 
-    /* Nueva sección Maptons */
-    #aparicion { padding:3rem 2rem; background: #f9f9f9; }
-    [data-theme="dark"] #aparicion { background:#1a1a1a; }
-    .section-head { text-align:center; margin-bottom:2rem; }
-    .section-head .kicker { font-size:0.9rem; color: var(--primary-2); }
-    .section-head .section-title { font-size:2rem; margin:0.5rem 0; }
-    .section-text { font-size:1rem; color:#555; max-width:600px; margin:0 auto; }
-    .cards-1 { display:flex; justify-content:center; flex-wrap:wrap; gap:2rem; }
-    .card { background: var(--bg-light); border-radius:8px; padding:2rem; box-shadow:0 2px 8px rgba(0,0,0,0.1); transition:0.3s; }
-    [data-theme="dark"] .card { background:#222; }
-    .btn { padding:0.5rem 1rem; background: var(--primary-1); color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:500; }
-    .btn:hover { background: var(--primary-2); }
-  </style>
+    .grid-3,
+    .process-grid,
+    .pricing-grid,
+    .testimonials-grid,
+    .footer-grid,
+    .presencia-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .clients-grid {
+      gap: 1rem;
+    }
+
+    .client-icon {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 </head>
-<body data-theme="light">
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="logo-text">
+            <h1>DESOPORTE.CL</h1>
+            <p>Sistemas POS · Menú QR · Soporte TI</p>
+          </div>
+        </div>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">DESOPORTE</div>
-    <nav>
-      <ul id="navLinks">
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#aparicion">Aparición</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-      <i class="fa-solid fa-moon theme-toggle" id="themeToggle"></i>
-      <i class="fa-solid fa-bars menu-toggle" id="menuToggle"></i>
-    </nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#soluciones">Soluciones</a></li>
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#presencia">Presencia</a></li>
+          <li><a href="#metodo">Método</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+          <a href="https://wa.me/56972001109" class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Cotizar
+          </a>
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- HERO PANEL -->
-  <section class="hero-panel" id="hero">
-    <h1>Sistemas Web que Venden por Ti 24/7</h1>
-    <p>Ingeniero en Informática especializado en desarrollo de sistemas, ecommerce y automatización.</p>
-    <div class="hero-panel-grid">
-      <div class="mini-card">
-        <small>Solución destacada</small>
-        <strong>POS</strong>
-        <div class="ok"><i class="fa-solid fa-arrow-trend-up"></i> Mejor control operativo</div>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <h1>Menos caos. <span class="highlight">Más control.</span> Más ventas.</h1>
+            <p>Implementación de sistemas POS, menú digital QR, control de inventario y soporte TI profesional para restaurantes, comercios y empresas en Chile.</p>
+            <div class="hero-buttons">
+              <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp directo
+              </a>
+              <a href="#soluciones" class="btn btn-outline">Ver soluciones</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <span>+50</span>
+                <span>Clientes activos</span>
+              </div>
+              <div class="stat">
+                <span>24/7</span>
+                <span>Soporte técnico</span>
+              </div>
+              <div class="stat">
+                <span>100%</span>
+                <span>Implementación exitosa</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card reveal">
+            <div class="card-icon" style="margin-bottom: 1rem;">
+              <i class="fas fa-chart-simple"></i>
+            </div>
+            <h3>Panel de control ejecutivo</h3>
+            <p>Visualiza en tiempo real el estado de tu negocio</p>
+            <div style="margin-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span>Pedidos hoy</span>
+                <strong>284</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span>Ticket promedio</span>
+                <strong>$18.500</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Stock crítico</span>
+                <strong class="text-warning">7 productos</strong>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mini-card">
-        <small>Solución destacada</small>
-        <strong>QR</strong>
-        <div class="ok"><i class="fa-solid fa-bolt"></i> Atención más rápida</div>
+    </section>
+
+    <!-- Clientes que confían -->
+    <section class="clients-section" id="clientes">
+      <div class="container">
+        <h3>EMPRESAS QUE CONFÍAN EN NOSOTROS</h3>
+        <div class="clients-grid">
+          <div class="client-card">
+            <div class="client-icon"><i class="fas fa-utensils"></i></div>
+            <span>La Casona Restaurant</span>
+            <small>POS + Menú QR</small>
+          </div>
+          <div class="client-card">
+            <div class="client-icon"><i class="fas fa-mug-hot"></i></div>
+            <span>Café Central</span>
+            <small>Menú Digital</small>
+          </div>
+          <div class="client-card">
+            <div class="client-icon"><i class="fas fa-pizza"></i></div>
+            <span>Pizzeria Don Giovanni</span>
+            <small>POS + Inventario</small>
+          </div>
+          <div class="client-card">
+            <div class="client-icon"><i class="fas fa-store"></i></div>
+            <span>Distribuidora Los Andes</span>
+            <small>Inventario Total</small>
+          </div>
+          <div class="client-card">
+            <div class="client-icon"><i class="fas fa-hotel"></i></div>
+            <span>Hotel Boutique Valpo</span>
+            <small>Soporte TI</small>
+          </div>
+          <div class="client-card">
+            <div class="client-icon"><i class="fas fa-wine-bottle"></i></div>
+            <span>Vinoteca 1875</span>
+            <small>QR + Inventario</small>
+          </div>
+        </div>
       </div>
-      <div class="mini-card">
-        <small>Solución destacada</small>
-        <strong>Stock</strong>
-        <div class="ok"><i class="fa-solid fa-box"></i> Inventario organizado</div>
+    </section>
+
+    <!-- Presencia Verificada - Maptons (VENTAJA COMPETITIVA) -->
+    <section class="container" id="presencia">
+      <div class="presencia-section reveal">
+        <div class="section-header">
+          <h2>📍 Presencia verificada en plataformas profesionales</h2>
+          <p>Tu negocio visible donde los clientes te buscan</p>
+        </div>
+        <div class="presencia-grid">
+          <div class="presencia-card">
+            <div class="presencia-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <h3>Geolocalización estratégica</h3>
+            <p>Registro oficial en plataformas de mapas y directorios profesionales como Maptons, garantizando visibilidad y posicionamiento local.</p>
+            <div class="presencia-badge">
+              <i class="fas fa-check-circle"></i> Verificado en directorios técnicos
+            </div>
+          </div>
+          <div class="presencia-card">
+            <div class="presencia-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Ventaja competitiva real</h3>
+            <p>La presencia en plataformas de geolocalización y directorios especializados genera confianza y facilita que nuevos clientes te encuentren.</p>
+            <div class="presencia-badge">
+              <i class="fas fa-chart-simple"></i> + Visibilidad orgánica
+            </div>
+          </div>
+          <div class="presencia-card">
+            <div class="presencia-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Datos públicos = Confianza</h3>
+            <p>Negocios con información verificada en plataformas externas generan mayor credibilidad ante clientes y partners comerciales.</p>
+            <div class="presencia-badge">
+              <i class="fas fa-building"></i> Perfil empresarial completo
+            </div>
+          </div>
+        </div>
+        <div class="maptons-link">
+          <a href="https://kw.maptons.com/p/2484544314" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i> Ver perfil en Maptons.com
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
-      <div class="mini-card">
-        <small>Solución destacada</small>
-        <strong>CCTV</strong>
-        <div class="ok"><i class="fa-solid fa-video"></i> Mayor seguridad</div>
+    </section>
+
+    <!-- Soluciones -->
+    <section class="section" id="soluciones">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Soluciones que transforman negocios</h2>
+          <p>Tecnología aplicada a resolver problemas reales de operación y ventas</p>
+        </div>
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="card-icon"><i class="fas fa-cash-register"></i></div>
+            <h3>ToEat POS</h3>
+            <p>Sistema de punto de venta especializado para restaurantes y locales comerciales</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Gestión de mesas y pedidos</li>
+              <li><i class="fas fa-check"></i> Panel de cocina integrado</li>
+              <li><i class="fas fa-check"></i> Reportes de ventas en tiempo real</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><i class="fas fa-qrcode"></i></div>
+            <h3>Menú Digital QR Pro</h3>
+            <p>Carta interactiva que los clientes escanean desde su celular</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Actualización instantánea</li>
+              <li><i class="fas fa-check"></i> Diseño responsive premium</li>
+              <li><i class="fas fa-check"></i> Fotos y descripciones detalladas</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><i class="fas fa-boxes"></i></div>
+            <h3>Inventario Total</h3>
+            <p>Control de stock, alertas de productos críticos y trazabilidad</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Alertas de stock mínimo</li>
+              <li><i class="fas fa-check"></i> Entradas y salidas registradas</li>
+              <li><i class="fas fa-check"></i> Reporte de mermas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Método -->
+    <section class="section" id="metodo">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Nuestro método de trabajo</h2>
+          <p>Implementación ágil y sin complicaciones</p>
+        </div>
+        <div class="process-grid">
+          <div class="step reveal">
+            <div class="step-number">1</div>
+            <h3>Diagnóstico</h3>
+            <p class="text-muted">Analizamos las necesidades reales de tu negocio</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">2</div>
+            <h3>Propuesta</h3>
+            <p class="text-muted">Te entregamos un plan claro y personalizado</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">3</div>
+            <h3>Implementación</h3>
+            <p class="text-muted">Configuración y puesta en marcha en tiempo récord</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">4</div>
+            <h3>Acompañamiento</h3>
+            <p class="text-muted">Soporte continuo y capacitación incluida</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes -->
+    <section class="section" id="planes">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Planes diseñados para ti</h2>
+          <p>Elige el que mejor se adapte a tu negocio</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <h3>Inicial</h3>
+            <div class="price">Desde <span>CLP 199.900</span></div>
+            <ul>
+              <li><i class="fas fa-check"></i> Landing page profesional</li>
+              <li><i class="fas fa-check"></i> Enlace directo a WhatsApp</li>
+              <li><i class="fas fa-check"></i> Soporte básico</li>
+            </ul>
+            <a href="https://wa.me/56972001109" class="btn btn-outline" style="width: 100%; text-align: center;">Consultar</a>
+          </div>
+          <div class="price-card featured reveal">
+            <div class="featured-badge">Más popular</div>
+            <h3>Operación PRO</h3>
+            <div class="price">Desde <span>CLP 399.900</span></div>
+            <ul>
+              <li><i class="fas fa-check"></i> Menú QR o POS incluido</li>
+              <li><i class="fas fa-check"></i> Configuración completa</li>
+              <li><i class="fas fa-check"></i> Capacitación incluida</li>
+              <li><i class="fas fa-check"></i> Soporte prioritario</li>
+            </ul>
+            <a href="https://wa.me/56972001109" class="btn btn-primary" style="width: 100%; text-align: center;">Cotizar PRO</a>
+          </div>
+          <div class="price-card reveal">
+            <h3>Control Total</h3>
+            <div class="price">Desde <span>CLP 699.900</span></div>
+            <ul>
+              <li><i class="fas fa-check"></i> POS + QR + Inventario</li>
+              <li><i class="fas fa-check"></i> Automatizaciones</li>
+              <li><i class="fas fa-check"></i> Soporte 24/7</li>
+              <li><i class="fas fa-check"></i> Escalamiento incluido</li>
+            </ul>
+            <a href="https://wa.me/56972001109" class="btn btn-outline" style="width: 100%; text-align: center;">Hablar con asesor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>Experiencias reales de negocios que ya confían en nosotros</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal">
+            <p>"Implementamos el sistema POS y menú QR, las ventas aumentaron un 30% en el primer mes. El soporte es excelente."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">CM</div>
+              <div>
+                <strong>Carlos Martínez</strong>
+                <small>La Casona Restaurant</small>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal">
+            <p>"El control de inventario nos ayudó a reducir pérdidas en un 25%. La mejor inversión que hicimos este año."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div>
+                <strong>María Rodríguez</strong>
+                <small>Distribuidora Los Andes</small>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal">
+            <p>"El soporte TI es rápido y efectivo. Resuelven cualquier problema en minutos, no en días."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JS</div>
+              <div>
+                <strong>Juan Silva</strong>
+                <small>Hotel Boutique Valpo</small>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal">
+            <p>"El menú digital QR transformó la experiencia de nuestros clientes. Los pedidos llegaban más rápido a la cocina."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">FG</div>
+              <div>
+                <strong>Felipe González</strong>
+                <small>Café Central</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Preguntas frecuentes</h2>
+          <p>Resolvemos tus dudas para que tomes la mejor decisión</p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item reveal open">
+            <button class="faq-question">
+              <span>¿Ofrecen soporte técnico después de la instalación?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, todos nuestros planes incluyen soporte técnico. Dependiendo del plan, puedes tener soporte básico, prioritario o 24/7.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>¿Cuánto tiempo toma la implementación?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>El tiempo varía según el plan, pero generalmente entre 3 a 7 días hábiles para tener el sistema funcionando.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>¿Puedo comenzar con un plan pequeño y después actualizar?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>¡Por supuesto! Nuestros planes están diseñados para escalar junto con tu negocio. Puedes empezar con lo básico e ir sumando funcionalidades.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>¿Trabajan solo con restaurantes?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>No, aunque tenemos especialización en el rubro gastronómico, trabajamos con todo tipo de comercios y empresas que necesitan orden y control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta-section reveal">
+          <h2>¿Listo para transformar tu negocio?</h2>
+          <p>Contáctanos hoy y descubre cómo podemos ayudarte a vender más y operar mejor</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+            <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Correo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <div class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon" style="width: 40px; height: 40px;">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div>
+              <strong>DESOPORTE.CL</strong>
+            </div>
+          </div>
+          <p>Tecnología aplicada al crecimiento de tu negocio. Sistemas POS, menú QR, inventario y soporte TI profesional.</p>
+        </div>
+        <div>
+          <h4>Enlaces rápidos</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#soluciones">Soluciones</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#presencia">Presencia</a></li>
+            <li><a href="#planes">Planes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/56972001109">+56 9 7200 1109</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com">Email</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Valparaíso, Chile</li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--line); margin-top: 2rem; color: var(--muted);">
+        <p>&copy; <span id="year"></span> DESOPORTE.CL - Todos los derechos reservados</p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- SECCIÓN MAPTONS -->
-  <section class="section" id="aparicion">
-    <div class="section-head">
-      <p class="kicker">Aparición destacada</p>
-      <h2 class="section-title">Reconocimiento en medios</h2>
-      <p class="section-text">Puedes ver mi perfil y aparición en Maptons, lo que demuestra experiencia y presencia profesional en línea.</p>
-    </div>
-    <div class="cards-1">
-      <div class="card" style="text-align:center;">
-        <i class="fa-solid fa-link fa-2x" style="color:var(--primary-2); margin-bottom:1rem;"></i>
-        <p><strong>Mi perfil en Maptons</strong></p>
-        <a href="https://kw.maptons.com/p/2484544314" target="_blank" class="btn" style="margin-top:1rem;">Ver página</a>
-      </div>
-    </div>
-  </section>
+  <a href="https://wa.me/56972001109" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-  <!-- CONTACTO (Ejemplo) -->
-  <section class="section" id="contacto" style="padding:3rem 2rem; text-align:center;">
-    <h2>Contacto</h2>
-    <p>Puedes escribirme a: <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com">ingesistem.alfredo.sanhueza@gmail.com</a></p>
-  </section>
-
-  <!-- SCRIPT -->
   <script>
-    // Tema
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const newTheme = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      themeToggle.className = newTheme === 'dark' ? 'fa-solid fa-moon theme-toggle' : 'fa-solid fa-sun theme-toggle';
-    });
+    (() => {
+      // Tema oscuro/claro
+      const html = document.documentElement;
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        html.setAttribute('data-theme', savedTheme);
+        themeIcon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-moon';
+      } else {
+        html.setAttribute('data-theme', 'light');
+        themeIcon.className = 'fas fa-sun';
+      }
 
-    // Menú móvil
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', false);
+      themeToggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const newTheme = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
       });
-    });
-  </script>
 
+      // Menú móvil
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+        });
+      });
+
+      // FAQ acordeón
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          faqItems.forEach(i => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+
+      // Animación scroll
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      reveals.forEach(el => observer.observe(el));
+
+      // Año actual
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Navegación activa
+      const sections = document.querySelectorAll('section[id]');
+      const navAnchors = document.querySelectorAll('.nav-links a');
+      
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navAnchors.forEach(anchor => {
+          anchor.classList.remove('active');
+          if (anchor.getAttribute('href') === `#${current}`) {
+            anchor.classList.add('active');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
- 
