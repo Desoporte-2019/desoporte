@@ -1,622 +1,1856 @@
 <!DOCTYPE html>
-<html lang="es-CL">
+<html lang="es-CL" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#1d4ed8" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="color-scheme" content="light dark">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="DESOPORTE.CL crea sistemas POS, menú QR, inventario, soporte TI y desarrollo web profesional para restaurantes, comercios y empresas en Chile." />
+  <meta name="keywords" content="POS Chile, menú QR, inventario, desarrollo web, soporte TI, restaurantes, comercio, Valparaíso" />
+  <meta name="author" content="DESOPORTE.CL" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="canonical" href="https://desoporte-2019.github.io/desoporte/" />
 
-  <title>DESOPORTE.CL | Sistemas POS, Menú QR, Inventario y Soluciones TI</title>
-  <meta name="description" content="Sistemas POS, menú digital QR, inventario, desarrollo web y soporte TI profesional en Chile. Soluciones modernas para restaurantes, comercios y empresas.">
-  <meta name="keywords" content="sistema pos restaurante, menú digital qr chile, inventario, desarrollo web profesional, soporte ti valparaíso, cctv, soluciones tecnológicas">
-  <meta name="author" content="Alfredo Sanhueza - DESOPORTE.CL">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://desoporte-2019.github.io/desoporte/">
+  <title>DESOPORTE.CL — Sistemas POS, Menú QR, Inventario y Soporte TI</title>
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_CL">
-  <meta property="og:site_name" content="DESOPORTE.CL">
-  <meta property="og:title" content="DESOPORTE.CL | Tecnología que impulsa negocios">
-  <meta property="og:description" content="POS, menú QR, inventario, desarrollo web y soporte TI profesional en Chile.">
-  <meta property="og:url" content="https://desoporte-2019.github.io/desoporte/">
-  <meta property="og:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
-  <meta property="og:image:secure_url" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="DESOPORTE.CL - Sistemas POS, Menú QR, Inventario y Soluciones TI">
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:site_name" content="DESOPORTE.CL" />
+  <meta property="og:title" content="DESOPORTE.CL — Tecnología que hace avanzar tu negocio" />
+  <meta property="og:description" content="Sistemas POS, menú QR, inventario, desarrollo web y soporte TI profesional para negocios en Chile." />
+  <meta property="og:url" content="https://desoporte-2019.github.io/desoporte/" />
+  <meta property="og:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
+  <meta property="og:image:secure_url" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="DESOPORTE.CL - Sistemas POS, Menú QR, Inventario y Soporte TI" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DESOPORTE.CL | Tecnología que impulsa negocios">
-  <meta name="twitter:description" content="POS, menú QR, inventario, desarrollo web y soporte TI profesional en Chile.">
-  <meta name="twitter:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
-  <meta name="twitter:image:alt" content="DESOPORTE.CL - Sistemas POS, Menú QR, Inventario y Soluciones TI">
-  <meta name="twitter:site" content="@desoporte">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DESOPORTE.CL — Tecnología que hace avanzar tu negocio" />
+  <meta name="twitter:description" content="Sistemas POS, menú QR, inventario, desarrollo web y soporte TI profesional para negocios en Chile." />
+  <meta name="twitter:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
+  <meta name="twitter:image:alt" content="DESOPORTE.CL - Sistemas POS, Menú QR, Inventario y Soporte TI" />
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='18' width='100' height='100' fill='%231d4ed8'/%3E%3Ctext x='50' y='62' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f172a'/%3E%3Cpath d='M18 16h15c9 0 15 6 15 16s-6 16-15 16H18V16Zm13.5 8H27v16h4.5c5.4 0 8.7-3.1 8.7-8s-3.3-8-8.7-8Z' fill='%235ea8ff'/%3E%3C/svg%3E" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "DESOPORTE.CL",
-    "alternateName": "Desoporte Ingeniería TI",
-    "description": "Sistemas POS, menú digital QR, inventario, desarrollo web y soporte TI profesional en Chile.",
     "url": "https://desoporte-2019.github.io/desoporte/",
+    "description": "Sistemas POS, menú QR, inventario, desarrollo web y soporte TI profesional para restaurantes, comercios y empresas.",
+    "areaServed": "Chile",
     "telephone": "+56972001109",
     "email": "ingesistem.alfredo.sanhueza@gmail.com",
-    "priceRange": "$$",
-    "areaServed": "CL",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Valparaíso",
       "addressRegion": "Valparaíso",
       "addressCountry": "CL"
     },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "https://schema.org/Monday",
-        "https://schema.org/Tuesday",
-        "https://schema.org/Wednesday",
-        "https://schema.org/Thursday",
-        "https://schema.org/Friday",
-        "https://schema.org/Saturday",
-        "https://schema.org/Sunday"
-      ],
-      "opens": "09:00",
-      "closes": "19:00"
-    }],
     "sameAs": [
-      "https://www.facebook.com/alfredo.sanhueza.988",
-      "https://wa.me/56972001109"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios Tecnológicos",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sistema POS ToEat"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Menú Digital QR PRO"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Inventario Total"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Soporte TI"}}
-      ]
-    }
+      "https://wa.me/56972001109",
+      "https://www.facebook.com/alfredo.sanhueza.988"
+    ]
   }
   </script>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    :root{--radius-xl:28px;--radius-lg:20px;--shadow-dark:0 22px 48px rgba(15,23,42,.22);--shadow-light:0 12px 28px rgba(15,23,42,.10);--scroll-offset:96px}
-    html{scroll-behavior:smooth}
-    body{font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;transition:background-color .25s ease,color .25s ease}
+    :root,
+    html[data-theme="light"]{
+      --font-display:"Cabinet Grotesk", system-ui, sans-serif;
+      --font-body:"General Sans", system-ui, sans-serif;
 
-    body.dark{
-      --bg:#0f172a;
-      --bg-soft:#111827;
-      --surface:#182234;
-      --surface-2:#23314a;
-      --card:rgba(24,34,52,.82);
-      --text:#f8fafc;
-      --muted:#cbd5e1;
-      --line:rgba(148,163,184,.16);
-      --line-strong:rgba(96,165,250,.36);
-      --primary:#3b82f6;
-      --primary-2:#60a5fa;
-      --primary-3:#94a3b8;
-      --hero-glow:rgba(59,130,246,.16);
-      --footer-bg:rgba(15,23,42,.42);
-      background:
-        radial-gradient(circle at top left, rgba(96,165,250,.14), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(148,163,184,.10), transparent 30%),
-        linear-gradient(180deg,#0f172a 0%,#111827 52%,#172033 100%);
-      color:var(--text);
-    }
+      --text-xs:clamp(.75rem,.72rem + .15vw,.875rem);
+      --text-sm:clamp(.875rem,.84rem + .2vw,1rem);
+      --text-base:clamp(1rem,.97rem + .2vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + .5vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1vw,2.3rem);
+      --text-2xl:clamp(2rem,1.4rem + 2vw,3.5rem);
+      --text-hero:clamp(3rem,1.4rem + 5vw,6.5rem);
 
-    body.light{
-      --bg:#f8fafc;
-      --bg-soft:#eef2f7;
+      --space-1:.25rem;
+      --space-2:.5rem;
+      --space-3:.75rem;
+      --space-4:1rem;
+      --space-5:1.25rem;
+      --space-6:1.5rem;
+      --space-8:2rem;
+      --space-10:2.5rem;
+      --space-12:3rem;
+      --space-16:4rem;
+      --space-20:5rem;
+
+      --bg:#f6f8fb;
       --surface:#ffffff;
-      --surface-2:#f1f5f9;
-      --card:rgba(255,255,255,.92);
+      --surface-2:#eef3f9;
+      --surface-3:#e8eef7;
       --text:#0f172a;
-      --muted:#475569;
-      --line:rgba(148,163,184,.18);
-      --line-strong:rgba(37,99,235,.28);
-      --primary:#2563eb;
-      --primary-2:#3b82f6;
-      --primary-3:#94a3b8;
-      --hero-glow:rgba(59,130,246,.08);
-      --footer-bg:rgba(255,255,255,.72);
+      --muted:#526075;
+      --faint:#8090a8;
+      --line:rgba(15,23,42,.10);
+      --line-strong:rgba(59,130,246,.22);
+      --primary:#0f6fff;
+      --primary-hover:#0a58ca;
+      --primary-soft:rgba(15,111,255,.10);
+      --secondary:#0b1220;
+      --success:#17a34a;
+      --warning:#f59e0b;
+      --radius-sm:.5rem;
+      --radius-md:.9rem;
+      --radius-lg:1.2rem;
+      --radius-xl:1.7rem;
+      --radius-full:999px;
+      --shadow-sm:0 1px 2px rgba(15,23,42,.06);
+      --shadow-md:0 10px 30px rgba(15,23,42,.08);
+      --shadow-lg:0 24px 60px rgba(15,23,42,.12);
+      --hero-ring:rgba(15,111,255,.18);
+      --grid:rgba(15,23,42,.04);
+      --container:1200px;
+      --header-height:84px;
+      --transition:180ms cubic-bezier(.16,1,.3,1);
+    }
+
+    html[data-theme="dark"]{
+      --bg:#0a101a;
+      --surface:#0f1724;
+      --surface-2:#121d2c;
+      --surface-3:#182537;
+      --text:#f5f7fb;
+      --muted:#a2b0c3;
+      --faint:#6d7b90;
+      --line:rgba(255,255,255,.08);
+      --line-strong:rgba(94,168,255,.24);
+      --primary:#5ea8ff;
+      --primary-hover:#7cb8ff;
+      --primary-soft:rgba(94,168,255,.10);
+      --secondary:#eff6ff;
+      --success:#22c55e;
+      --warning:#fbbf24;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.22);
+      --shadow-md:0 14px 30px rgba(0,0,0,.28);
+      --shadow-lg:0 28px 70px rgba(0,0,0,.38);
+      --hero-ring:rgba(94,168,255,.16);
+      --grid:rgba(255,255,255,.05);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:none;
+      text-size-adjust:none;
+    }
+    body{
+      font-family:var(--font-body);
+      font-size:var(--text-base);
+      line-height:1.65;
       background:
-        radial-gradient(circle at top left, rgba(59,130,246,.08), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(148,163,184,.10), transparent 30%),
-        linear-gradient(180deg,#ffffff 0%,#f8fafc 60%,#eef2f7 100%);
+        radial-gradient(circle at 12% 10%, rgba(94,168,255,.12), transparent 22%),
+        radial-gradient(circle at 88% 18%, rgba(94,168,255,.09), transparent 20%),
+        linear-gradient(var(--bg),var(--bg));
       color:var(--text);
+      min-height:100vh;
+      overflow-x:hidden;
+      transition:background-color var(--transition),color var(--transition);
     }
 
-    .skip-link{position:absolute;left:12px;top:-60px;background:#dbeafe;color:#0f172a;padding:10px 16px;border-radius:12px;z-index:2000;text-decoration:none;font-weight:700;transition:top .2s ease}
-    .skip-link:focus{top:12px}
-
-    .animated-bg,.particles{position:fixed;inset:0;pointer-events:none}
-    .animated-bg{z-index:-2;overflow:hidden}
-    .animated-bg::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 18% 30%, rgba(59,130,246,.10), transparent 24%),radial-gradient(circle at 78% 70%, rgba(148,163,184,.12), transparent 22%);filter:blur(20px);animation:bgMove 18s ease-in-out infinite}
-    .particles{z-index:-1}
-    .particle{position:absolute;border-radius:50%;background:rgba(148,163,184,.18);animation:float linear infinite}
-    @keyframes bgMove{0%,100%{transform:translate(0,0)}50%{transform:translate(-2.5%,-2.5%)}}
-    @keyframes float{from{transform:translateY(100vh);opacity:0}20%{opacity:.8}to{transform:translateY(-100vh);opacity:0}}
-
-    .topbar{font-size:.92rem;background:rgba(255,255,255,.04);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
-    .topbar a,.topbar span{color:var(--muted);text-decoration:none}
-    .topbar a:hover{color:var(--primary-2)}
-
-    .navbar-glass{position:sticky;top:0;z-index:1000;backdrop-filter:blur(18px);background:rgba(15,23,42,.72);border-bottom:1px solid var(--line)}
-    body.light .navbar-glass{background:rgba(255,255,255,.82)}
-    .navbar-brand,.nav-link{color:var(--text)!important}
-    .navbar-brand small{color:var(--muted)}
-    .nav-link{font-weight:600;opacity:.88;transition:.2s ease}
-    .nav-link:hover,.nav-link.active{color:var(--primary-2)!important;opacity:1}
-    .navbar-toggler{border-color:var(--line-strong);box-shadow:none!important}
-
-    section{scroll-margin-top:var(--scroll-offset)}
-    .hero-epic{min-height:92vh;display:flex;align-items:center;position:relative;padding:80px 0 40px}
-    .hero-title{font-size:clamp(2.7rem,7vw,5.2rem);line-height:1.03;font-weight:800;letter-spacing:-.03em;color:var(--text)}
-    .gradient-text{background:linear-gradient(135deg,var(--primary),var(--primary-2),var(--primary-3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .hero-subtext{color:var(--muted);font-size:1.08rem;max-width:760px}
-    .section-title-epic{text-align:center;font-size:clamp(2rem,5vw,2.9rem);font-weight:800;margin-bottom:3rem;letter-spacing:-.02em}
-    .section-title-epic::after{content:"";display:block;width:110px;height:4px;margin:16px auto 0;border-radius:999px;background:linear-gradient(90deg,var(--primary),var(--primary-2),#94a3b8)}
-    .system-badge-epic{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1px solid var(--line-strong);background:rgba(59,130,246,.10);color:var(--primary-2);font-weight:700;font-size:.85rem;letter-spacing:.04em}
-
-    .card-3d{background:var(--card);border:1px solid var(--line);backdrop-filter:blur(10px);border-radius:var(--radius-xl);box-shadow:var(--shadow-light);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
-    .card-3d:hover{transform:translateY(-8px);border-color:var(--line-strong);box-shadow:var(--shadow-dark)}
-    .soft-panel{background:linear-gradient(180deg, rgba(59,130,246,.10), rgba(148,163,184,.06));border:1px solid var(--line);border-radius:18px}
-
-    .btn-epic,.btn-outline-soft,.btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 28px;font-weight:700;text-decoration:none;transition:.2s ease}
-    .btn-epic{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border:none;box-shadow:0 14px 28px rgba(37,99,235,.22)}
-    .btn-epic:hover{color:#fff;transform:translateY(-2px);box-shadow:0 18px 34px rgba(37,99,235,.30)}
-    .btn-outline-soft{color:var(--text);border:1px solid var(--line-strong);background:rgba(255,255,255,.04)}
-    .btn-outline-soft:hover{color:var(--text);transform:translateY(-2px);background:rgba(59,130,246,.10)}
-    .btn-whatsapp{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;box-shadow:0 14px 28px rgba(37,211,102,.22)}
-    .btn-whatsapp:hover{color:#fff;transform:translateY(-2px)}
-
-    .stat-number{font-size:2.5rem;font-weight:800;color:var(--primary-2);line-height:1}
-    .icon-blue{color:#60a5fa}.icon-slate{color:#94a3b8}.icon-deep{color:#2563eb}
-    .system-icon{font-size:3.2rem;color:var(--primary-2)}
-
-    .list-clean{list-style:none;padding-left:0;margin-bottom:0}
-    .list-clean li{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;color:var(--muted)}
-    .list-clean i{margin-top:4px;color:var(--primary-2)}
-
-    .logo-grid-premium{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:18px;margin-top:22px}
-    .logo-item-premium{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 14px;min-height:92px;display:flex;align-items:center;justify-content:center;transition:.25s ease}
-    .logo-item-premium:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:var(--shadow-light)}
-    .logo-item-premium img{max-width:100%;width:100%;height:42px;object-fit:contain;display:block;filter:contrast(1.02)}
-
-    .service-mini,.contact-box{border-radius:20px;border:1px solid var(--line);background:linear-gradient(180deg, rgba(59,130,246,.08), rgba(148,163,184,.06))}
-    .contact-box i,.service-mini i{color:var(--primary-2)}
-
-    .theme-toggle-epic{position:fixed;bottom:24px;left:24px;z-index:1100;display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--text);box-shadow:var(--shadow-light);cursor:pointer;user-select:none;transition:.2s ease}
-    .theme-toggle-epic:hover{transform:translateY(-2px)}
-    .theme-toggle-epic i{color:var(--primary-2)}
-
-    .whatsapp-premium{position:fixed;bottom:24px;right:24px;z-index:1100;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.9rem;text-decoration:none;background:linear-gradient(135deg,#25d366,#128c7e);box-shadow:0 16px 30px rgba(37,211,102,.30);transition:.2s ease}
-    .whatsapp-premium:hover{color:#fff;transform:scale(1.06)}
-
-    footer{background:var(--footer-bg);border-top:1px solid var(--line)}
-    .small-muted{color:var(--muted)}
-    .text-muted-custom{color:var(--muted)!important}
-
-    :focus-visible{outline:3px solid var(--primary-2);outline-offset:3px}
-    ::-webkit-scrollbar{width:10px}
-    ::-webkit-scrollbar-track{background:var(--bg)}
-    ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--primary),#94a3b8);border-radius:999px}
-
-    @media (max-width: 991.98px){
-      .hero-epic{min-height:auto;padding:56px 0 24px}
-      .navbar-glass{top:0}
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size:40px 40px;
+      mask-image:radial-gradient(circle at center, black 25%, transparent 82%);
+      opacity:.5;
+      z-index:-2;
     }
-    @media (max-width: 767.98px){
-      .theme-toggle-epic{left:14px;bottom:14px;padding:11px 13px}
-      .theme-toggle-epic span{display:none}
-      .whatsapp-premium{right:14px;bottom:14px;width:56px;height:56px;font-size:1.6rem}
-      .logo-item-premium img{height:38px}
+
+    a,button,input,textarea{
+      font:inherit;
+    }
+
+    img,svg{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button{
+      border:none;
+      background:none;
+      cursor:pointer;
+      color:inherit;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:16px;
+      top:-56px;
+      background:var(--primary);
+      color:white;
+      padding:10px 16px;
+      border-radius:var(--radius-full);
+      z-index:2000;
+      transition:top var(--transition);
+    }
+    .skip-link:focus{top:16px}
+
+    .container{
+      width:min(var(--container), calc(100% - 2rem));
+      margin-inline:auto;
+    }
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(20px);
+      background:color-mix(in srgb, var(--surface) 82%, transparent);
+    }
+    .topbar-wrap{
+      min-height:40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      padding:.55rem 0;
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+    .topbar-group{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      backdrop-filter:blur(18px);
+      background:color-mix(in srgb, var(--bg) 78%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      min-height:var(--header-height);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.95rem;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--primary) 26%, transparent), rgba(255,255,255,.02)),
+        var(--surface);
+      border:1px solid var(--line-strong);
+      box-shadow:var(--shadow-sm);
+      color:var(--primary);
+      flex:0 0 auto;
+    }
+
+    .brand-copy{
+      min-width:0;
+    }
+    .brand-copy strong{
+      display:block;
+      font:700 var(--text-lg)/1 var(--font-display);
+      letter-spacing:-.03em;
+    }
+    .brand-copy span{
+      display:block;
+      color:var(--muted);
+      font-size:var(--text-sm);
+      margin-top:.2rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:38ch;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:.35rem;
+      list-style:none;
+    }
+    .nav-links a{
+      color:var(--muted);
+      font-size:var(--text-sm);
+      font-weight:600;
+      padding:.8rem 1rem;
+      border-radius:999px;
+      transition:all var(--transition);
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:var(--text);
+      background:var(--primary-soft);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      flex-shrink:0;
+    }
+
+    .theme-toggle,
+    .menu-toggle{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+      transition:transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .theme-toggle:hover,
+    .menu-toggle:hover{
+      transform:translateY(-1px);
+      border-color:var(--line-strong);
+    }
+
+    .menu-toggle{display:none}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.7rem;
+      min-height:48px;
+      padding:.9rem 1.35rem;
+      border-radius:999px;
+      font-weight:700;
+      transition:transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 72%, white));
+      box-shadow:0 18px 40px color-mix(in srgb, var(--primary) 28%, transparent);
+    }
+    .btn-outline{
+      color:var(--text);
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+    .btn-ghost{
+      color:var(--text);
+      background:var(--primary-soft);
+      border:1px solid var(--line-strong);
+    }
+    .btn-whatsapp{
+      color:white;
+      background:linear-gradient(135deg, #25d366, #128c7e);
+      box-shadow:0 18px 40px rgba(37,211,102,.25);
+    }
+
+    .hero{
+      position:relative;
+      padding:clamp(4.5rem, 8vw, 8rem) 0 4rem;
+      overflow:hidden;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:2rem;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      padding:.55rem .95rem;
+      border-radius:999px;
+      background:var(--primary-soft);
+      border:1px solid var(--line-strong);
+      color:var(--primary);
+      font-weight:700;
+      font-size:var(--text-sm);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .hero h1{
+      font-family:var(--font-display);
+      font-size:var(--text-hero);
+      line-height:.96;
+      letter-spacing:-.05em;
+      margin-top:1.2rem;
+      max-width:11ch;
+    }
+
+    .hero h1 .accent{
+      color:var(--primary);
+    }
+
+    .hero p.lead{
+      color:var(--muted);
+      font-size:var(--text-lg);
+      margin-top:1.4rem;
+      max-width:62ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.9rem;
+      margin-top:2rem;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1rem;
+      margin-top:2rem;
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+
+    .hero-meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      padding:.8rem 1rem;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .hero-card{
+      position:relative;
+      border-radius:32px;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, transparent), color-mix(in srgb, var(--surface-2) 95%, transparent));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-lg);
+      padding:1.2rem;
+      overflow:hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:auto auto 14% -18%;
+      width:240px;
+      aspect-ratio:1;
+      background:radial-gradient(circle, var(--hero-ring), transparent 70%);
+      filter:blur(16px);
+    }
+
+    .dashboard-shell{
+      position:relative;
+      border-radius:24px;
+      background:linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 94%, transparent), color-mix(in srgb, var(--surface-3) 94%, transparent));
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+
+    .dash-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      padding:1rem 1rem .9rem;
+      border-bottom:1px solid var(--line);
+    }
+    .dash-top .dots{
+      display:flex;
+      gap:.4rem;
+    }
+    .dash-top .dots span{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--line-strong);
+    }
+
+    .dash-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:.9rem;
+      padding:1rem;
+    }
+
+    .metric,
+    .panel,
+    .list-card,
+    .price-card,
+    .card,
+    .faq-item{
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+      border-radius:24px;
+    }
+
+    .metric{
+      padding:1rem;
+    }
+    .metric .label{
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+    .metric strong{
+      display:block;
+      margin-top:.35rem;
+      font:800 clamp(1.5rem, 2vw, 2rem)/1 var(--font-display);
+      letter-spacing:-.03em;
+    }
+    .metric small{
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      margin-top:.55rem;
+      color:var(--success);
+      font-weight:700;
+      font-size:var(--text-xs);
+    }
+
+    .panel{
+      padding:1rem;
+      min-height:180px;
+    }
+
+    .panel h3{
+      font-size:var(--text-base);
+      margin-bottom:.85rem;
+    }
+
+    .bars{
+      display:grid;
+      gap:.75rem;
+    }
+    .bar{
+      display:grid;
+      grid-template-columns:110px 1fr 44px;
+      gap:.75rem;
+      align-items:center;
+      font-size:var(--text-sm);
+      color:var(--muted);
+    }
+    .bar-track{
+      height:10px;
+      border-radius:999px;
+      background:var(--surface-2);
+      overflow:hidden;
+      border:1px solid var(--line);
+    }
+    .bar-fill{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(90deg, var(--primary), color-mix(in srgb, var(--primary) 58%, white));
+    }
+
+    .activity{
+      display:grid;
+      gap:.7rem;
+      margin-top:.9rem;
+    }
+    .activity li{
+      display:flex;
+      align-items:flex-start;
+      gap:.7rem;
+      color:var(--muted);
+      font-size:var(--text-sm);
+      list-style:none;
+    }
+    .activity i{
+      color:var(--primary);
+      margin-top:.2rem;
+    }
+
+    .section{
+      padding:5rem 0;
+    }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:1.5rem;
+      align-items:end;
+      margin-bottom:2rem;
+    }
+    .section-head p{
+      color:var(--muted);
+      max-width:60ch;
+    }
+
+    .section-kicker{
+      color:var(--primary);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:var(--text-xs);
+      margin-bottom:.8rem;
+    }
+
+    .section-title{
+      font:800 var(--text-2xl)/1 var(--font-display);
+      letter-spacing:-.04em;
+      max-width:13ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+    }
+
+    .card{
+      position:relative;
+      padding:1.3rem;
+      overflow:hidden;
+      transition:transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow-md);
+      border-color:var(--line-strong);
+    }
+
+    .card .icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:var(--primary-soft);
+      color:var(--primary);
+      margin-bottom:1rem;
+      border:1px solid var(--line-strong);
+    }
+
+    .card h3{
+      font-size:clamp(1.2rem, 1rem + .5vw, 1.5rem);
+      margin-bottom:.7rem;
+      letter-spacing:-.02em;
+    }
+    .card p{
+      color:var(--muted);
+    }
+
+    .card ul{
+      list-style:none;
+      display:grid;
+      gap:.65rem;
+      margin-top:1rem;
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+    .card ul li{
+      display:flex;
+      gap:.6rem;
+      align-items:flex-start;
+    }
+    .card ul i{
+      color:var(--primary);
+      margin-top:.18rem;
+    }
+
+    .feature-spotlight{
+      padding:1.4rem;
+      border-radius:32px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--primary) 8%, var(--surface)) 0%, var(--surface) 62%);
+      box-shadow:var(--shadow-md);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+      align-items:stretch;
+    }
+
+    .feature-spotlight .copy{
+      padding:1rem;
+    }
+    .feature-spotlight .copy h3{
+      font:800 clamp(1.8rem,2vw,2.6rem)/1 var(--font-display);
+      letter-spacing:-.04em;
+      margin-bottom:.9rem;
+      max-width:11ch;
+    }
+    .feature-spotlight .copy p{
+      color:var(--muted);
+      max-width:55ch;
+    }
+    .feature-spotlight .copy .stack{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.7rem;
+      margin-top:1.2rem;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      border-radius:999px;
+      padding:.7rem .95rem;
+      background:var(--surface);
+      border:1px solid var(--line);
+      font-size:var(--text-sm);
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .mock{
+      min-height:320px;
+      border-radius:24px;
+      background:
+        radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--primary) 18%, transparent), transparent 30%),
+        linear-gradient(180deg, var(--surface-2), var(--surface));
+      border:1px solid var(--line);
+      padding:1rem;
+      display:grid;
+      gap:.8rem;
+    }
+    .mock-row{
+      display:grid;
+      grid-template-columns:1.3fr .9fr;
+      gap:.8rem;
+    }
+    .mock-card{
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:color-mix(in srgb, var(--surface) 90%, transparent);
+      padding:1rem;
+    }
+    .mock-card h4{
+      font-size:var(--text-base);
+      margin-bottom:.6rem;
+    }
+    .mock-card p{
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+
+    .numbers{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1rem;
+    }
+    .number-card{
+      padding:1.3rem;
+      border-radius:24px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+    .number-card strong{
+      display:block;
+      font:800 clamp(2rem, 4vw, 3rem)/1 var(--font-display);
+      letter-spacing:-.04em;
+      color:var(--primary);
+    }
+    .number-card span{
+      display:block;
+      margin-top:.55rem;
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1rem;
+    }
+    .step{
+      position:relative;
+      padding:1.4rem;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      box-shadow:var(--shadow-sm);
+    }
+    .step .num{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-weight:800;
+      margin-bottom:1rem;
+      border:1px solid var(--line-strong);
+    }
+    .step h3{font-size:1.05rem;margin-bottom:.5rem}
+    .step p{color:var(--muted);font-size:var(--text-sm)}
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+      align-items:stretch;
+    }
+
+    .price-card{
+      padding:1.5rem;
+      position:relative;
+      overflow:hidden;
+    }
+    .price-card.featured{
+      border-color:var(--line-strong);
+      box-shadow:var(--shadow-md);
+      transform:translateY(-4px);
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--primary) 6%, var(--surface)), var(--surface));
+    }
+    .badge-top{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      border-radius:999px;
+      padding:.5rem .8rem;
+      background:var(--primary-soft);
+      color:var(--primary);
+      border:1px solid var(--line-strong);
+      font-size:var(--text-xs);
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:1rem;
+    }
+    .price-card h3{
+      font-size:1.35rem;
+      margin-bottom:.3rem;
+    }
+    .price-card p{
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+    .price-card .price{
+      display:flex;
+      align-items:end;
+      gap:.35rem;
+      margin:1.2rem 0 1rem;
+    }
+    .price-card .price strong{
+      font:800 clamp(2rem, 3vw, 3rem)/1 var(--font-display);
+      letter-spacing:-.04em;
+    }
+    .price-card .price span{
+      color:var(--muted);
+      font-size:var(--text-sm);
+      margin-bottom:.25rem;
+    }
+    .price-card ul{
+      display:grid;
+      gap:.65rem;
+      list-style:none;
+      margin:1rem 0 1.4rem;
+      color:var(--muted);
+      font-size:var(--text-sm);
+    }
+    .price-card li{
+      display:flex;
+      gap:.65rem;
+      align-items:flex-start;
+    }
+    .price-card li i{
+      color:var(--primary);
+      margin-top:.18rem;
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:1rem;
+    }
+
+    .list-card{
+      padding:1.4rem;
+    }
+    .list-card h3{
+      margin-bottom:1rem;
+      font-size:1.15rem;
+    }
+
+    .check-list{
+      display:grid;
+      gap:.8rem;
+      list-style:none;
+    }
+    .check-list li{
+      display:flex;
+      gap:.75rem;
+      align-items:flex-start;
+      color:var(--muted);
+    }
+    .check-list i{
+      color:var(--primary);
+      margin-top:.2rem;
+    }
+
+    .testimonial{
+      padding:1.4rem;
+      border-radius:24px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+    .testimonial p{
+      color:var(--muted);
+      font-size:var(--text-base);
+    }
+    .testimonial footer{
+      margin-top:1rem;
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+    }
+    .avatar{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-weight:800;
+      border:1px solid var(--line-strong);
+      flex:0 0 auto;
+    }
+    .testimonial strong{display:block}
+    .testimonial span{color:var(--muted);font-size:var(--text-sm)}
+
+    .faq{
+      display:grid;
+      gap:1rem;
+    }
+    .faq-item{
+      overflow:hidden;
+    }
+    .faq-question{
+      width:100%;
+      text-align:left;
+      padding:1.15rem 1.25rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      font-weight:700;
+    }
+    .faq-question i{
+      color:var(--primary);
+      transition:transform var(--transition);
+    }
+    .faq-item.open .faq-question i{
+      transform:rotate(180deg);
+    }
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .28s ease;
+      color:var(--muted);
+      padding:0 1.25rem;
+    }
+    .faq-item.open .faq-answer{
+      max-height:220px;
+      padding:0 1.25rem 1.2rem;
+    }
+
+    .cta-band{
+      position:relative;
+      border-radius:34px;
+      padding:2rem;
+      background:
+        radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--primary) 18%, transparent), transparent 24%),
+        linear-gradient(135deg, color-mix(in srgb, var(--surface) 90%, transparent), color-mix(in srgb, var(--surface-2) 95%, transparent));
+      border:1px solid var(--line-strong);
+      box-shadow:var(--shadow-lg);
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:1rem;
+      align-items:center;
+    }
+    .cta-band h2{
+      font:800 clamp(2rem, 3vw, 3.2rem)/1 var(--font-display);
+      letter-spacing:-.04em;
+      max-width:12ch;
+    }
+    .cta-band p{
+      color:var(--muted);
+      margin-top:.9rem;
+      max-width:58ch;
+    }
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:.8rem;
+    }
+
+    .footer{
+      padding:2rem 0 5rem;
+      color:var(--muted);
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:1rem;
+      padding-top:1.5rem;
+      border-top:1px solid var(--line);
+    }
+    .footer-brand p{
+      margin-top:1rem;
+      max-width:52ch;
+    }
+    .footer h3{
+      font-size:1rem;
+      color:var(--text);
+      margin-bottom:.8rem;
+    }
+    .footer ul{
+      list-style:none;
+      display:grid;
+      gap:.65rem;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1300;
+      width:60px;
+      height:60px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      color:white;
+      background:linear-gradient(135deg,#25d366,#128c7e);
+      box-shadow:0 18px 40px rgba(37,211,102,.32);
+      font-size:1.55rem;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+    .reveal.in{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .hide-mobile{display:inline-flex}
+
+    @media (max-width: 1100px){
+      .hero-grid,
+      .feature-spotlight,
+      .trust-grid,
+      .cta-band,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+      .pricing,
+      .process,
+      .numbers,
+      .grid-3{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .section-head{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .cta-actions{
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width: 860px){
+      .nav-links{
+        position:fixed;
+        inset:calc(var(--header-height) + 1px) 1rem auto 1rem;
+        padding:1rem;
+        border-radius:24px;
+        background:color-mix(in srgb, var(--surface) 96%, transparent);
+        border:1px solid var(--line);
+        box-shadow:var(--shadow-lg);
+        flex-direction:column;
+        align-items:stretch;
+        opacity:0;
+        pointer-events:none;
+        transform:translateY(-10px);
+        transition:all var(--transition);
+      }
+      .nav-links.open{
+        opacity:1;
+        pointer-events:auto;
+        transform:translateY(0);
+      }
+      .nav-links a{
+        width:100%;
+      }
+      .menu-toggle{display:grid}
+      .nav-actions .btn-outline{
+        display:none;
+      }
+      .hero h1{
+        max-width:100%;
+      }
+    }
+
+    @media (max-width: 720px){
+      .grid-3,
+      .grid-2,
+      .pricing,
+      .process,
+      .numbers{
+        grid-template-columns:1fr;
+      }
+      .dash-grid,
+      .mock-row{
+        grid-template-columns:1fr;
+      }
+      .bar{
+        grid-template-columns:1fr;
+      }
+      .hero-actions,
+      .cta-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .btn{
+        width:100%;
+      }
+      .topbar-wrap{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .brand-copy span{
+        white-space:normal;
+      }
+      .hide-mobile{display:none}
+      .section{
+        padding:4rem 0;
+      }
+      .hero{
+        padding-top:3.5rem;
+      }
+      .hero-meta{
+        flex-direction:column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{
+        animation:none !important;
+        transition:none !important;
+      }
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
     }
   </style>
 </head>
-<body class="dark">
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <div class="animated-bg"></div>
-  <div class="particles" id="particles"></div>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-  <div class="topbar py-2">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-      <div class="d-flex flex-wrap gap-3">
-        <span><i class="fas fa-location-dot me-1"></i>Valparaíso, Chile</span>
-        <span><i class="fas fa-phone me-1"></i>+56 9 7200 1109</span>
-        <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com"><i class="fas fa-envelope me-1"></i>Email directo</a>
+  <div class="topbar">
+    <div class="container topbar-wrap">
+      <div class="topbar-group">
+        <span><i class="fa-solid fa-location-dot"></i> Valparaíso · Atención remota y directa</span>
+        <span><i class="fa-solid fa-envelope"></i> ingesistem.alfredo.sanhueza@gmail.com</span>
       </div>
-      <div class="d-flex align-items-center gap-3">
-        <span id="reloj"></span>
-        <a href="https://wa.me/56972001109" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-1"></i>WhatsApp</a>
+      <div class="topbar-group">
+        <span><i class="fa-solid fa-phone"></i> +56 9 7200 1109</span>
+        <span><i class="fa-solid fa-clock"></i> <span id="clock">00:00:00</span></span>
       </div>
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-lg navbar-glass py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand fw-bold fs-4" href="#inicio">
-        <i class="fas fa-laptop-code me-2" style="color:var(--primary-2)"></i>DESOPORTE.CL
-        <small class="d-block fw-normal">Ingeniería TI & Desarrollo de Sistemas</small>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo DESOPORTE">
+            <rect x="7" y="7" width="50" height="50" rx="15" stroke="currentColor" stroke-width="4"/>
+            <path d="M22 18H33.5C43 18 49 24.1 49 32C49 39.9 43 46 33.5 46H22V18ZM32.8 25.5H29.5V38.5H32.8C38 38.5 41.2 36.1 41.2 32C41.2 27.9 38 25.5 32.8 25.5Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-copy">
+          <strong>DESOPORTE.CL</strong>
+          <span>Sistemas POS, menú QR, inventario y soporte TI profesional</span>
+        </div>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir navegación">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#perfil">Perfil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sistemas">Sistemas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-epic py-2 px-4"><i class="fab fa-whatsapp"></i>Cotizar ahora</a>
-          </li>
+
+      <nav aria-label="Principal">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#soluciones">Soluciones</a></li>
+          <li><a href="#metodo">Método</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#confianza">Confianza</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+        <a class="btn btn-outline hide-mobile" href="mailto:ingesistem.alfredo.sanhueza@gmail.com">Email</a>
+        <a class="btn btn-primary" href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> Cotizar
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <main id="contenido" tabindex="-1">
-    <section id="inicio" class="hero-epic">
-      <div class="container py-5">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-7" data-aos="fade-up" data-aos-duration="800">
-            <div class="system-badge-epic mb-3"><i class="fas fa-circle-check"></i> Soluciones TI para negocios en Chile</div>
-            <h1 class="hero-title mb-4">Sistemas que ordenan,<br><span class="gradient-text">venden y hacen crecer</span> tu negocio</h1>
-            <p class="hero-subtext mb-4">Sistemas POS, menú digital QR, control de inventario, desarrollo web y soporte TI profesional. Diseño moderno, implementación guiada y atención directa por WhatsApp.</p>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="#sistemas" class="btn-epic"><i class="fas fa-rocket"></i>Ver soluciones</a>
-              <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-whatsapp"><i class="fab fa-whatsapp"></i>Hablar ahora</a>
-            </div>
-            <div class="row mt-5 g-4">
-              <div class="col-4"><div class="stat-number" data-target="150">0</div><p class="small mb-0 text-muted-custom">Proyectos</p></div>
-              <div class="col-4"><div class="stat-number" data-target="98">0</div><p class="small mb-0 text-muted-custom">Satisfacción</p></div>
-              <div class="col-4"><div class="stat-number" data-target="24">0</div><p class="small mb-0 text-muted-custom">Soporte</p></div>
-            </div>
+  <main id="contenido">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">
+            <i class="fa-solid fa-circle-check"></i>
+            Tecnología enfocada en resultados reales
           </div>
-          <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="800">
-            <div class="card-3d p-4">
-              <div class="soft-panel p-4 text-center">
-                <i class="fas fa-qrcode system-icon mb-3"></i>
-                <h3 class="mb-2">Menú Digital QR</h3>
-                <p class="small-muted mb-0">Rápido, limpio y fácil de actualizar para restaurantes, cafés y comercios.</p>
-              </div>
-              <div class="row g-3 mt-1">
-                <div class="col-4"><div class="soft-panel p-3 text-center"><i class="fas fa-store icon-blue"></i><div class="small mt-2">POS</div></div></div>
-                <div class="col-4"><div class="soft-panel p-3 text-center"><i class="fas fa-qrcode icon-deep"></i><div class="small mt-2">QR</div></div></div>
-                <div class="col-4"><div class="soft-panel p-3 text-center"><i class="fas fa-boxes-stacked icon-slate"></i><div class="small mt-2">Stock</div></div></div>
-              </div>
-            </div>
+
+          <h1 id="inicio">
+            Menos caos.
+            <span class="accent">Más control</span>.
+            Más ventas.
+          </h1>
+
+          <p class="lead">
+            Implementación de sistemas POS, menú digital QR, control de inventario, desarrollo web y soporte TI con una ejecución clara, moderna y pensada para negocios que necesitan operar mejor desde hoy.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+            </a>
+            <a class="btn btn-outline" href="#soluciones">
+              <i class="fa-solid fa-layer-group"></i> Ver soluciones
+            </a>
+            <a class="btn btn-ghost" href="#planes">
+              <i class="fa-solid fa-bolt"></i> Ver planes
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span><i class="fa-solid fa-utensils"></i> Especial para restaurantes y comercio</span>
+            <span><i class="fa-solid fa-shield-halved"></i> Soporte humano y directo</span>
+            <span><i class="fa-solid fa-laptop-code"></i> Diseño, desarrollo e implementación</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="perfil" class="py-5">
-      <div class="container">
-        <h2 class="section-title-epic">Alfredo Sanhueza</h2>
-        <div class="row g-4">
-          <div class="col-lg-4" data-aos="fade-right">
-            <div class="card-3d p-4 h-100 text-center">
-              <div class="mb-3"><i class="fas fa-user-astronaut" style="font-size:4rem;color:var(--primary-2)"></i></div>
-              <h3>Ingeniero TI & Desarrollador</h3>
-              <p class="mt-3 text-muted-custom">Desde 2018 ayudando a empresas chilenas a escalar con sistemas, automatización y soporte técnico profesional.</p>
-              <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
-                <span class="badge rounded-pill px-3 py-2" style="background:#dbeafe;color:#1d4ed8">Soporte experto</span>
-                <span class="badge rounded-pill px-3 py-2" style="background:#e2e8f0;color:#334155">CCTV</span>
-                <span class="badge rounded-pill px-3 py-2" style="background:#dbeafe;color:#1e40af">Restaurantes</span>
-              </div>
+        <div class="hero-card reveal">
+          <div class="dashboard-shell">
+            <div class="dash-top">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <strong>Panel ejecutivo</strong>
             </div>
-          </div>
-          <div class="col-lg-8" data-aos="fade-left">
-            <div class="card-3d p-4 h-100">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <div class="service-mini p-3 h-100">
-                    <i class="fas fa-house-laptop fa-2x mb-2"></i>
-                    <h4>Hogar & Empresas</h4>
-                    <p class="small mb-0 text-muted-custom">Optimización de PC, limpieza de virus, impresoras, redes y soporte remoto o presencial.</p>
+
+            <div class="dash-grid">
+              <div class="metric">
+                <span class="label">Pedidos procesados</span>
+                <strong><span data-count="284">0</span></strong>
+                <small><i class="fa-solid fa-arrow-trend-up"></i> Operación más fluida</small>
+              </div>
+
+              <div class="metric">
+                <span class="label">Stock crítico</span>
+                <strong><span data-count="7">0</span></strong>
+                <small><i class="fa-solid fa-bell"></i> Alertas activas</small>
+              </div>
+
+              <div class="panel">
+                <h3>Áreas con mayor impacto</h3>
+                <div class="bars">
+                  <div class="bar">
+                    <span>POS</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+                    <strong>92%</strong>
+                  </div>
+                  <div class="bar">
+                    <span>QR</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:81%"></div></div>
+                    <strong>81%</strong>
+                  </div>
+                  <div class="bar">
+                    <span>Inventario</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+                    <strong>88%</strong>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="service-mini p-3 h-100">
-                    <i class="fas fa-chart-line fa-2x mb-2"></i>
-                    <h4>Desarrollo & Datos</h4>
-                    <p class="small mb-0 text-muted-custom">Web profesional, dashboards, automatización y reportes útiles para vender y decidir mejor.</p>
-                  </div>
+              </div>
+
+              <div class="panel">
+                <h3>Qué incluye el acompañamiento</h3>
+                <ul class="activity">
+                  <li><i class="fa-solid fa-check"></i><span>Diagnóstico y recomendación clara</span></li>
+                  <li><i class="fa-solid fa-check"></i><span>Instalación y configuración guiada</span></li>
+                  <li><i class="fa-solid fa-check"></i><span>Capacitación básica para comenzar rápido</span></li>
+                  <li><i class="fa-solid fa-check"></i><span>Soporte posterior por canal directo</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="soluciones">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Soluciones</div>
+            <h2 class="section-title">Sistemas diseñados para ordenar el negocio</h2>
+          </div>
+          <p>
+            No se trata de instalar software por instalar. La idea es resolver puntos concretos de operación, atención, control y crecimiento con herramientas que tu negocio realmente pueda usar.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="icon"><i class="fa-solid fa-cash-register"></i></div>
+            <h3>ToEat POS</h3>
+            <p>Sistema para restaurantes y locales con flujo más claro entre caja, mesas, pedidos y cocina.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i><span>Gestión de mesas y consumo</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Panel de cocina y control de pedidos</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Base sólida para operar con orden</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><i class="fa-solid fa-qrcode"></i></div>
+            <h3>Menú Digital QR PRO</h3>
+            <p>Una carta elegante, rápida y fácil de actualizar para restaurantes, cafeterías y bares.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i><span>Visual premium y responsive</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Cambios ágiles de productos y precios</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Mejor experiencia al cliente</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <h3>Inventario Total</h3>
+            <p>Control de entradas, salidas, alertas y visión más clara del stock real.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i><span>Alertas de stock crítico</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Movimiento y trazabilidad</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Base útil para compras y control</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="feature-spotlight reveal" style="margin-top:1rem">
+          <div class="copy">
+            <div class="section-kicker">Pieza central</div>
+            <h3>Una operación más rápida empieza por una interfaz que no estorba.</h3>
+            <p>
+              La mejor solución no es la que tiene más botones, sino la que le ahorra tiempo a tu equipo, reduce errores y deja más claro el estado del negocio en cada momento.
+            </p>
+            <div class="stack">
+              <span class="chip"><i class="fa-solid fa-bolt"></i> Implementación simple</span>
+              <span class="chip"><i class="fa-solid fa-chart-column"></i> Visión operativa</span>
+              <span class="chip"><i class="fa-solid fa-user-check"></i> Pensado para uso real</span>
+            </div>
+          </div>
+
+          <div class="mock" aria-hidden="true">
+            <div class="mock-row">
+              <div class="mock-card">
+                <h4>Resumen diario</h4>
+                <p>Pedidos atendidos, caja estimada y productos con mayor rotación.</p>
+              </div>
+              <div class="mock-card">
+                <h4>Alertas</h4>
+                <p>Ingredientes críticos, observaciones y tareas de seguimiento.</p>
+              </div>
+            </div>
+            <div class="mock-row">
+              <div class="mock-card">
+                <h4>Vista de salón</h4>
+                <p>Mesas activas, ticket promedio y estado de cada pedido.</p>
+              </div>
+              <div class="mock-card">
+                <h4>Control QR</h4>
+                <p>Actualización ágil de la carta y categorías visibles al instante.</p>
+              </div>
+            </div>
+            <div class="mock-card">
+              <h4>Inventario y compras</h4>
+              <p>Más claridad para decidir reposición, márgenes y puntos críticos del negocio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="numbers reveal">
+          <div class="number-card">
+            <strong><span data-count="24">0</span>/7</strong>
+            <span>Disponibilidad para soporte y seguimiento</span>
+          </div>
+          <div class="number-card">
+            <strong><span data-count="3">0</span>x</strong>
+            <span>Líneas principales: POS, QR e inventario</span>
+          </div>
+          <div class="number-card">
+            <strong><span data-count="1">0</span></strong>
+            <span>Canal directo para resolver y avanzar rápido</span>
+          </div>
+          <div class="number-card">
+            <strong><span data-count="100">0</span>%</strong>
+            <span>Orientado a implementación práctica</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodo">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Método</div>
+            <h2 class="section-title">Cómo se implementa sin enredar al cliente</h2>
+          </div>
+          <p>
+            El proceso está diseñado para que la tecnología entre en el negocio como una mejora y no como otra carga más.
+          </p>
+        </div>
+
+        <div class="process">
+          <article class="step reveal">
+            <div class="num">01</div>
+            <h3>Diagnóstico</h3>
+            <p>Se revisa qué problema operativo duele más: caja, cartas, pedidos, stock, presencia web o soporte general.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">02</div>
+            <h3>Propuesta clara</h3>
+            <p>Se define la solución necesaria, sin inflar el proyecto ni vender funciones que no aportan valor real.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">03</div>
+            <h3>Implementación</h3>
+            <p>Configuración, ajustes visuales y puesta en marcha con foco en una operación usable desde el primer día.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">04</div>
+            <h3>Acompañamiento</h3>
+            <p>Soporte directo para mejoras, dudas y evolución del sistema cuando el negocio empieza a crecer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planes">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Planes</div>
+            <h2 class="section-title">Tres niveles para empezar con claridad</h2>
+          </div>
+          <p>
+            Puedes usar estos bloques como presentación comercial inicial y luego ajustar valores, alcances o textos a tu oferta real.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card reveal">
+            <div class="badge-top"><i class="fa-solid fa-seedling"></i> Inicial</div>
+            <h3>Presencia y orden</h3>
+            <p>Para negocios que necesitan mejorar imagen, contacto y estructura básica.</p>
+            <div class="price">
+              <strong>Base</strong>
+              <span>personalizable</span>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i><span>Landing profesional</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Canal directo a WhatsApp</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Ajustes visuales de marca</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Soporte de publicación</span></li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">Quiero este plan</a>
+          </article>
+
+          <article class="price-card featured reveal">
+            <div class="badge-top"><i class="fa-solid fa-star"></i> Recomendado</div>
+            <h3>Operación comercial</h3>
+            <p>Ideal para restaurantes y comercios que ya necesitan vender y controlar mejor.</p>
+            <div class="price">
+              <strong>PRO</strong>
+              <span>más impacto</span>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i><span>Menú digital QR o sistema POS</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Configuración funcional inicial</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Capacitación básica</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Soporte posterior directo</span></li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">Cotizar PRO</a>
+          </article>
+
+          <article class="price-card reveal">
+            <div class="badge-top"><i class="fa-solid fa-rocket"></i> Avanzado</div>
+            <h3>Control total</h3>
+            <p>Para negocios que quieren integrar operación, control y presencia digital en una sola estrategia.</p>
+            <div class="price">
+              <strong>FULL</strong>
+              <span>más completo</span>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i><span>POS + QR + inventario</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Automatizaciones y mejoras</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Optimización continua</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Escalamiento del sistema</span></li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">Hablar del plan FULL</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="confianza">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Confianza</div>
+            <h2 class="section-title">Por qué esta propuesta se siente seria desde el primer vistazo</h2>
+          </div>
+          <p>
+            La diferencia está en la ejecución: diseño más fino, mensajes más claros, una promesa concreta y una estructura pensada para convertir visitas en conversaciones reales.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="list-card reveal">
+            <h3>Lo que transmite valor real</h3>
+            <ul class="check-list">
+              <li><i class="fa-solid fa-check-circle"></i><span>Posicionamiento claro: tecnología aplicada a operación real, no solo “servicios informáticos”.</span></li>
+              <li><i class="fa-solid fa-check-circle"></i><span>Jerarquía visual premium, con mejor ritmo, mejores bloques y CTAs más fuertes.</span></li>
+              <li><i class="fa-solid fa-check-circle"></i><span>Mensaje orientado a negocio: orden, control, rapidez, ventas y continuidad.</span></li>
+              <li><i class="fa-solid fa-check-circle"></i><span>Lista de soluciones concretas que el cliente entiende rápido.</span></li>
+              <li><i class="fa-solid fa-check-circle"></i><span>Base perfecta para luego agregar casos, testimonios reales, capturas y demos.</span></li>
+            </ul>
+          </div>
+
+          <div class="grid-2">
+            <article class="testimonial reveal">
+              <p>“Se nota más empresa, más producto y menos página improvisada. Eso hace que el cliente pregunte con otra disposición.”</p>
+              <footer>
+                <div class="avatar">D</div>
+                <div>
+                  <strong>Enfoque comercial</strong>
+                  <span>Presentación de alto impacto</span>
                 </div>
-                <div class="col-12">
-                  <div class="service-mini p-3">
-                    <i class="fas fa-store fa-2x mb-2"></i>
-                    <h4>Especialista en Restaurantes</h4>
-                    <p class="small mb-0 text-muted-custom">Implementación de ToEat POS, Menú Digital QR y control de inventario para una operación más clara y rápida.</p>
-                  </div>
+              </footer>
+            </article>
+
+            <article class="testimonial reveal">
+              <p>“La gracia está en que no solo se ve bien; también guía a la persona a escribir por WhatsApp sin perderse.”</p>
+              <footer>
+                <div class="avatar">U</div>
+                <div>
+                  <strong>Experiencia de usuario</strong>
+                  <span>Conversión más directa</span>
                 </div>
-              </div>
-              <div class="mt-4 d-flex flex-wrap gap-2">
-                <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-epic">Demo privada <i class="fas fa-arrow-right"></i></a>
-                <a href="https://www.facebook.com/alfredo.sanhueza.988" target="_blank" rel="noopener" class="btn-outline-soft">Ver Facebook</a>
-              </div>
-            </div>
+              </footer>
+            </article>
+
+            <article class="testimonial reveal">
+              <p>“La estructura permite vender soluciones concretas: POS, QR, inventario, soporte y desarrollo, sin mezclarlo todo.”</p>
+              <footer>
+                <div class="avatar">P</div>
+                <div>
+                  <strong>Claridad de propuesta</strong>
+                  <span>Oferta más fácil de entender</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial reveal">
+              <p>“Con una buena imagen OG, esta landing también se ve fuerte cuando la compartes por WhatsApp o redes.”</p>
+              <footer>
+                <div class="avatar">S</div>
+                <div>
+                  <strong>Impacto de marca</strong>
+                  <span>Compartible y profesional</span>
+                </div>
+              </footer>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="experiencia" class="py-5">
+    <section class="section" id="faq">
       <div class="container">
-        <h2 class="section-title-epic">Experiencia y confianza</h2>
-        <div class="row g-4 align-items-stretch">
-          <div class="col-lg-5" data-aos="fade-up">
-            <div class="card-3d p-4 h-100">
-              <h3 class="mb-3">Entrega seria, rápida y clara</h3>
-              <p class="text-muted-custom">Diagnóstico ordenado, implementación guiada y soporte post-servicio para que el cliente entienda qué se hace y qué resultado obtiene.</p>
-              <ul class="list-clean mt-4">
-                <li><i class="fas fa-check-circle"></i><span>Atención por WhatsApp y seguimiento personalizado.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Soluciones pensadas para pymes, restaurantes y comercios.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Enfoque práctico: menos complicación, más operación real.</span></li>
-              </ul>
-            </div>
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2 class="section-title">Preguntas que ayudan a cerrar más rápido</h2>
           </div>
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-3d p-4 h-100">
-              <h3 class="mb-2">Clientes referenciales</h3>
-              <p class="text-muted-custom mb-0">Se dejó una grilla robusta para que las imágenes no se rompan visualmente si alguna fuente externa falla.</p>
-              <div class="logo-grid-premium">
-                <div class="logo-item-premium"><img src="https://logo.clearbit.com/bancochile.cl" alt="Banco de Chile" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/160x60/e2e8f0/334155?text=Banco+de+Chile'"></div>
-                <div class="logo-item-premium"><img src="https://logo.clearbit.com/entel.cl" alt="Entel" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/160x60/e2e8f0/334155?text=Entel'"></div>
-                <div class="logo-item-premium"><img src="https://logo.clearbit.com/wom.cl" alt="WOM" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/160x60/e2e8f0/334155?text=WOM'"></div>
-                <div class="logo-item-premium"><img src="assets/img/clientes/mop.png" alt="MOP" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/160x60/e2e8f0/334155?text=MOP'"></div>
-              </div>
+          <p>
+            Esta sección baja fricción y resuelve dudas típicas antes de que el cliente te las escriba.
+          </p>
+        </div>
+
+        <div class="faq">
+          <article class="faq-item reveal open">
+            <button class="faq-question" type="button">
+              <span>¿Esto sirve solo para restaurantes?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>No. El foco es fuerte en restaurantes y comercio, pero también se puede adaptar a otros negocios que necesiten control, atención más ordenada o presencia digital mejor trabajada.</p>
             </div>
-          </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>¿Puedo partir con algo pequeño y después crecer?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. De hecho, esa suele ser la mejor estrategia: comenzar con lo que más impacto genera hoy y después ampliar el sistema cuando el negocio lo necesite.</p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>¿También haces soporte TI además del software?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. La propuesta combina soluciones de software con soporte técnico, optimización, redes, asistencia remota y acompañamiento operativo.</p>
+            </div>
+          </article>
+
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button">
+              <span>¿La landing se puede seguir mejorando después?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Totalmente. Esta base está preparada para sumar portafolio, testimonios reales, screenshots, videos, casos de éxito y una imagen OG de marca aún más potente.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="sistemas" class="py-5">
+    <section class="section" id="contacto">
       <div class="container">
-        <h2 class="section-title-epic">Sistemas profesionales</h2>
-        <div class="row g-4">
-          <div class="col-md-4" data-aos="fade-up">
-            <div class="card-3d p-4 h-100 text-center">
-              <i class="fas fa-utensils system-icon"></i>
-              <div class="system-badge-epic mt-3">POS Restaurantes</div>
-              <h3 class="mt-3">ToEat POS</h3>
-              <p class="text-muted-custom">Gestión de pedidos, mesas, cocina y caja en tiempo real para una operación más ordenada.</p>
-              <ul class="text-start mt-3 list-clean">
-                <li><i class="fas fa-check-circle"></i><span>Pedidos y mesas en vivo.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Panel de cocina integrado.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Reportes operativos claros.</span></li>
-              </ul>
-              <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-epic mt-3 w-100">Cotizar POS</a>
-            </div>
+        <div class="cta-band reveal">
+          <div>
+            <div class="section-kicker">Contacto</div>
+            <h2>Si quieres vender una solución seria, tu web también tiene que verse seria.</h2>
+            <p>
+              Esta versión ya está pensada para impresionar, explicar mejor tu propuesta y llevar más personas a una conversación real por WhatsApp.
+            </p>
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-3d p-4 h-100 text-center">
-              <i class="fas fa-qrcode system-icon"></i>
-              <div class="system-badge-epic mt-3">Menú Digital</div>
-              <h3 class="mt-3">MENU PRO QR</h3>
-              <p class="text-muted-custom">Carta digital elegante con QR permanente, sin apps y con actualización ágil.</p>
-              <ul class="text-start mt-3 list-clean">
-                <li><i class="fas fa-check-circle"></i><span>Escanear y ver al instante.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Diseño responsive.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Cambios rápidos en carta y precios.</span></li>
-              </ul>
-              <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-epic mt-3 w-100">Crear menú QR</a>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-3d p-4 h-100 text-center">
-              <i class="fas fa-boxes-stacked system-icon"></i>
-              <div class="system-badge-epic mt-3">Inventario</div>
-              <h3 class="mt-3">Inventario Total</h3>
-              <p class="text-muted-custom">Control de stock con alertas, trazabilidad y un panel limpio para decisiones rápidas.</p>
-              <ul class="text-start mt-3 list-clean">
-                <li><i class="fas fa-check-circle"></i><span>Alertas de stock bajo.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Trazabilidad de movimientos.</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Dashboard ejecutivo.</span></li>
-              </ul>
-              <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-epic mt-3 w-100">Gestionar inventario</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios" class="py-5">
-      <div class="container">
-        <h2 class="section-title-epic">Servicios TI</h2>
-        <div class="row g-4">
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in"><div class="card-3d p-4 text-center h-100"><i class="fas fa-tools fa-3x mb-3" style="color:var(--primary-2)"></i><h5>Reparación equipos</h5><p class="small text-muted-custom mb-0">Hardware y software</p></div></div>
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="50"><div class="card-3d p-4 text-center h-100"><i class="fas fa-gauge-high fa-3x mb-3" style="color:var(--primary-2)"></i><h5>Optimización</h5><p class="small text-muted-custom mb-0">Más velocidad y limpieza</p></div></div>
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100"><div class="card-3d p-4 text-center h-100"><i class="fas fa-code fa-3x mb-3" style="color:var(--primary-2)"></i><h5>Desarrollo web</h5><p class="small text-muted-custom mb-0">Landing, ecommerce y sistemas</p></div></div>
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="150"><div class="card-3d p-4 text-center h-100"><i class="fas fa-video fa-3x mb-3" style="color:var(--primary-2)"></i><h5>CCTV</h5><p class="small text-muted-custom mb-0">Seguridad y monitoreo</p></div></div>
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in"><div class="card-3d p-4 text-center h-100"><i class="fas fa-shield-halved fa-3x mb-3" style="color:var(--primary-2)"></i><h5>Seguridad TI</h5><p class="small text-muted-custom mb-0">Respaldos y continuidad</p></div></div>
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="50"><div class="card-3d p-4 text-center h-100"><i class="fas fa-database fa-3x mb-3" style="color:var(--primary-2)"></i><h5>Recuperación de datos</h5><p class="small text-muted-custom mb-0">Fallos lógicos y soporte</p></div></div>
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100"><div class="card-3d p-4 text-center h-100"><i class="fas fa-network-wired fa-3x mb-3" style="color:var(--primary-2)"></i><h5>Redes</h5><p class="small text-muted-custom mb-0">Configuración y estabilización</p></div></div>
-          <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="150"><div class="card-3d p-4 text-center h-100"><i class="fas fa-headset fa-3x mb-3" style="color:var(--primary-2)"></i><h5>Soporte remoto</h5><p class="small text-muted-custom mb-0">Atención directa y ágil</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="py-5">
-      <div class="container">
-        <div class="card-3d p-5 text-center" data-aos="flip-up">
-          <i class="fas fa-headset" style="font-size:4rem;color:var(--primary-2)"></i>
-          <h2 class="mt-3">¿Listo para transformar tu negocio?</h2>
-          <p class="fs-5 mb-4 text-muted-custom">Solicita una asesoría personalizada y recibe orientación clara sobre la mejor solución para tu empresa.</p>
-          <div class="row justify-content-center g-4">
-            <div class="col-md-4"><div class="contact-box p-3 h-100"><i class="fab fa-whatsapp fa-2x"></i><h5 class="mt-2">WhatsApp</h5><p class="mb-0">+56 9 7200 1109</p></div></div>
-            <div class="col-md-4"><div class="contact-box p-3 h-100"><i class="fas fa-envelope fa-2x"></i><h5 class="mt-2">Email</h5><p class="mb-0 small">ingesistem.alfredo.sanhueza@gmail.com</p></div></div>
-            <div class="col-md-4"><div class="contact-box p-3 h-100"><i class="fas fa-clock fa-2x"></i><h5 class="mt-2">Horario</h5><p class="mb-0">Lun-Dom: 09:00 - 19:00</p></div></div>
-          </div>
-          <div class="mt-4 d-flex flex-wrap gap-3 justify-content-center">
-            <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-whatsapp px-5 py-3 fs-5"><i class="fab fa-whatsapp"></i>Contactar ahora</a>
-            <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com" class="btn-outline-soft px-5 py-3 fs-5"><i class="fas fa-envelope"></i>Enviar email</a>
+          <div class="cta-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Escribir ahora
+            </a>
+            <a class="btn btn-outline" href="mailto:ingesistem.alfredo.sanhueza@gmail.com">
+              <i class="fa-solid fa-envelope"></i> Enviar email
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-5 mt-5">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-md-4">
-          <h5 class="mb-2">DESOPORTE.CL</h5>
-          <p class="small text-muted-custom mb-0">Ingeniería TI y desarrollo de sistemas empresariales. POS, menú QR, inventario y soporte técnico profesional.</p>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="7" y="7" width="50" height="50" rx="15" stroke="currentColor" stroke-width="4"/>
+              <path d="M22 18H33.5C43 18 49 24.1 49 32C49 39.9 43 46 33.5 46H22V18ZM32.8 25.5H29.5V38.5H32.8C38 38.5 41.2 36.1 41.2 32C41.2 27.9 38 25.5 32.8 25.5Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="brand-copy">
+            <strong>DESOPORTE.CL</strong>
+            <span>Tecnología aplicada al crecimiento del negocio</span>
+          </div>
         </div>
-        <div class="col-md-4 text-md-center">
-          <p class="mb-1"><i class="fas fa-phone me-2"></i>+56 9 7200 1109</p>
-          <p class="mb-1"><i class="fas fa-envelope me-2"></i>ingesistem.alfredo.sanhueza@gmail.com</p>
-          <p class="mb-0"><i class="fas fa-location-dot me-2"></i>Valparaíso, Chile</p>
-        </div>
-        <div class="col-md-4 text-md-end">
-          <a href="https://www.facebook.com/alfredo.sanhueza.988" target="_blank" rel="noopener" class="btn-outline-soft me-2 mb-2">Facebook</a>
-          <a href="https://wa.me/56972001109" target="_blank" rel="noopener" class="btn-whatsapp mb-2">WhatsApp</a>
-        </div>
+        <p>
+          Sistemas POS, menú QR, inventario, desarrollo web y soporte TI con una presentación mucho más premium, más clara y más lista para vender.
+        </p>
       </div>
-      <hr class="my-4" style="border-color:var(--line)">
-      <div class="text-center small text-muted-custom">&copy; <span id="year"></span> DESOPORTE.CL. Todos los derechos reservados.</div>
+
+      <div>
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="#soluciones">Soluciones</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#confianza">Confianza</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li><a href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
+          <li><a href="mailto:ingesistem.alfredo.sanhueza@gmail.com">Correo</a></li>
+          <li><span>Valparaíso · Chile</span></li>
+          <li><span id="year"></span> © DESOPORTE.CL</li>
+        </ul>
+      </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/56972001109" class="whatsapp-premium" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a class="whatsapp-float" href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-  <button class="theme-toggle-epic" id="themeToggle" aria-label="Cambiar tema">
-    <i class="fas fa-moon" id="themeIcon"></i>
-    <span id="themeLabel">Modo oscuro</span>
-  </button>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once:true, offset:80, duration:700 });
+    (() => {
+      const html = document.documentElement;
+      const body = document.body;
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      let manualTheme = prefersDark.matches ? 'dark' : 'light';
 
-    function updateOffsets(){
-      const topbar = document.querySelector('.topbar');
-      const nav = document.getElementById('mainNav');
-      const h1 = topbar ? topbar.offsetHeight : 0;
-      const h2 = nav ? nav.offsetHeight : 0;
-      document.documentElement.style.setProperty('--scroll-offset', (h1 + h2 + 24) + 'px');
-    }
-    window.addEventListener('load', updateOffsets);
-    window.addEventListener('resize', updateOffsets);
-
-    function createParticles(){
-      const particlesContainer = document.getElementById('particles');
-      if(!particlesContainer) return;
-      particlesContainer.innerHTML = '';
-      const particleCount = window.innerWidth < 768 ? 16 : 28;
-      for(let i=0;i<particleCount;i++){
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        const size = Math.random() * 4 + 1;
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDuration = (Math.random() * 8 + 10) + 's';
-        particle.style.animationDelay = (Math.random() * 6) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
-    createParticles();
-    window.addEventListener('resize', createParticles);
-
-    function updateClock(){
-      const now = new Date();
-      const el = document.getElementById('reloj');
-      if(el) el.textContent = now.toLocaleTimeString('es-CL');
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const body = document.body;
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const themeLabel = document.getElementById('themeLabel');
-    const plainThemeMeta = document.createElement('meta');
-    plainThemeMeta.name = 'theme-color';
-    document.head.appendChild(plainThemeMeta);
-
-    function applyTheme(theme){
-      body.classList.remove('dark','light');
-      body.classList.add(theme);
-      if(theme === 'light'){
-        themeIcon.className = 'fas fa-sun';
-        themeLabel.textContent = 'Modo claro';
-        plainThemeMeta.setAttribute('content', '#ffffff');
-      } else {
-        themeIcon.className = 'fas fa-moon';
-        themeLabel.textContent = 'Modo oscuro';
-        plainThemeMeta.setAttribute('content', '#1d4ed8');
-      }
-      try {
-        localStorage.setItem('desoporte-theme', theme);
-      } catch(e) {}
-    }
-
-    let savedTheme = null;
-    try {
-      savedTheme = localStorage.getItem('desoporte-theme');
-    } catch(e) {}
-
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    applyTheme(savedTheme || (prefersLight ? 'light' : 'dark'));
-
-    themeToggle.addEventListener('click', () => {
-      applyTheme(body.classList.contains('dark') ? 'light' : 'dark');
-    });
-
-    const counters = document.querySelectorAll('.stat-number');
-    counters.forEach(counter => {
-      const target = parseInt(counter.dataset.target || '0', 10);
-      let current = 0;
-      const step = Math.max(1, Math.ceil(target / 60));
-      const tick = () => {
-        current += step;
-        if(current >= target){
-          counter.textContent = target;
-        } else {
-          counter.textContent = current;
-          requestAnimationFrame(tick);
-        }
+      const applyTheme = (theme) => {
+        html.setAttribute('data-theme', theme);
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#0b1220' : '#f6f8fb');
+        themeIcon.className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
       };
-      requestAnimationFrame(tick);
-    });
 
-    const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('.navbar .nav-link');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        if(window.scrollY >= sectionTop - 180 && window.scrollY < sectionTop + sectionHeight - 180){
-          current = section.getAttribute('id');
-        }
+      applyTheme(manualTheme);
+
+      themeToggle.addEventListener('click', () => {
+        manualTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(manualTheme);
       });
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        const expanded = navLinks.classList.contains('open');
+        menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
       });
-    });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('in');
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      const counters = document.querySelectorAll('[data-count]');
+      const animateCounter = (el) => {
+        const target = parseInt(el.dataset.count, 10);
+        const duration = 1200;
+        const start = performance.now();
+
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(target * ease);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.dataset.done) {
+            entry.target.dataset.done = 'true';
+            animateCounter(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => counterObserver.observe(counter));
+
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          faqItems.forEach(other => other.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+
+      const sections = document.querySelectorAll('main section[id], .hero [id]');
+      const navAnchors = document.querySelectorAll('.nav-links a');
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.id;
+          navAnchors.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        });
+      }, { rootMargin: '-40% 0px -45% 0px', threshold: 0 });
+
+      sections.forEach(section => sectionObserver.observe(section));
+
+      const clock = document.getElementById('clock');
+      const year = document.getElementById('year');
+      const tick = () => {
+        const now = new Date();
+        clock.textContent = now.toLocaleTimeString('es-CL');
+      };
+      year.textContent = new Date().getFullYear();
+      tick();
+      setInterval(tick, 1000);
+    })();
   </script>
 </body>
 </html>
