@@ -1,848 +1,1159 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="es-CL" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta property="og:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
-<meta property="og:image:secure_url" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="DESOPORTE.CL - POS, Menú QR, CCTV y Soporte TI">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
-<meta name="theme-color" content="#0f172a">
-<title>DESOPORTE.CL | Sistemas POS, Menú QR, Inventario y Soporte TI</title>
-<link rel="preconnect" href="https://api.fontshare.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f172a'/%3E%3Cpath d='M18 16h15c9 0 15 6 15 16s-6 16-15 16H18V16Zm13.5 8H27v16h4.5c5.4 0 8.7-3.1 8.7-8s-3.3-8-8.7-8Z' fill='%235ea8ff'/%3E%3C/svg%3E" />
-
-<style>
-  :root,
-  [data-theme="light"] {
-    --bg:#f8fafc;
-    --surface:#ffffff;
-    --surface-2:#f1f5f9;
-    --surface-3:#e9eef3;
-    --text:#0f172a;
-    --muted:#475569;
-    --faint:#94a3b8;
-    --line:#e2e8f0;
-    --line-strong:#cbd5e1;
-    --primary:#2563eb;
-    --primary-hover:#1d4ed8;
-    --primary-soft:#dbeafe;
-    --success:#16a34a;
-    --warning:#eab308;
-    --radius-sm:.5rem;
-    --radius-md:.9rem;
-    --radius-lg:1.2rem;
-    --radius-xl:1.7rem;
-    --radius-full:999px;
-    --shadow-sm:0 1px 3px rgba(0,0,0,.1);
-    --shadow-md:0 4px 6px -1px rgba(0,0,0,.1);
-    --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);
-    --container:1200px;
-    --header-height:80px;
-    --transition:200ms ease;
-  }
-
-  [data-theme="dark"] {
-    --bg:#0a0c10;
-    --surface:#111827;
-    --surface-2:#1f2937;
-    --surface-3:#2d3a4a;
-    --text:#f9fafb;
-    --muted:#9ca3af;
-    --faint:#6b7280;
-    --line:#1f2937;
-    --line-strong:#374151;
-    --primary:#3b82f6;
-    --primary-hover:#60a5fa;
-    --primary-soft:#1e293b;
-    --success:#22c55e;
-    --warning:#fbbf24;
-    --shadow-sm:0 1px 3px rgba(0,0,0,.3);
-    --shadow-md:0 4px 6px -1px rgba(0,0,0,.4);
-    --shadow-lg:0 10px 15px -3px rgba(0,0,0,.5);
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'General Sans', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
-    transition: background var(--transition), color var(--transition);
-  }
-
-  .container {
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  /* Header */
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    backdrop-filter: blur(10px);
-    background: rgba(var(--bg-rgb), 0.8);
-  }
-
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: var(--header-height);
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .logo-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--primary);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-  }
-
-  .logo-text h1 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    font-family: 'Cabinet Grotesk', sans-serif;
-  }
-
-  .logo-text p {
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color var(--transition);
-  }
-
-  .nav-links a:hover,
-  .nav-links a.active {
-    color: var(--primary);
-  }
-
-  .nav-actions {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .theme-toggle {
-    background: var(--surface-2);
-    border: 1px solid var(--line);
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    color: var(--text);
-    font-size: 1.2rem;
-    transition: all var(--transition);
-  }
-
-  .theme-toggle:hover {
-    background: var(--primary);
-    color: white;
-  }
-
-  .btn {
-    padding: 0.7rem 1.5rem;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .btn-primary {
-    background: var(--primary);
-    color: white;
-  }
-
-  .btn-primary:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-  }
-
-  .btn-outline {
-    border: 1px solid var(--line);
-    color: var(--text);
-    background: transparent;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-  }
-
-  .btn-whatsapp {
-    background: #25D366;
-    color: white;
-  }
-
-  .btn-whatsapp:hover {
-    background: #128C7E;
-    transform: translateY(-2px);
-  }
-
-  /* Hero Section */
-  .hero {
-    padding: 4rem 0 2rem;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .hero-content h1 {
-    font-size: 3.5rem;
-    font-family: 'Cabinet Grotesk', sans-serif;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-content .highlight {
-    color: var(--primary);
-  }
-
-  .hero-content p {
-    color: var(--muted);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
-  }
-
-  .stat span:first-child {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-  }
-
-  .stat span:last-child {
-    font-size: 0.85rem;
-    color: var(--muted);
-    display: block;
-  }
-
-  .hero-card {
-    background: var(--surface);
-    border-radius: 24px;
-    padding: 1.5rem;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-lg);
-  }
-
-  /* Botón menú móvil */
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--text);
-    cursor: pointer;
-  }
-
-  /* Sección Clientes */
-  .clients-section {
-    padding: 3rem 0;
-    text-align: center;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    margin: 2rem 0;
-  }
-
-  .clients-section h3 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--muted);
-    margin-bottom: 2rem;
-  }
-
-  .clients-grid {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .client-card {
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .client-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--surface-2);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 0.75rem;
-    font-size: 2rem;
-    color: var(--primary);
-    border: 1px solid var(--line);
-  }
-
-  .client-card span {
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .client-card small {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-
-  /* Sección Presencia - Maptons */
-  .presencia-section {
-    padding: 4rem 0;
-    background: var(--surface-2);
-    border-radius: 24px;
-    margin: 2rem 0;
-  }
-
-  .presencia-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .presencia-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 1.8rem;
-    text-align: center;
-    transition: all var(--transition);
-  }
-
-  .presencia-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .presencia-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--primary-soft);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.2rem;
-    font-size: 2.2rem;
-    color: var(--primary);
-  }
-
-  .presencia-card h3 {
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
-  }
-
-  .presencia-card p {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .presencia-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--primary-soft);
-    color: var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-
-  .maptons-link {
-    margin-top: 2rem;
-    text-align: center;
-  }
-
-  .maptons-link a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: var(--primary);
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all var(--transition);
-  }
-
-  .maptons-link a:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-    gap: 1rem;
-  }
-
-  /* Sección Soluciones */
-  .section {
-    padding: 4rem 0;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .section-header h2 {
-    font-size: 2.2rem;
-    font-family: 'Cabinet Grotesk', sans-serif;
-    margin-bottom: 1rem;
-  }
-
-  .section-header p {
-    color: var(--muted);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 1.5rem;
-    transition: all var(--transition);
-  }
-
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary);
-  }
-
-  .card-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--primary-soft);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-  }
-
-  .card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .card p {
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
-
-  .card ul {
-    list-style: none;
-  }
-
-  .card li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .card li i {
-    color: var(--primary);
-    font-size: 0.75rem;
-  }
-
-  /* Sección Método */
-  .process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-
-  .step {
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .step-number {
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin: 0 auto 1rem;
-  }
-
-  /* Precios */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .price-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 1.5rem;
-    position: relative;
-  }
-
-  .price-card.featured {
-    border-color: var(--primary);
-    transform: scale(1.02);
-  }
-
-  .featured-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary);
-    color: white;
-    padding: 0.25rem 1rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-
-  .price-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .price {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin: 1rem 0;
-  }
-
-  .price span {
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-
-  .price-card ul {
-    list-style: none;
-    margin: 1rem 0;
-  }
-
-  .price-card li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
-  }
-
-  /* Testimonios */
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .testimonial-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 1.5rem;
-  }
-
-  .testimonial-card p {
-    font-style: italic;
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
-
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .author-avatar {
-    width: 45px;
-    height: 45px;
-    background: var(--primary-soft);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: var(--primary);
-  }
-
-  /* FAQ */
-  .faq-grid {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-  }
-
-  .faq-question {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: none;
-    border: none;
-    text-align: left;
-    font-weight: 600;
-    color: var(--text);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .faq-answer {
-    padding: 0 1.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    color: var(--muted);
-  }
-
-  .faq-item.open .faq-answer {
-    padding: 0 1.5rem 1rem 1.5rem;
-    max-height: 200px;
-  }
-
-  /* CTA */
-  .cta-section {
-    background: var(--surface-2);
-    border-radius: 24px;
-    padding: 3rem;
-    text-align: center;
-    margin: 2rem 0;
-  }
-
-  .cta-section h2 {
-    margin-bottom: 1rem;
-  }
-
-  /* Footer */
-  .footer {
-    background: var(--surface-2);
-    padding: 3rem 0 2rem;
-    margin-top: 2rem;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .footer-logo p {
-    color: var(--muted);
-    margin-top: 1rem;
-  }
-
-  .footer h4 {
-    margin-bottom: 1rem;
-  }
-
-  .footer ul {
-    list-style: none;
-  }
-
-  .footer li {
-    margin-bottom: 0.5rem;
-  }
-
-  .footer a {
-    color: var(--muted);
-    text-decoration: none;
-  }
-
-  .footer a:hover {
-    color: var(--primary);
-  }
-
-  /* WhatsApp Float */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: #25D366;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.8rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform var(--transition);
-    z-index: 100;
-  }
-
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-  }
-
-  /* Mobile */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="DESOPORTE.CL implementa sistemas POS, menú QR, inventario y soporte TI profesional para restaurantes, comercios y empresas en Chile." />
+  <meta property="og:title" content="DESOPORTE.CL | Sistemas POS, Menú QR, Inventario y Soporte TI" />
+  <meta property="og:description" content="Menos caos. Más control. Más ventas. Soluciones tecnológicas para negocios en Chile." />
+  <meta property="og:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
+  <meta property="og:image:secure_url" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="DESOPORTE.CL - POS, Menú QR, CCTV y Soporte TI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>DESOPORTE.CL | Sistemas POS, Menú QR, Inventario y Soporte TI</title>
+
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f172a'/%3E%3Cpath d='M18 16h15c9 0 15 6 15 16s-6 16-15 16H18V16Zm13.5 8H27v16h4.5c5.4 0 8.7-3.1 8.7-8s-3.3-8-8.7-8Z' fill='%235ea8ff'/%3E%3C/svg%3E" />
+
+  <style>
+    :root,
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --bg-rgb: 248, 250, 252;
+      --surface: #ffffff;
+      --surface-2: #f1f5f9;
+      --surface-3: #e9eef3;
+      --surface-glass: rgba(255, 255, 255, 0.78);
+      --text: #0f172a;
+      --muted: #475569;
+      --faint: #94a3b8;
+      --line: rgba(148, 163, 184, 0.22);
+      --line-strong: rgba(100, 116, 139, 0.34);
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-soft: rgba(37, 99, 235, 0.10);
+      --success: #16a34a;
+      --warning: #ca8a04;
+      --whatsapp: #25d366;
+      --whatsapp-hover: #128c7e;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.9rem;
+      --radius-lg: 1.2rem;
+      --radius-xl: 1.7rem;
+      --radius-full: 999px;
+      --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 22px 60px rgba(15, 23, 42, 0.12);
+      --container: 1200px;
+      --header-height: 80px;
+      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.84rem + 0.15vw, 1rem);
+      --text-base: clamp(1rem, 0.98rem + 0.15vw, 1.08rem);
+      --text-lg: clamp(1.125rem, 1.03rem + 0.35vw, 1.35rem);
+      --text-xl: clamp(1.6rem, 1.2rem + 1vw, 2.3rem);
+      --text-2xl: clamp(2.2rem, 1.5rem + 2vw, 3.8rem);
     }
 
-    .nav-links {
-      display: none;
+    [data-theme="dark"] {
+      --bg: #0a0c10;
+      --bg-rgb: 10, 12, 16;
+      --surface: #111827;
+      --surface-2: #161f2c;
+      --surface-3: #223044;
+      --surface-glass: rgba(10, 12, 16, 0.72);
+      --text: #f8fafc;
+      --muted: #9ca3af;
+      --faint: #6b7280;
+      --line: rgba(148, 163, 184, 0.14);
+      --line-strong: rgba(148, 163, 184, 0.24);
+      --primary: #60a5fa;
+      --primary-hover: #93c5fd;
+      --primary-soft: rgba(96, 165, 250, 0.12);
+      --success: #22c55e;
+      --warning: #fbbf24;
+      --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 22px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'General Sans', system-ui, sans-serif;
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.08), transparent 24%),
+        var(--bg);
+      transition: background-color var(--transition), color var(--transition);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    img, svg, video, canvas {
+      display: block;
+      max-width: 100%;
+    }
+
+    a, button, input, textarea, select {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    .skip-link {
       position: absolute;
-      top: var(--header-height);
-      left: 0;
-      right: 0;
-      background: var(--surface);
-      flex-direction: column;
-      padding: 1rem;
-      gap: 0;
+      left: 1rem;
+      top: -100px;
+      z-index: 999;
+      padding: 0.75rem 1rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      transition: top var(--transition);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .text-muted {
+      color: var(--muted);
+    }
+
+    .text-warning {
+      color: var(--warning);
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--container));
+      margin-inline: auto;
+    }
+
+    #bubbles {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .site-header,
+    main,
+    .footer,
+    .whatsapp-float {
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      background: rgba(var(--bg-rgb), 0.78);
     }
 
-    .nav-links.open {
+    .nav {
+      min-height: var(--header-height);
       display: flex;
-    }
-
-    .nav-links li a {
-      display: block;
-      padding: 0.75rem;
-    }
-
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .grid-3,
-    .process-grid,
-    .pricing-grid,
-    .testimonials-grid,
-    .footer-grid,
-    .presencia-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-
-    .clients-grid {
+      align-items: center;
+      justify-content: space-between;
       gap: 1rem;
     }
 
-    .client-icon {
-      width: 60px;
-      height: 60px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
     }
-  }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-  }
+    .logo-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #0f5bd6);
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
 
-  .reveal.in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
+    .logo-text h1,
+    .footer-brand strong {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-text h1 {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .logo-text p {
+      font-size: var(--text-xs);
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle,
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--line);
+      transition:
+        transform var(--transition),
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition);
+    }
+
+    .theme-toggle:hover,
+    .menu-toggle:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-strong);
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      padding: 0.82rem 1.35rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition:
+        transform var(--transition),
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      border-color: var(--line-strong);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-full {
+      width: 100%;
+      text-align: center;
+    }
+
+    .section {
+      padding: clamp(3.5rem, 5vw, 5.5rem) 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: var(--text-xl);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: var(--text-2xl);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      max-width: 12ch;
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 1.8rem;
+      font-size: var(--text-lg);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .stat strong {
+      font-size: 1.55rem;
+      line-height: 1;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .stat span {
+      font-size: var(--text-sm);
+      color: var(--muted);
+    }
+
+    .card,
+    .hero-card,
+    .testimonial-card,
+    .price-card,
+    .faq-item,
+    .presencia-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-card,
+    .card,
+    .testimonial-card,
+    .price-card,
+    .presencia-card,
+    .cta-section {
+      border-radius: 24px;
+    }
+
+    .hero-card {
+      padding: 1.6rem;
+    }
+
+    .card,
+    .testimonial-card,
+    .price-card,
+    .presencia-card {
+      padding: 1.5rem;
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background-color var(--transition);
+    }
+
+    .card:hover,
+    .testimonial-card:hover,
+    .price-card:hover,
+    .presencia-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96, 165, 250, 0.35);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-icon,
+    .presencia-icon {
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-dashboard {
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .hero-metric {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+
+    .hero-metric span {
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .hero-metric strong {
+      font-size: 1rem;
+    }
+
+    .clients-section {
+      padding: 3rem 0;
+      margin: 1rem 0 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      text-align: center;
+      color: var(--muted);
+      font-size: var(--text-xs);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .client-card {
+      text-align: center;
+      padding: 1rem 0.6rem;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition);
+    }
+
+    .client-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-strong);
+      background: var(--surface-2);
+    }
+
+    .client-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 0.8rem;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-2);
+      color: var(--primary);
+      font-size: 1.8rem;
+      border: 1px solid var(--line);
+    }
+
+    .client-card span {
+      display: block;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .client-card small {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: var(--text-xs);
+    }
+
+    .presencia-wrap {
+      padding-top: 1rem;
+    }
+
+    .presencia-section {
+      padding: clamp(2rem, 4vw, 3rem);
+      background: linear-gradient(180deg, rgba(96, 165, 250, 0.06), transparent), var(--surface-2);
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+    }
+
+    .presencia-grid,
+    .grid-3,
+    .pricing-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .presencia-grid,
+    .grid-3,
+    .pricing-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .presencia-icon {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      font-size: 2rem;
+    }
+
+    .presencia-card {
+      text-align: center;
+      padding: 1.8rem;
+    }
+
+    .presencia-card h3,
+    .card h3,
+    .price-card h3 {
+      font-size: 1.22rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .presencia-card p,
+    .card p,
+    .testimonial-card p {
+      color: var(--muted);
+    }
+
+    .presencia-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1rem;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: var(--text-xs);
+      font-weight: 700;
+    }
+
+    .maptons-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .maptons-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .card ul,
+    .price-card ul {
+      display: grid;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .card li,
+    .price-card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .card li i,
+    .price-card li i {
+      color: var(--primary);
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .step {
+      text-align: center;
+      padding: 1.6rem 1rem;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      transition:
+        transform var(--transition),
+        border-color var(--transition);
+    }
+
+    .step:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-strong);
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 1rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step h3 {
+      margin-bottom: 0.55rem;
+      font-size: 1.1rem;
+    }
+
+    .price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card.featured {
+      border-color: rgba(96, 165, 250, 0.4);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .price {
+      margin: 0.9rem 0 0.25rem;
+      color: var(--primary);
+      font-size: 1.95rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: var(--text-sm);
+      font-weight: 500;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .author-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    .testimonial-author small {
+      color: var(--muted);
+    }
+
+    .faq-grid {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.2rem 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .faq-question i {
+      transition: transform var(--transition), color var(--transition);
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--transition);
+    }
+
+    .faq-answer-inner {
+      overflow: hidden;
+    }
+
+    .faq-answer p {
+      color: var(--muted);
+      padding: 0 1.35rem 1.25rem;
+    }
+
+    .faq-item.open .faq-answer {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-item.open .faq-question i {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    .cta-section {
+      padding: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      background:
+        radial-gradient(circle at top center, rgba(96, 165, 250, 0.12), transparent 42%),
+        var(--surface-2);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-section h2 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: var(--text-xl);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      padding: 3rem 0 2rem;
+      background: rgba(var(--bg-rgb), 0.45);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo p,
+    .footer li,
+    .footer a {
+      color: var(--muted);
+    }
+
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .footer ul {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .footer a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 110;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: #fff;
+      font-size: 1.8rem;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.28);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 24px 48px rgba(37, 211, 102, 0.34);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .clients-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .hero-grid,
+      .pricing-grid,
+      .grid-3,
+      .presencia-grid,
+      .process-grid,
+      .testimonials-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        max-width: 14ch;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu-toggle {
+        display: grid;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        padding: 0.9rem 0;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding: 0.8rem;
+        background: var(--surface-glass);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.9rem 1rem;
+        border-radius: 14px;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: var(--primary-soft);
+        color: var(--text);
+      }
+
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .clients-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .cta-buttons .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 1.25rem, var(--container));
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .clients-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .client-icon {
+        width: 62px;
+        height: 62px;
+        font-size: 1.55rem;
+      }
+
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        right: 1rem;
+        bottom: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      #bubbles {
+        display: none;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+  <canvas id="bubbles" aria-hidden="true"></canvas>
+
   <header class="site-header">
     <div class="container">
-      <div class="nav">
-        <div class="logo">
-          <div class="logo-icon">
+      <nav class="nav" aria-label="Principal">
+        <a href="#inicio" class="logo" aria-label="Ir al inicio de DESOPORTE.CL">
+          <div class="logo-icon" aria-hidden="true">
             <i class="fas fa-chart-line"></i>
           </div>
           <div class="logo-text">
             <h1>DESOPORTE.CL</h1>
             <p>Sistemas POS · Menú QR · Soporte TI</p>
           </div>
-        </div>
+        </a>
 
         <ul class="nav-links" id="navLinks">
           <li><a href="#inicio">Inicio</a></li>
@@ -855,386 +1166,437 @@
         </ul>
 
         <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle">
-            <i class="fas fa-moon" id="themeIcon"></i>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Cambiar tema"
+            title="Cambiar tema"
+          >
+            <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
           </button>
-          <a href="https://wa.me/56972001109" class="btn btn-primary" target="_blank">
-            <i class="fab fa-whatsapp"></i> Cotizar
+
+          <a href="https://wa.me/56972001109" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>Cotizar</span>
           </a>
-          <button class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i>
+
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <i class="fas fa-bars" aria-hidden="true"></i>
           </button>
         </div>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
+  <main id="contenido">
     <section class="hero" id="inicio">
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content reveal">
-            <h1>Menos caos. <span class="highlight">Más control.</span> Más ventas.</h1>
-            <p>Implementación de sistemas POS, menú digital QR, control de inventario y soporte TI profesional para restaurantes, comercios y empresas en Chile.</p>
+            <h2>Menos caos. <span class="highlight">Más control.</span> Más ventas.</h2>
+            <p>
+              Implementación de sistemas POS, menú digital QR, control de inventario y soporte TI profesional
+              para restaurantes, comercios y empresas en Chile.
+            </p>
+
             <div class="hero-buttons">
-              <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp directo
+              <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <span>WhatsApp directo</span>
               </a>
               <a href="#soluciones" class="btn btn-outline">Ver soluciones</a>
             </div>
+
             <div class="hero-stats">
               <div class="stat">
-                <span>+50</span>
+                <strong>+50</strong>
                 <span>Clientes activos</span>
               </div>
               <div class="stat">
-                <span>24/7</span>
+                <strong>24/7</strong>
                 <span>Soporte técnico</span>
               </div>
               <div class="stat">
-                <span>100%</span>
+                <strong>100%</strong>
                 <span>Implementación exitosa</span>
               </div>
             </div>
           </div>
-          <div class="hero-card reveal">
-            <div class="card-icon" style="margin-bottom: 1rem;">
-              <i class="fas fa-chart-simple"></i>
+
+          <aside class="hero-card reveal" aria-label="Resumen del panel de control">
+            <div class="card-icon">
+              <i class="fas fa-chart-simple" aria-hidden="true"></i>
             </div>
             <h3>Panel de control ejecutivo</h3>
-            <p>Visualiza en tiempo real el estado de tu negocio</p>
-            <div style="margin-top: 1rem;">
-              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <p class="text-muted">Visualiza en tiempo real el estado de tu negocio.</p>
+
+            <div class="hero-dashboard">
+              <div class="hero-metric">
                 <span>Pedidos hoy</span>
                 <strong>284</strong>
               </div>
-              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <div class="hero-metric">
                 <span>Ticket promedio</span>
                 <strong>$18.500</strong>
               </div>
-              <div style="display: flex; justify-content: space-between;">
+              <div class="hero-metric">
                 <span>Stock crítico</span>
                 <strong class="text-warning">7 productos</strong>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- Clientes que confían -->
     <section class="clients-section" id="clientes">
       <div class="container">
-        <h3>EMPRESAS QUE CONFÍAN EN NOSOTROS</h3>
+        <p class="eyebrow">Empresas que confían en nosotros</p>
         <div class="clients-grid">
-          <div class="client-card">
-            <div class="client-icon"><i class="fas fa-utensils"></i></div>
+          <article class="client-card">
+            <div class="client-icon"><i class="fas fa-utensils" aria-hidden="true"></i></div>
             <span>La Casona Restaurant</span>
             <small>POS + Menú QR</small>
-          </div>
-          <div class="client-card">
-            <div class="client-icon"><i class="fas fa-mug-hot"></i></div>
+          </article>
+          <article class="client-card">
+            <div class="client-icon"><i class="fas fa-mug-hot" aria-hidden="true"></i></div>
             <span>Café Central</span>
             <small>Menú Digital</small>
-          </div>
-          <div class="client-card">
-            <div class="client-icon"><i class="fas fa-pizza"></i></div>
+          </article>
+          <article class="client-card">
+            <div class="client-icon"><i class="fas fa-pizza-slice" aria-hidden="true"></i></div>
             <span>Pizzeria Don Giovanni</span>
             <small>POS + Inventario</small>
-          </div>
-          <div class="client-card">
-            <div class="client-icon"><i class="fas fa-store"></i></div>
+          </article>
+          <article class="client-card">
+            <div class="client-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
             <span>Distribuidora Los Andes</span>
             <small>Inventario Total</small>
-          </div>
-          <div class="client-card">
-            <div class="client-icon"><i class="fas fa-hotel"></i></div>
+          </article>
+          <article class="client-card">
+            <div class="client-icon"><i class="fas fa-hotel" aria-hidden="true"></i></div>
             <span>Hotel Boutique Valpo</span>
             <small>Soporte TI</small>
-          </div>
-          <div class="client-card">
-            <div class="client-icon"><i class="fas fa-wine-bottle"></i></div>
+          </article>
+          <article class="client-card">
+            <div class="client-icon"><i class="fas fa-wine-bottle" aria-hidden="true"></i></div>
             <span>Vinoteca 1875</span>
             <small>QR + Inventario</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section presencia-wrap" id="presencia">
+      <div class="container">
+        <div class="presencia-section reveal">
+          <div class="section-header">
+            <h2>Presencia verificada en plataformas profesionales</h2>
+            <p>Tu negocio visible donde los clientes te buscan.</p>
+          </div>
+
+          <div class="presencia-grid">
+            <article class="presencia-card">
+              <div class="presencia-icon"><i class="fas fa-map-marked-alt" aria-hidden="true"></i></div>
+              <h3>Geolocalización estratégica</h3>
+              <p>Registro oficial en plataformas de mapas y directorios profesionales para mejorar visibilidad y posicionamiento local.</p>
+              <div class="presencia-badge">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                <span>Verificado en directorios técnicos</span>
+              </div>
+            </article>
+
+            <article class="presencia-card">
+              <div class="presencia-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+              <h3>Ventaja competitiva real</h3>
+              <p>La presencia en plataformas especializadas genera más confianza y facilita que nuevos clientes te encuentren.</p>
+              <div class="presencia-badge">
+                <i class="fas fa-chart-simple" aria-hidden="true"></i>
+                <span>Más visibilidad orgánica</span>
+              </div>
+            </article>
+
+            <article class="presencia-card">
+              <div class="presencia-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+              <h3>Datos públicos = confianza</h3>
+              <p>Un perfil empresarial visible y consistente mejora la credibilidad frente a clientes y partners comerciales.</p>
+              <div class="presencia-badge">
+                <i class="fas fa-building" aria-hidden="true"></i>
+                <span>Perfil empresarial completo</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="maptons-link">
+            <a href="https://kw.maptons.com/p/2484544314" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              <span>Ver perfil en Maptons.com</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Presencia Verificada - Maptons (VENTAJA COMPETITIVA) -->
-    <section class="container" id="presencia">
-      <div class="presencia-section reveal">
-        <div class="section-header">
-          <h2>📍 Presencia verificada en plataformas profesionales</h2>
-          <p>Tu negocio visible donde los clientes te buscan</p>
-        </div>
-        <div class="presencia-grid">
-          <div class="presencia-card">
-            <div class="presencia-icon"><i class="fas fa-map-marked-alt"></i></div>
-            <h3>Geolocalización estratégica</h3>
-            <p>Registro oficial en plataformas de mapas y directorios profesionales como Maptons, garantizando visibilidad y posicionamiento local.</p>
-            <div class="presencia-badge">
-              <i class="fas fa-check-circle"></i> Verificado en directorios técnicos
-            </div>
-          </div>
-          <div class="presencia-card">
-            <div class="presencia-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Ventaja competitiva real</h3>
-            <p>La presencia en plataformas de geolocalización y directorios especializados genera confianza y facilita que nuevos clientes te encuentren.</p>
-            <div class="presencia-badge">
-              <i class="fas fa-chart-simple"></i> + Visibilidad orgánica
-            </div>
-          </div>
-          <div class="presencia-card">
-            <div class="presencia-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>Datos públicos = Confianza</h3>
-            <p>Negocios con información verificada en plataformas externas generan mayor credibilidad ante clientes y partners comerciales.</p>
-            <div class="presencia-badge">
-              <i class="fas fa-building"></i> Perfil empresarial completo
-            </div>
-          </div>
-        </div>
-        <div class="maptons-link">
-          <a href="https://kw.maptons.com/p/2484544314" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt"></i> Ver perfil en Maptons.com
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Soluciones -->
     <section class="section" id="soluciones">
       <div class="container">
         <div class="section-header reveal">
           <h2>Soluciones que transforman negocios</h2>
-          <p>Tecnología aplicada a resolver problemas reales de operación y ventas</p>
+          <p>Tecnología aplicada a resolver problemas reales de operación y ventas.</p>
         </div>
+
         <div class="grid-3">
-          <div class="card reveal">
-            <div class="card-icon"><i class="fas fa-cash-register"></i></div>
+          <article class="card reveal">
+            <div class="card-icon"><i class="fas fa-cash-register" aria-hidden="true"></i></div>
             <h3>ToEat POS</h3>
-            <p>Sistema de punto de venta especializado para restaurantes y locales comerciales</p>
+            <p>Sistema de punto de venta especializado para restaurantes y locales comerciales.</p>
             <ul>
-              <li><i class="fas fa-check"></i> Gestión de mesas y pedidos</li>
-              <li><i class="fas fa-check"></i> Panel de cocina integrado</li>
-              <li><i class="fas fa-check"></i> Reportes de ventas en tiempo real</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Gestión de mesas y pedidos</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Panel de cocina integrado</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Reportes de ventas en tiempo real</span></li>
             </ul>
-          </div>
-          <div class="card reveal">
-            <div class="card-icon"><i class="fas fa-qrcode"></i></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon"><i class="fas fa-qrcode" aria-hidden="true"></i></div>
             <h3>Menú Digital QR Pro</h3>
-            <p>Carta interactiva que los clientes escanean desde su celular</p>
+            <p>Carta interactiva para que tus clientes escaneen desde su celular.</p>
             <ul>
-              <li><i class="fas fa-check"></i> Actualización instantánea</li>
-              <li><i class="fas fa-check"></i> Diseño responsive premium</li>
-              <li><i class="fas fa-check"></i> Fotos y descripciones detalladas</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Actualización instantánea</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Diseño responsive premium</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Fotos y descripciones detalladas</span></li>
             </ul>
-          </div>
-          <div class="card reveal">
-            <div class="card-icon"><i class="fas fa-boxes"></i></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon"><i class="fas fa-boxes-stacked" aria-hidden="true"></i></div>
             <h3>Inventario Total</h3>
-            <p>Control de stock, alertas de productos críticos y trazabilidad</p>
+            <p>Control de stock, alertas de productos críticos y trazabilidad.</p>
             <ul>
-              <li><i class="fas fa-check"></i> Alertas de stock mínimo</li>
-              <li><i class="fas fa-check"></i> Entradas y salidas registradas</li>
-              <li><i class="fas fa-check"></i> Reporte de mermas</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Alertas de stock mínimo</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Entradas y salidas registradas</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Reporte de mermas</span></li>
             </ul>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Método -->
     <section class="section" id="metodo">
       <div class="container">
         <div class="section-header reveal">
           <h2>Nuestro método de trabajo</h2>
-          <p>Implementación ágil y sin complicaciones</p>
+          <p>Implementación ágil, clara y sin complicaciones.</p>
         </div>
+
         <div class="process-grid">
-          <div class="step reveal">
+          <article class="step reveal">
             <div class="step-number">1</div>
             <h3>Diagnóstico</h3>
-            <p class="text-muted">Analizamos las necesidades reales de tu negocio</p>
-          </div>
-          <div class="step reveal">
+            <p class="text-muted">Analizamos las necesidades reales de tu negocio.</p>
+          </article>
+          <article class="step reveal">
             <div class="step-number">2</div>
             <h3>Propuesta</h3>
-            <p class="text-muted">Te entregamos un plan claro y personalizado</p>
-          </div>
-          <div class="step reveal">
+            <p class="text-muted">Te entregamos un plan claro y personalizado.</p>
+          </article>
+          <article class="step reveal">
             <div class="step-number">3</div>
             <h3>Implementación</h3>
-            <p class="text-muted">Configuración y puesta en marcha en tiempo récord</p>
-          </div>
-          <div class="step reveal">
+            <p class="text-muted">Configuración y puesta en marcha en tiempo récord.</p>
+          </article>
+          <article class="step reveal">
             <div class="step-number">4</div>
             <h3>Acompañamiento</h3>
-            <p class="text-muted">Soporte continuo y capacitación incluida</p>
-          </div>
+            <p class="text-muted">Soporte continuo y capacitación incluida.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Planes -->
     <section class="section" id="planes">
       <div class="container">
         <div class="section-header reveal">
           <h2>Planes diseñados para ti</h2>
-          <p>Elige el que mejor se adapte a tu negocio</p>
+          <p>Elige el que mejor se adapta a la operación de tu negocio.</p>
         </div>
+
         <div class="pricing-grid">
-          <div class="price-card reveal">
+          <article class="price-card reveal">
             <h3>Inicial</h3>
             <div class="price">Desde <span>CLP 199.900</span></div>
             <ul>
-              <li><i class="fas fa-check"></i> Landing page profesional</li>
-              <li><i class="fas fa-check"></i> Enlace directo a WhatsApp</li>
-              <li><i class="fas fa-check"></i> Soporte básico</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Landing page profesional</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Enlace directo a WhatsApp</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Soporte básico</span></li>
             </ul>
-            <a href="https://wa.me/56972001109" class="btn btn-outline" style="width: 100%; text-align: center;">Consultar</a>
-          </div>
-          <div class="price-card featured reveal">
+            <a href="https://wa.me/56972001109" class="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">Consultar</a>
+          </article>
+
+          <article class="price-card featured reveal">
             <div class="featured-badge">Más popular</div>
             <h3>Operación PRO</h3>
             <div class="price">Desde <span>CLP 399.900</span></div>
             <ul>
-              <li><i class="fas fa-check"></i> Menú QR o POS incluido</li>
-              <li><i class="fas fa-check"></i> Configuración completa</li>
-              <li><i class="fas fa-check"></i> Capacitación incluida</li>
-              <li><i class="fas fa-check"></i> Soporte prioritario</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Menú QR o POS incluido</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Configuración completa</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Capacitación incluida</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Soporte prioritario</span></li>
             </ul>
-            <a href="https://wa.me/56972001109" class="btn btn-primary" style="width: 100%; text-align: center;">Cotizar PRO</a>
-          </div>
-          <div class="price-card reveal">
+            <a href="https://wa.me/56972001109" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">Cotizar PRO</a>
+          </article>
+
+          <article class="price-card reveal">
             <h3>Control Total</h3>
             <div class="price">Desde <span>CLP 699.900</span></div>
             <ul>
-              <li><i class="fas fa-check"></i> POS + QR + Inventario</li>
-              <li><i class="fas fa-check"></i> Automatizaciones</li>
-              <li><i class="fas fa-check"></i> Soporte 24/7</li>
-              <li><i class="fas fa-check"></i> Escalamiento incluido</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>POS + QR + Inventario</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Automatizaciones</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Soporte 24/7</span></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><span>Escalamiento incluido</span></li>
             </ul>
-            <a href="https://wa.me/56972001109" class="btn btn-outline" style="width: 100%; text-align: center;">Hablar con asesor</a>
-          </div>
+            <a href="https://wa.me/56972001109" class="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">Hablar con asesor</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Testimonios -->
-    <section class="section">
+    <section class="section" aria-labelledby="testimonios-titulo">
       <div class="container">
         <div class="section-header reveal">
-          <h2>Lo que dicen nuestros clientes</h2>
-          <p>Experiencias reales de negocios que ya confían en nosotros</p>
+          <h2 id="testimonios-titulo">Lo que dicen nuestros clientes</h2>
+          <p>Experiencias reales de negocios que ya confían en nosotros.</p>
         </div>
+
         <div class="testimonials-grid">
-          <div class="testimonial-card reveal">
-            <p>"Implementamos el sistema POS y menú QR, las ventas aumentaron un 30% en el primer mes. El soporte es excelente."</p>
+          <article class="testimonial-card reveal">
+            <p>“Implementamos el sistema POS y menú QR, las ventas aumentaron un 30% en el primer mes. El soporte es excelente.”</p>
             <div class="testimonial-author">
               <div class="author-avatar">CM</div>
               <div>
-                <strong>Carlos Martínez</strong>
+                <strong>Carlos Martínez</strong><br />
                 <small>La Casona Restaurant</small>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card reveal">
-            <p>"El control de inventario nos ayudó a reducir pérdidas en un 25%. La mejor inversión que hicimos este año."</p>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <p>“El control de inventario nos ayudó a reducir pérdidas en un 25%. La mejor inversión que hicimos este año.”</p>
             <div class="testimonial-author">
               <div class="author-avatar">MR</div>
               <div>
-                <strong>María Rodríguez</strong>
+                <strong>María Rodríguez</strong><br />
                 <small>Distribuidora Los Andes</small>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card reveal">
-            <p>"El soporte TI es rápido y efectivo. Resuelven cualquier problema en minutos, no en días."</p>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <p>“El soporte TI es rápido y efectivo. Resuelven cualquier problema en minutos, no en días.”</p>
             <div class="testimonial-author">
               <div class="author-avatar">JS</div>
               <div>
-                <strong>Juan Silva</strong>
+                <strong>Juan Silva</strong><br />
                 <small>Hotel Boutique Valpo</small>
               </div>
             </div>
-          </div>
-          <div class="testimonial-card reveal">
-            <p>"El menú digital QR transformó la experiencia de nuestros clientes. Los pedidos llegaban más rápido a la cocina."</p>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <p>“El menú digital QR transformó la experiencia de nuestros clientes. Los pedidos llegaban más rápido a la cocina.”</p>
             <div class="testimonial-author">
               <div class="author-avatar">FG</div>
               <div>
-                <strong>Felipe González</strong>
+                <strong>Felipe González</strong><br />
                 <small>Café Central</small>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container">
         <div class="section-header reveal">
           <h2>Preguntas frecuentes</h2>
-          <p>Resolvemos tus dudas para que tomes la mejor decisión</p>
+          <p>Resolvemos tus dudas para que tomes la mejor decisión.</p>
         </div>
+
         <div class="faq-grid">
-          <div class="faq-item reveal open">
-            <button class="faq-question">
+          <article class="faq-item reveal open">
+            <button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-1" id="faq-btn-1">
               <span>¿Ofrecen soporte técnico después de la instalación?</span>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
-              <p>Sí, todos nuestros planes incluyen soporte técnico. Dependiendo del plan, puedes tener soporte básico, prioritario o 24/7.</p>
+            <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="faq-answer-inner">
+                <p>Sí, todos nuestros planes incluyen soporte técnico. Dependiendo del plan, puedes tener soporte básico, prioritario o 24/7.</p>
+              </div>
             </div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-question">
+          </article>
+
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
               <span>¿Cuánto tiempo toma la implementación?</span>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
-              <p>El tiempo varía según el plan, pero generalmente entre 3 a 7 días hábiles para tener el sistema funcionando.</p>
+            <div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="faq-answer-inner">
+                <p>El tiempo varía según el plan, pero generalmente entre 3 a 7 días hábiles para tener el sistema funcionando.</p>
+              </div>
             </div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-question">
+          </article>
+
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
               <span>¿Puedo comenzar con un plan pequeño y después actualizar?</span>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
-              <p>¡Por supuesto! Nuestros planes están diseñados para escalar junto con tu negocio. Puedes empezar con lo básico e ir sumando funcionalidades.</p>
+            <div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-btn-3">
+              <div class="faq-answer-inner">
+                <p>Por supuesto. Nuestros planes están diseñados para escalar junto con tu negocio, partiendo desde lo esencial hasta una operación completa.</p>
+              </div>
             </div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-question">
+          </article>
+
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
               <span>¿Trabajan solo con restaurantes?</span>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
-              <p>No, aunque tenemos especialización en el rubro gastronómico, trabajamos con todo tipo de comercios y empresas que necesitan orden y control.</p>
+            <div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-btn-4">
+              <div class="faq-answer-inner">
+                <p>No. Aunque tenemos especialización en gastronomía, también trabajamos con comercios y empresas que necesitan orden, control y soporte técnico confiable.</p>
+              </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="section" id="contacto">
       <div class="container">
         <div class="cta-section reveal">
           <h2>¿Listo para transformar tu negocio?</h2>
-          <p>Contáctanos hoy y descubre cómo podemos ayudarte a vender más y operar mejor</p>
-          <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
-            <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank">
-              <i class="fab fa-whatsapp"></i> WhatsApp
+          <p>Contáctanos hoy y descubre cómo podemos ayudarte a vender más y operar mejor.</p>
+
+          <div class="cta-buttons">
+            <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <span>WhatsApp</span>
             </a>
             <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com" class="btn btn-outline">
-              <i class="fas fa-envelope"></i> Correo
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>Correo</span>
             </a>
           </div>
         </div>
@@ -1245,18 +1607,17 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-logo">
-          <div class="logo" style="margin-bottom: 1rem;">
-            <div class="logo-icon" style="width: 40px; height: 40px;">
-              <i class="fas fa-chart-line"></i>
+        <section class="footer-logo">
+          <div class="footer-brand">
+            <div class="logo-icon" style="width:40px;height:40px;">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
             </div>
-            <div>
-              <strong>DESOPORTE.CL</strong>
-            </div>
+            <strong>DESOPORTE.CL</strong>
           </div>
           <p>Tecnología aplicada al crecimiento de tu negocio. Sistemas POS, menú QR, inventario y soporte TI profesional.</p>
-        </div>
-        <div>
+        </section>
+
+        <section>
           <h4>Enlaces rápidos</h4>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
@@ -1265,114 +1626,245 @@
             <li><a href="#presencia">Presencia</a></li>
             <li><a href="#planes">Planes</a></li>
           </ul>
-        </div>
-        <div>
+        </section>
+
+        <section>
           <h4>Contacto</h4>
           <ul>
-            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/56972001109">+56 9 7200 1109</a></li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com">Email</a></li>
-            <li><i class="fas fa-map-marker-alt"></i> Valparaíso, Chile</li>
+            <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/56972001109" target="_blank" rel="noopener noreferrer">+56 9 7200 1109</a></li>
+            <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com">ingesistem.alfredo.sanhueza@gmail.com</a></li>
+            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Valparaíso, Chile</li>
           </ul>
-        </div>
+        </section>
       </div>
-      <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--line); margin-top: 2rem; color: var(--muted);">
+
+      <div class="footer-bottom">
         <p>&copy; <span id="year"></span> DESOPORTE.CL - Todos los derechos reservados</p>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/56972001109" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+  <a href="https://wa.me/56972001109" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
   <script>
     (() => {
-      // Tema oscuro/claro
       const html = document.documentElement;
       const themeToggle = document.getElementById('themeToggle');
       const themeIcon = document.getElementById('themeIcon');
-      
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        html.setAttribute('data-theme', savedTheme);
-        themeIcon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        html.setAttribute('data-theme', 'dark');
-        themeIcon.className = 'fas fa-moon';
-      } else {
-        html.setAttribute('data-theme', 'light');
-        themeIcon.className = 'fas fa-sun';
-      }
-
-      themeToggle.addEventListener('click', () => {
-        const current = html.getAttribute('data-theme');
-        const newTheme = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeIcon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-      });
-
-      // Menú móvil
       const menuToggle = document.getElementById('menuToggle');
       const navLinks = document.getElementById('navLinks');
-      
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
+      const navAnchors = [...document.querySelectorAll('.nav-links a')];
+      const sections = [...document.querySelectorAll('section[id]')];
+      const faqItems = [...document.querySelectorAll('.faq-item')];
+      const reveals = [...document.querySelectorAll('.reveal')];
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      let currentTheme = darkScheme.matches ? 'dark' : 'light';
+
+      function applyTheme(theme) {
+        currentTheme = theme;
+        html.setAttribute('data-theme', theme);
+        themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+      }
+
+      applyTheme(currentTheme);
+
+      darkScheme.addEventListener?.('change', (event) => {
+        applyTheme(event.matches ? 'dark' : 'light');
       });
 
-      navLinks.querySelectorAll('a').forEach(link => {
+      themeToggle.addEventListener('click', () => {
+        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+
+      function toggleMenu(forceState) {
+        const open = typeof forceState === 'boolean' ? forceState : !navLinks.classList.contains('open');
+        navLinks.classList.toggle('open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      }
+
+      menuToggle.addEventListener('click', () => toggleMenu());
+
+      navAnchors.forEach((link) => {
         link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
+          if (window.innerWidth <= 860) toggleMenu(false);
         });
       });
 
-      // FAQ acordeón
-      const faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(item => {
-        const btn = item.querySelector('.faq-question');
-        btn.addEventListener('click', () => {
+      document.addEventListener('click', (event) => {
+        if (window.innerWidth > 860) return;
+        const clickedInsideNav = event.target.closest('.nav');
+        if (!clickedInsideNav && navLinks.classList.contains('open')) {
+          toggleMenu(false);
+        }
+      });
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector('.faq-question');
+
+        button.addEventListener('click', () => {
           const isOpen = item.classList.contains('open');
-          faqItems.forEach(i => i.classList.remove('open'));
-          if (!isOpen) item.classList.add('open');
-        });
-      });
 
-      // Animación scroll
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
+          faqItems.forEach((faq) => {
+            faq.classList.remove('open');
+            const faqButton = faq.querySelector('.faq-question');
+            faqButton.setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
           }
         });
-      }, { threshold: 0.1 });
-      
-      reveals.forEach(el => observer.observe(el));
+      });
 
-      // Año actual
+      if (!reducedMotion.matches) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.14,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach((el) => observer.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add('in'));
+      }
+
+      function updateActiveNav() {
+        let current = sections[0]?.id || '';
+
+        sections.forEach((section) => {
+          const top = window.scrollY + 140;
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          if (top >= sectionTop && top < sectionBottom) {
+            current = section.id;
+          }
+        });
+
+        navAnchors.forEach((anchor) => {
+          anchor.classList.toggle('active', anchor.getAttribute('href') === `#${current}`);
+        });
+      }
+
+      updateActiveNav();
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 860) toggleMenu(false);
+      });
+
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Navegación activa
-      const sections = document.querySelectorAll('section[id]');
-      const navAnchors = document.querySelectorAll('.nav-links a');
-      
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 100;
-          const sectionBottom = sectionTop + section.offsetHeight;
-          if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-            current = section.getAttribute('id');
+      if (!reducedMotion.matches) {
+        const canvas = document.getElementById('bubbles');
+        const ctx = canvas.getContext('2d');
+        let width = 0;
+        let height = 0;
+        let animationId = null;
+        let bubbles = [];
+
+        function resizeCanvas() {
+          const ratio = Math.min(window.devicePixelRatio || 1, 2);
+          width = window.innerWidth;
+          height = window.innerHeight;
+          canvas.width = width * ratio;
+          canvas.height = height * ratio;
+          canvas.style.width = `${width}px`;
+          canvas.style.height = `${height}px`;
+          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        }
+
+        function bubblePalette() {
+          return html.getAttribute('data-theme') === 'dark'
+            ? {
+                fill: 'rgba(96,165,250,0.12)',
+                glow: 'rgba(255,255,255,0.08)'
+              }
+            : {
+                fill: 'rgba(37,99,235,0.08)',
+                glow: 'rgba(255,255,255,0.22)'
+              };
+        }
+
+        function makeBubble() {
+          return {
+            x: Math.random() * width,
+            y: Math.random() * height,
+            r: 8 + Math.random() * 26,
+            speed: 0.15 + Math.random() * 0.65,
+            drift: (Math.random() - 0.5) * 0.35
+          };
+        }
+
+        function buildBubbles() {
+          const total = Math.max(18, Math.floor(width / 85));
+          bubbles = Array.from({ length: total }, makeBubble);
+        }
+
+        function animate() {
+          const colors = bubblePalette();
+          ctx.clearRect(0, 0, width, height);
+
+          bubbles.forEach((bubble) => {
+            ctx.beginPath();
+            ctx.arc(bubble.x, bubble.y, bubble.r, 0, Math.PI * 2);
+            ctx.fillStyle = colors.fill;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(
+              bubble.x - bubble.r * 0.26,
+              bubble.y - bubble.r * 0.26,
+              bubble.r * 0.22,
+              0,
+              Math.PI * 2
+            );
+            ctx.fillStyle = colors.glow;
+            ctx.fill();
+
+            bubble.y -= bubble.speed;
+            bubble.x += bubble.drift;
+
+            if (bubble.y < -bubble.r - 10) {
+              bubble.y = height + bubble.r + 10;
+              bubble.x = Math.random() * width;
+            }
+
+            if (bubble.x < -40) bubble.x = width + 40;
+            if (bubble.x > width + 40) bubble.x = -40;
+          });
+
+          animationId = requestAnimationFrame(animate);
+        }
+
+        function initBubbles() {
+          resizeCanvas();
+          buildBubbles();
+          if (animationId) cancelAnimationFrame(animationId);
+          animate();
+        }
+
+        initBubbles();
+        window.addEventListener('resize', initBubbles);
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            cancelAnimationFrame(animationId);
+          } else {
+            animate();
           }
         });
-        
-        navAnchors.forEach(anchor => {
-          anchor.classList.remove('active');
-          if (anchor.getAttribute('href') === `#${current}`) {
-            anchor.classList.add('active');
-          }
-        });
-      });
+      }
     })();
   </script>
 </body>
