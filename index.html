@@ -1,686 +1,402 @@
 <!DOCTYPE html>
 <html lang="es-CL" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="DESOPORTE.CL implementa sistemas POS, menú QR, inventario y soporte TI profesional para restaurantes, comercios y empresas en Chile." />
-  <meta property="og:title" content="DESOPORTE.CL | Sistemas POS, Menú QR, Inventario y Soporte TI" />
-  <meta property="og:description" content="Menos caos. Más control. Más ventas. Soluciones tecnológicas para negocios en Chile." />
-  <meta property="og:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
-  <meta property="og:image:secure_url" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="DESOPORTE.CL - POS, Menú QR, CCTV y Soporte TI" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg" />
-  <meta name="theme-color" content="#09111f" />
-  <title>DESOPORTE.CL | Sistemas POS, Menú QR, Inventario y Soporte TI</title>
-
-  <link rel="preconnect" href="https://api.fontshare.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2309111f'/%3E%3Cpath d='M18 16h15c9 0 15 6 15 16s-6 16-15 16H18V16Zm13.5 8H27v16h4.5c5.4 0 8.7-3.1 8.7-8s-3.3-8-8.7-8Z' fill='%2360a5fa'/%3E%3C/svg%3E" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>DESOPORTE.CL — SaaS POS, Menú QR, Inventario y Soporte TI</title>
+  <meta name="description" content="Plataforma SaaS para restaurantes y comercios: POS, menú digital QR, inventario y soporte 24/7. Tecnología que convierte caos en crecimiento.">
+  <meta property="og:title" content="DESOPORTE.CL — Control operativo avanzado">
+  <meta property="og:description" content="SaaS todo en uno para negocios en Chile. Menos caos, más control, más ventas.">
+  <meta property="og:image" content="https://desoporte-2019.github.io/desoporte/assets/img/og/desoporte-preview-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0c12">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    /* ----- RESET Y VARIABLES PREMIUM (SIN EFECTOS BORROSOS EN BOTONES) ----- */
-    :root,
-    [data-theme="light"] {
-      --bg: #f6f9fe;
-      --bg-rgb: 246, 249, 254;
-      --surface: rgba(255, 255, 255, 0.86);
-      --surface-strong: rgba(255, 255, 255, 0.96);
-      --surface-2: rgba(242, 248, 255, 0.72);
-      --surface-3: rgba(235, 243, 253, 0.82);
-      --text: #0b182c;
-      --muted: #4a5b7a;
-      --faint: #7e8da6;
-      --line: rgba(100, 120, 150, 0.14);
-      --line-strong: rgba(60, 80, 110, 0.22);
-      --primary: #2563eb;
-      --primary-2: #60a5fa;
-      --primary-hover: #1d4ed8;
-      --primary-soft: rgba(37, 99, 235, 0.12);
-      --whatsapp: #25d366;
-      --whatsapp-hover: #128c7e;
-      --glow: 0 0 0 1px rgba(96, 165, 250, 0.2), 0 14px 32px rgba(37, 99, 235, 0.12);
-      --radius-sm: 0.75rem;
-      --radius-md: 1rem;
-      --radius-lg: 1.4rem;
-      --radius-xl: 1.8rem;
-      --radius-2xl: 2rem;
-      --radius-full: 999px;
-      --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.08);
-      --container: 1240px;
-      --header-height: 80px;
-      --transition: 240ms cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      --text-xs: clamp(0.7rem, 0.68rem + 0.1vw, 0.8rem);
-      --text-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
-      --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
-      --text-lg: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
-      --text-xl: clamp(1.6rem, 1.1rem + 1.4vw, 2.6rem);
-      --text-2xl: clamp(2.4rem, 1.6rem + 2.8vw, 4.6rem);
-    }
-
-    [data-theme="dark"] {
-      --bg: #07101f;
-      --bg-rgb: 7, 16, 31;
-      --surface: rgba(18, 26, 42, 0.78);
-      --surface-strong: rgba(18, 26, 42, 0.92);
-      --surface-2: rgba(26, 36, 54, 0.68);
-      --surface-3: rgba(36, 48, 70, 0.8);
-      --text: #f0f4fe;
-      --muted: #9dafcf;
-      --faint: #6c7fa0;
-      --line: rgba(148, 170, 210, 0.12);
-      --line-strong: rgba(148, 170, 210, 0.22);
-      --primary: #60a5fa;
-      --primary-2: #93c5fd;
-      --primary-hover: #bfdbfe;
-      --primary-soft: rgba(96, 165, 250, 0.12);
-      --whatsapp: #25d366;
-      --whatsapp-hover: #128c7e;
-      --glow: 0 0 0 1px rgba(96, 165, 250, 0.2), 0 16px 40px rgba(59, 130, 246, 0.2);
-      --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.2);
-      --shadow-md: 0 18px 44px rgba(0, 0, 0, 0.28);
-      --shadow-lg: 0 28px 68px rgba(0, 0, 0, 0.36);
-    }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --bg: #0a0c12;
+      --bg-gradient: radial-gradient(ellipse at 30% 40%, rgba(30, 80, 255, 0.08), transparent 50%),
+                      radial-gradient(ellipse at 80% 20%, rgba(0, 200, 255, 0.05), transparent 55%);
+      --surface: rgba(18, 22, 32, 0.72);
+      --surface-solid: #10141e;
+      --surface-hover: rgba(28, 35, 48, 0.9);
+      --border-light: rgba(255, 255, 255, 0.05);
+      --border-glow: rgba(78, 137, 255, 0.3);
+      --text: #edf2ff;
+      --text-secondary: #8a99bb;
+      --primary: #3b7cff;
+      --primary-glow: rgba(59, 124, 255, 0.4);
+      --primary-soft: rgba(59, 124, 255, 0.12);
+      --whatsapp: #25d366;
+      --whatsapp-hover: #1da15a;
+      --radius-card: 24px;
+      --radius-element: 32px;
+      --transition: 0.32s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
 
     body {
-      min-height: 100vh;
-      font-family: 'General Sans', system-ui, sans-serif;
-      font-size: var(--text-base);
-      line-height: 1.6;
+      background-color: var(--bg);
+      background-image: var(--bg-gradient);
       color: var(--text);
-      background: var(--bg);
-      transition: background var(--transition), color var(--transition);
+      font-family: 'General Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      line-height: 1.5;
+      scroll-behavior: smooth;
       overflow-x: hidden;
-      position: relative;
     }
 
-    /* fondos animados sutiles sin interferir en botones */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.12), transparent 50%),
-                  radial-gradient(circle at 85% 70%, rgba(59, 130, 246, 0.1), transparent 55%);
-      pointer-events: none;
-      z-index: -2;
-    }
-
+    /* contenedor base (sistema 8px) */
     .container {
-      width: min(100% - 2rem, var(--container));
-      margin-inline: auto;
-    }
-
-    .text-muted { color: var(--muted); }
-    .text-warning { color: var(--warning, #fbbf24); }
-
-    /* elementos con glassmorphism suave (sin blur agresivo en botones) */
-    .glass-panel {
-      background: var(--surface);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* HEADER */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 120;
-      background: rgba(var(--bg-rgb), 0.72);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: var(--header-height);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.2rem;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--primary), #1e4bd2);
-      color: white;
-      flex-shrink: 0;
-    }
-
-    .logo-text h1 { font-family: 'Cabinet Grotesk', sans-serif; font-size: 1.22rem; line-height: 1; }
-    .logo-text p { font-size: var(--text-xs); color: var(--muted); margin-top: 0.2rem; }
-
-    .nav-links {
-      display: flex;
-      gap: 1.6rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-weight: 520;
-      transition: color var(--transition);
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 0;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
       width: 100%;
-      height: 2px;
-      background: var(--primary);
-      transform: scaleX(0);
-      transition: transform var(--transition);
-      border-radius: 999px;
     }
 
-    .nav-links a.active::after,
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-links a.active, .nav-links a:hover { color: var(--text); }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .theme-toggle, .menu-toggle {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
+    /* glassmorphism puro */
+    .glass-card {
       background: var(--surface);
-      border: 1px solid var(--line);
-      color: var(--text);
-      transition: transform var(--transition), background var(--transition);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      transition: transform var(--transition), box-shadow var(--transition), border-color 0.2s;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-glow);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 124, 255, 0.1);
     }
 
-    .theme-toggle:hover, .menu-toggle:hover { transform: translateY(-2px); background: var(--primary-soft); color: var(--primary); }
-    .menu-toggle { display: none; }
+    /* tipografía premium */
+    h1, h2, h3 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
 
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff, #9bbdff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* botones tipo SaaS */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
-      min-height: 48px;
-      padding: 0.7rem 1.5rem;
-      border-radius: var(--radius-full);
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 40px;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s, background 0.2s;
-      border: 1px solid transparent;
+      transition: all var(--transition);
+      border: none;
       cursor: pointer;
       background: transparent;
     }
-
     .btn-primary {
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      background: var(--primary);
       color: white;
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 4px 12px rgba(59, 124, 255, 0.3);
     }
-
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 28px rgba(37, 99, 235, 0.28); background: linear-gradient(135deg, #2563eb, #1d4ed8);}
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #4e88ff;
+      box-shadow: 0 12px 24px rgba(59, 124, 255, 0.4);
+    }
     .btn-outline {
-      border-color: var(--line-strong);
-      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.02);
       color: var(--text);
-      backdrop-filter: blur(2px);
     }
-    .btn-outline:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); transform: translateY(-2px);}
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+      transform: translateY(-2px);
+    }
     .btn-whatsapp {
       background: var(--whatsapp);
-      color: white;
-      gap: 0.5rem;
+      color: #0a0c12;
     }
-    .btn-whatsapp:hover { background: var(--whatsapp-hover); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(37,211,102,0.3);}
-    .btn-full { width: 100%; }
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(37, 211, 102, 0.2);
+    }
 
-    /* HERO */
-    .hero {
-      padding: clamp(3rem, 7vw, 6rem) 0 2rem;
+    /* header tipo app */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(10, 12, 18, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .hero-grid {
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), #2b5fdd);
+      border-radius: 14px;
       display: grid;
-      grid-template-columns: 1.2fr 0.9fr;
-      gap: 2.5rem;
+      place-items: center;
+    }
+    .logo-text h1 {
+      font-size: 1.2rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: white;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
       align-items: center;
     }
-    .hero-content h2 {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: var(--text-2xl);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.2rem;
+    .theme-toggle, .menu-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 44px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
     }
-    .hero-content p {
-      color: var(--muted);
-      font-size: var(--text-lg);
-      max-width: 90%;
-      margin-bottom: 1.8rem;
+    .menu-toggle { display: none; }
+
+    /* Hero cinematic */
+    .hero {
+      padding: 96px 0 64px;
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-size: clamp(3rem, 6vw, 5.2rem);
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 32px;
     }
     .hero-buttons {
       display: flex;
+      gap: 16px;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.6rem;
     }
     .hero-stats {
       display: flex;
-      gap: 1.2rem;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 64px;
       flex-wrap: wrap;
-      margin-top: 0.8rem;
     }
-    .stat {
-      padding: 0.6rem 1rem;
-      border-radius: 24px;
+    .stat-card {
       background: var(--surface);
-      border: 1px solid var(--line);
-      min-width: 110px;
+      backdrop-filter: blur(8px);
+      border-radius: 48px;
+      padding: 12px 28px;
+      border: 1px solid rgba(255,255,255,0.05);
     }
-    .stat strong { font-size: 1.55rem; color: var(--primary); display: block; line-height: 1.2; }
-    .stat span { font-size: var(--text-sm); color: var(--muted); }
-
-    .hero-card {
-      padding: 1.5rem;
-      border-radius: 28px;
-    }
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--primary-soft);
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-      font-size: 1.3rem;
-    }
-    .hero-dashboard {
-      display: grid;
-      gap: 0.8rem;
-      margin-top: 1.2rem;
-    }
-    .hero-metric {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.7rem 1rem;
-      background: rgba(255,255,255,0.04);
-      border-radius: 22px;
-      border: 1px solid var(--line);
-    }
-    .hero-metric span { color: var(--muted); font-size: var(--text-sm); }
-    .hero-metric strong { font-weight: 700; }
-
-    /* clientes centrado */
-    .clients-section {
-      padding: 1.5rem 0 0.5rem;
-    }
-    .clients-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .client-card {
-      text-align: center;
-      padding: 1rem 0.6rem;
-      border-radius: 24px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      transition: transform var(--transition);
-    }
-    .client-card:hover { transform: translateY(-4px); border-color: var(--primary-soft);}
-    .client-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 0.6rem;
-      background: var(--primary-soft);
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 1.6rem;
-      color: var(--primary);
-    }
-    .client-card span { font-weight: 600; display: block; }
-    .client-card small { font-size: var(--text-xs); color: var(--muted); }
-
-    /* presencia cards */
-    .presencia-section {
-      padding: 2rem;
-      border-radius: 32px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(2px);
-    }
-    .presencia-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin: 1.2rem 0;
-    }
-    .presencia-card {
-      text-align: center;
-      padding: 1.25rem;
-      border-radius: 24px;
-      background: var(--surface-2);
-      border: 1px solid var(--line);
-    }
-    .presencia-icon {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 1rem;
-      background: var(--primary-soft);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
+    .stat-card strong {
       font-size: 1.8rem;
       color: var(--primary);
     }
-    .presencia-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 1rem;
-      padding: 0.4rem 1rem;
-      background: var(--primary-soft);
-      border-radius: 999px;
-      font-size: var(--text-xs);
-      font-weight: 600;
+
+    /* Bento grid premium */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      margin: 48px 0;
+    }
+    .bento-item {
+      background: var(--surface-solid);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: all var(--transition);
+    }
+    .bento-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(59,124,255,0.3);
+      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.3);
+    }
+    /* tamaños asimétricos */
+    .col-span-5 { grid-column: span 5; }
+    .col-span-4 { grid-column: span 4; }
+    .col-span-3 { grid-column: span 3; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-7 { grid-column: span 7; }
+    .col-span-12 { grid-column: span 12; }
+
+    .feature-icon {
+      font-size: 2rem;
       color: var(--primary);
+      margin-bottom: 16px;
     }
 
-    /* cards de soluciones y planes */
-    .grid-3, .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .card, .price-card {
-      padding: 1.6rem;
-      border-radius: 28px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .card:hover, .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary-soft);
-    }
-    .card ul, .price-card ul {
-      margin-top: 1rem;
-      display: grid;
-      gap: 0.6rem;
-    }
-    .card li, .price-card li {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--muted);
-      font-size: var(--text-sm);
-    }
-    .card li i, .price-card li i {
-      color: var(--primary);
-      width: 18px;
-    }
+    /* pricing */
     .price {
-      font-size: 1.8rem;
-      font-weight: 800;
+      font-size: 2.5rem;
+      font-weight: 700;
       color: var(--primary);
-      margin: 0.6rem 0 0.2rem;
     }
-    .price span { font-size: var(--text-sm); font-weight: 500; color: var(--muted);}
     .featured {
+      background: linear-gradient(145deg, #11161f, #0c101a);
       border: 1px solid var(--primary);
-      transform: translateY(-4px);
-      position: relative;
-    }
-    .featured-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
-      color: white;
-      padding: 0.3rem 1rem;
-      border-radius: 999px;
-      font-size: var(--text-xs);
-      font-weight: 700;
     }
 
-    /* método */
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
+    /* Animaciones scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px) scale(0.98);
+      filter: blur(4px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease, filter 0.6s;
     }
-    .step {
-      text-align: center;
-      padding: 1.2rem;
-      border-radius: 24px;
-      background: var(--surface);
-      border: 1px solid var(--line);
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
     }
-    .step-number {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, var(--primary), #1e4bd2);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 800;
-      margin: 0 auto 1rem;
+    .stagger-item {
+      transition-delay: calc(var(--i, 0) * 0.07s);
     }
-
-    /* testimonios */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
-    }
-    .testimonial-card {
-      padding: 1.4rem;
-      border-radius: 26px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-    .author-avatar {
-      width: 46px;
-      height: 46px;
-      background: var(--primary-soft);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    /* faq */
-    .faq-grid {
-      max-width: 880px;
-      margin: 0 auto;
-      display: grid;
-      gap: 1rem;
-    }
-    .faq-item {
-      border-radius: 24px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .faq-question {
-      width: 100%;
-      padding: 1rem 1.3rem;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      font-weight: 700;
-      background: transparent;
-      color: var(--text);
-    }
-    .faq-answer {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows var(--transition);
-    }
-    .faq-answer-inner { overflow: hidden; }
-    .faq-answer p { padding: 0 1.3rem 1.2rem; color: var(--muted);}
-    .faq-item.open .faq-answer { grid-template-rows: 1fr; }
-    .faq-item.open .faq-question i { transform: rotate(180deg); color: var(--primary); }
-
-    /* cta */
-    .cta-section {
-      text-align: center;
-      padding: 2.2rem;
-      border-radius: 32px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-    }
-    .cta-buttons { margin-top: 1.6rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* footer */
     .footer {
-      margin-top: 3rem;
-      padding: 2.5rem 0 1.5rem;
-      border-top: 1px solid var(--line);
-      background: rgba(var(--bg-rgb), 0.6);
-      backdrop-filter: blur(6px);
+      margin-top: 80px;
+      padding: 48px 0 32px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(0,0,0,0.3);
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 2rem;
+      gap: 48px;
     }
-    .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: var(--text-sm); color: var(--muted);}
 
+    /* whatsapp float */
     .whatsapp-float {
       position: fixed;
-      bottom: 1.2rem;
-      right: 1.2rem;
+      bottom: 28px;
+      right: 28px;
+      background: var(--whatsapp);
       width: 56px;
       height: 56px;
-      background: #25d366;
-      border-radius: 50%;
+      border-radius: 56px;
       display: grid;
       place-items: center;
-      color: white;
+      color: #0a0c12;
       font-size: 1.8rem;
-      box-shadow: 0 12px 24px rgba(37,211,102,0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-      z-index: 130;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+      transition: all 0.2s;
+      z-index: 99;
     }
-    .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 18px 32px rgba(37,211,102,0.4);}
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
 
-    /* animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+    /* FAQ accordion */
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
     }
-    .reveal.in { opacity: 1; transform: translateY(0); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      color: var(--text-secondary);
+    }
 
     /* responsive */
     @media (max-width: 1024px) {
-      .hero-grid, .grid-3, .pricing-grid, .presencia-grid, .process-grid, .testimonials-grid, .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-stats { justify-content: center; }
-      .hero-content p { max-width: 100%;}
+      .bento-grid { grid-template-columns: repeat(6, 1fr); }
+      .col-span-5, .col-span-4, .col-span-3, .col-span-6, .col-span-7 { grid-column: span 6; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     }
-
-    @media (max-width: 860px) {
-      .menu-toggle { display: grid; }
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
       .nav-links {
         display: none;
         position: absolute;
         top: 80px;
-        left: 1rem;
-        right: 1rem;
-        background: var(--surface-strong);
+        left: 16px;
+        right: 16px;
+        background: var(--surface-solid);
         backdrop-filter: blur(20px);
-        border-radius: 28px;
+        border-radius: 32px;
         flex-direction: column;
-        padding: 1rem;
-        gap: 0.4rem;
-        border: 1px solid var(--line);
-        z-index: 200;
+        padding: 20px;
+        gap: 16px;
+        border: 1px solid rgba(255,255,255,0.1);
       }
       .nav-links.open { display: flex; }
       .nav-actions .btn-primary { display: none; }
-      .hero-buttons .btn { width: 100%; justify-content: center; }
-      .presencia-grid, .clients-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 16px; }
+      .container { padding: 0 20px; }
+      .hero { padding: 64px 0 48px; }
     }
-
-    @media (max-width: 560px) {
-      .container { width: min(100% - 1rem, var(--container)); }
-      .hero-stats { flex-direction: column; align-items: stretch; }
-      .stat { text-align: center; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal, .btn, .card, .step, .price-card { transition: none; }
-      .reveal { opacity: 1; transform: none; }
+    @media (max-width: 480px) {
+      .stat-card { width: 100%; text-align: center; }
+      .btn { width: 100%; justify-content: center; }
+      .hero-buttons { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <a href="#contenido" class="skip-link">Saltar al contenido</a>
-
   <header class="site-header">
     <div class="container">
       <nav class="nav">
         <a href="#inicio" class="logo">
           <div class="logo-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="logo-text"><h1>DESOPORTE.CL</h1><p>Sistemas POS · Menú QR · Soporte TI</p></div>
+          <div class="logo-text"><h1>DESOPORTE</h1></div>
         </a>
         <ul class="nav-links" id="navLinks">
           <li><a href="#inicio">Inicio</a></li><li><a href="#soluciones">Soluciones</a></li><li><a href="#clientes">Clientes</a></li>
           <li><a href="#presencia">Presencia</a></li><li><a href="#metodo">Método</a></li><li><a href="#planes">Planes</a></li><li><a href="#contacto">Contacto</a></li>
         </ul>
         <div class="nav-actions">
-          <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon" id="themeIcon"></i></button>
+          <button class="theme-toggle" id="themeToggle" aria-label="Tema"><i class="fas fa-moon" id="themeIcon"></i></button>
           <a href="https://wa.me/56972001109" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Cotizar</a>
           <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
         </div>
@@ -688,145 +404,126 @@
     </div>
   </header>
 
-  <main id="contenido">
-    <!-- HERO -->
+  <main>
+    <!-- HERO CENTRADO PREMIUM -->
     <section class="hero" id="inicio">
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content reveal">
-            <h2>Control que vende.<br><span class="highlight" style="color:var(--primary);">Menos caos. Más ventas.</span></h2>
-            <p>Implementación de sistemas POS, menú digital QR, control de inventario y soporte TI profesional para restaurantes, comercios y empresas en Chile.</p>
-            <div class="hero-buttons">
-              <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp directo</a>
-              <a href="#soluciones" class="btn btn-outline">Ver soluciones</a>
-            </div>
-            <div class="hero-stats">
-              <div class="stat glass-panel"><strong>+50</strong><span>Clientes activos</span></div>
-              <div class="stat glass-panel"><strong>24/7</strong><span>Soporte técnico</span></div>
-              <div class="stat glass-panel"><strong>100%</strong><span>Implementación exitosa</span></div>
-            </div>
+        <div class="hero-content reveal">
+          <h2>Control que <span class="text-gradient">vende</span><br>Menos caos, más ventas</h2>
+          <p>Sistema POS, menú QR, inventario y soporte TI para restaurantes, comercios y empresas en Chile. Tecnología SaaS de alto rendimiento.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp directo</a>
+            <a href="#soluciones" class="btn btn-outline">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
           </div>
-          <aside class="hero-card glass-panel reveal">
-            <div class="card-icon"><i class="fas fa-chart-simple"></i></div>
-            <h3>Panel de control ejecutivo</h3>
-            <p class="text-muted">Visualiza en tiempo real el estado de tu negocio.</p>
-            <div class="hero-dashboard">
-              <div class="hero-metric"><span>Pedidos hoy</span><strong>284</strong></div>
-              <div class="hero-metric"><span>Ticket promedio</span><strong>$18.500</strong></div>
-              <div class="hero-metric"><span>Stock crítico</span><strong class="text-warning">7 productos</strong></div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLIENTES -->
-    <section class="clients-section" id="clientes">
-      <div class="container">
-        <div class="section-header reveal" style="text-align:center; margin-bottom:1.8rem;">
-          <div class="eyebrow" style="display:inline-flex; background:var(--surface); border-radius:999px; padding:0.3rem 1rem;">Empresas que confían</div>
-          <p class="text-muted">Soluciones aplicadas a restaurantes, cafeterías y comercios que necesitan control real.</p>
-        </div>
-        <div class="clients-grid">
-          <article class="client-card"><div class="client-icon"><i class="fas fa-utensils"></i></div><span>La Casona Restaurant</span><small>POS + Menú QR</small></article>
-          <article class="client-card"><div class="client-icon"><i class="fas fa-mug-hot"></i></div><span>Café Central</span><small>Menú Digital</small></article>
-          <article class="client-card"><div class="client-icon"><i class="fas fa-pizza-slice"></i></div><span>Pizzeria Don Giovanni</span><small>POS + Inventario</small></article>
-          <article class="client-card"><div class="client-icon"><i class="fas fa-store"></i></div><span>Distribuidora Los Andes</span><small>Inventario Total</small></article>
-          <article class="client-card"><div class="client-icon"><i class="fas fa-hotel"></i></div><span>Hotel Boutique Valpo</span><small>Soporte TI</small></article>
-          <article class="client-card"><div class="client-icon"><i class="fas fa-wine-bottle"></i></div><span>Vinoteca 1875</span><small>QR + Inventario</small></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRESENCIA -->
-    <section class="section" id="presencia">
-      <div class="container">
-        <div class="presencia-section reveal">
-          <div style="text-align:center;"><div class="eyebrow" style="display:inline-block;">Presencia verificada</div><h2 style="margin-top:0.5rem;">Tu negocio visible donde te buscan</h2></div>
-          <div class="presencia-grid">
-            <article class="presencia-card"><div class="presencia-icon"><i class="fas fa-map-marked-alt"></i></div><h3>Geolocalización estratégica</h3><p>Registro oficial en plataformas de mapas y directorios profesionales.</p><div class="presencia-badge"><i class="fas fa-check-circle"></i> Verificado</div></article>
-            <article class="presencia-card"><div class="presencia-icon"><i class="fas fa-chart-line"></i></div><h3>Ventaja competitiva real</h3><p>Más visibilidad y confianza para nuevos clientes.</p><div class="presencia-badge"><i class="fas fa-chart-simple"></i> Más visibilidad</div></article>
-            <article class="presencia-card"><div class="presencia-icon"><i class="fas fa-shield-alt"></i></div><h3>Datos públicos = confianza</h3><p>Perfil empresarial consistente y profesional.</p><div class="presencia-badge"><i class="fas fa-building"></i> Perfil completo</div></article>
+          <div class="hero-stats">
+            <div class="stat-card"><strong>+50</strong> <span>Clientes activos</span></div>
+            <div class="stat-card"><strong>24/7</strong> <span>Soporte técnico</span></div>
+            <div class="stat-card"><strong>100%</strong> <span>Implementación exitosa</span></div>
           </div>
-          <div class="maptons-link" style="text-align:center; margin-top:1.5rem;"><a href="https://kw.maptons.com/p/2484544314" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Ver perfil en Maptons.com</a></div>
         </div>
       </div>
     </section>
 
-    <!-- SOLUCIONES -->
-    <section class="section" id="soluciones">
-      <div class="container">
-        <div class="section-header reveal" style="text-align:center; margin-bottom:2rem;"><div class="eyebrow" style="display:inline-block;">Soluciones clave</div><h2>Tecnología aplicada a problemas reales</h2></div>
-        <div class="grid-3">
-          <article class="card reveal"><div class="card-icon"><i class="fas fa-cash-register"></i></div><h3>ToEat POS</h3><p>Sistema de punto de venta especializado para restaurantes.</p><ul><li><i class="fas fa-check"></i> Gestion de mesas y pedidos</li><li><i class="fas fa-check"></i> Panel de cocina integrado</li><li><i class="fas fa-check"></i> Reportes en tiempo real</li></ul></article>
-          <article class="card reveal"><div class="card-icon"><i class="fas fa-qrcode"></i></div><h3>Menú Digital QR Pro</h3><p>Carta interactiva que tus clientes escanean al instante.</p><ul><li><i class="fas fa-check"></i> Actualización instantánea</li><li><i class="fas fa-check"></i> Diseño responsive premium</li><li><i class="fas fa-check"></i> Fotos y descripciones</li></ul></article>
-          <article class="card reveal"><div class="card-icon"><i class="fas fa-boxes-stacked"></i></div><h3>Inventario Total</h3><p>Control de stock, alertas y trazabilidad completa.</p><ul><li><i class="fas fa-check"></i> Alertas de stock mínimo</li><li><i class="fas fa-check"></i> Entradas y salidas</li><li><i class="fas fa-check"></i> Reporte de mermas</li></ul></article>
+    <!-- CLIENTES BENTO -->
+    <section id="clientes" class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 32px;">
+        <span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px; font-size: 0.8rem;">+50 empresas confían</span>
+        <h2 style="margin-top: 16px;">Potenciando el crecimiento real</h2>
+      </div>
+      <div class="bento-grid">
+        <div class="bento-item col-span-3"><i class="fas fa-utensils feature-icon"></i><h3>La Casona</h3><span>POS + QR</span></div>
+        <div class="bento-item col-span-3"><i class="fas fa-mug-hot feature-icon"></i><h3>Café Central</h3><span>Menú Digital</span></div>
+        <div class="bento-item col-span-3"><i class="fas fa-pizza-slice feature-icon"></i><h3>Pizzeria Don Giovanni</h3><span>POS+Inventario</span></div>
+        <div class="bento-item col-span-3"><i class="fas fa-store feature-icon"></i><h3>Distribuidora Los Andes</h3><span>Inventario Total</span></div>
+        <div class="bento-item col-span-4"><i class="fas fa-hotel feature-icon"></i><h3>Hotel Boutique Valpo</h3><span>Soporte TI 24/7</span></div>
+        <div class="bento-item col-span-4"><i class="fas fa-wine-bottle feature-icon"></i><h3>Vinoteca 1875</h3><span>QR + Inventario</span></div>
+        <div class="bento-item col-span-4"><i class="fas fa-chart-line feature-icon"></i><h3>Más de 50 empresas</h3><span>Ecosistema SaaS</span></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PRESENCIA VERIFICADA -->
+    <section id="presencia" class="container" style="margin: 56px auto;">
+      <div class="glass-card" style="padding: 48px 32px;">
+        <div style="text-align: center;">
+          <span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px;">Presencia verificada</span>
+          <h2 style="margin: 16px 0 8px;">Tu negocio visible donde realmente importa</h2>
+        </div>
+        <div class="bento-grid" style="margin-top: 32px;">
+          <div class="bento-item col-span-4"><i class="fas fa-map-marked-alt feature-icon"></i><h3>Geolocalización estratégica</h3><p>Registro oficial en plataformas de mapas y directorios profesionales.</p><div style="margin-top: 12px;">✓ Verificado</div></div>
+          <div class="bento-item col-span-4"><i class="fas fa-chart-line feature-icon"></i><h3>Ventaja competitiva real</h3><p>Más visibilidad y confianza para nuevos clientes.</p><div style="margin-top: 12px;">+38% tráfico orgánico</div></div>
+          <div class="bento-item col-span-4"><i class="fas fa-shield-alt feature-icon"></i><h3>Perfil empresarial completo</h3><p>Credibilidad y presencia profesional consistente.</p><div style="margin-top: 12px;">Empresas verificadas</div></div>
+        </div>
+        <div style="text-align: center; margin-top: 32px;">
+          <a href="https://kw.maptons.com/p/2484544314" class="btn btn-primary" target="_blank">Ver perfil en Maptons.com <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
 
-    <!-- MÉTODO -->
-    <section class="section" id="metodo">
-      <div class="container">
-        <div class="section-header reveal" style="text-align:center;"><div class="eyebrow">Método</div><h2>Implementación ágil y sin fricción</h2></div>
-        <div class="process-grid">
-          <article class="step reveal"><div class="step-number">1</div><h3>Diagnóstico</h3><p class="text-muted">Analizamos tus necesidades reales.</p></article>
-          <article class="step reveal"><div class="step-number">2</div><h3>Propuesta</h3><p class="text-muted">Plan claro y personalizado.</p></article>
-          <article class="step reveal"><div class="step-number">3</div><h3>Implementación</h3><p class="text-muted">Puesta en marcha en tiempo récord.</p></article>
-          <article class="step reveal"><div class="step-number">4</div><h3>Acompañamiento</h3><p class="text-muted">Soporte continuo y capacitación.</p></article>
-        </div>
+    <!-- SOLUCIONES BENTO (tamaños estratégicos) -->
+    <section id="soluciones" class="container" style="margin: 64px auto;">
+      <div class="reveal" style="text-align: center; margin-bottom: 40px;">
+        <span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px;">SaaS modular</span>
+        <h2>Todo lo que tu negocio necesita</h2>
+      </div>
+      <div class="bento-grid">
+        <div class="bento-item col-span-5"><i class="fas fa-cash-register feature-icon"></i><h3>ToEat POS</h3><p>Sistema de punto de venta especializado. Gestión de mesas, pedidos y cocina en tiempo real.</p><ul style="margin-top: 16px;"><li>✔️ Reportes instantáneos</li><li>✔️ Integración con inventario</li></ul></div>
+        <div class="bento-item col-span-3"><i class="fas fa-qrcode feature-icon"></i><h3>Menú QR Pro</h3><p>Carta digital interactiva, actualización en tiempo real, sin contacto.</p><ul><li>✔️ Fotos HD</li><li>✔️ Analytics de consumo</li></ul></div>
+        <div class="bento-item col-span-4"><i class="fas fa-boxes-stacked feature-icon"></i><h3>Inventario Total</h3><p>Trazabilidad, alertas de stock mínimo y mermas.</p><ul><li>✔️ Control multicanal</li><li>✔️ Escalable</li></ul></div>
       </div>
     </section>
 
-    <!-- PLANES -->
-    <section class="section" id="planes">
-      <div class="container">
-        <div class="section-header reveal" style="text-align:center;"><div class="eyebrow">Planes</div><h2>Opciones claras para cada etapa</h2></div>
-        <div class="pricing-grid">
-          <article class="price-card reveal"><h3>Inicial</h3><div class="price">Desde <span>CLP 199.900</span></div><ul><li><i class="fas fa-check"></i> Landing page profesional</li><li><i class="fas fa-check"></i> Enlace directo a WhatsApp</li><li><i class="fas fa-check"></i> Soporte básico</li></ul><a href="https://wa.me/56972001109" class="btn btn-outline btn-full" target="_blank">Consultar</a></article>
-          <article class="price-card featured reveal"><div class="featured-badge">Más popular</div><h3>Operación PRO</h3><div class="price">Desde <span>CLP 399.900</span></div><ul><li><i class="fas fa-check"></i> Menú QR o POS incluido</li><li><i class="fas fa-check"></i> Configuración completa</li><li><i class="fas fa-check"></i> Capacitación incluida</li><li><i class="fas fa-check"></i> Soporte prioritario</li></ul><a href="https://wa.me/56972001109" class="btn btn-primary btn-full" target="_blank">Cotizar PRO</a></article>
-          <article class="price-card reveal"><h3>Control Total</h3><div class="price">Desde <span>CLP 699.900</span></div><ul><li><i class="fas fa-check"></i> POS + QR + Inventario</li><li><i class="fas fa-check"></i> Automatizaciones</li><li><i class="fas fa-check"></i> Soporte 24/7</li><li><i class="fas fa-check"></i> Escalamiento incluido</li></ul><a href="https://wa.me/56972001109" class="btn btn-outline btn-full" target="_blank">Hablar con asesor</a></article>
-        </div>
+    <!-- MÉTODO BENTO -->
+    <section id="metodo" class="container" style="margin: 64px auto;">
+      <div class="reveal" style="text-align: center;"><span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px;">Metodología</span><h2 style="margin-top: 16px;">Implementación en 4 pasos</h2></div>
+      <div class="bento-grid">
+        <div class="bento-item col-span-3"><div style="font-size: 2.5rem; font-weight:800; color:var(--primary);">1</div><h3>Diagnóstico</h3><p>Analizamos necesidades reales.</p></div>
+        <div class="bento-item col-span-3"><div style="font-size: 2.5rem; font-weight:800; color:var(--primary);">2</div><h3>Propuesta</h3><p>Plan claro y personalizado.</p></div>
+        <div class="bento-item col-span-3"><div style="font-size: 2.5rem; font-weight:800; color:var(--primary);">3</div><h3>Implementación</h3><p>Puesta en marcha récord.</p></div>
+        <div class="bento-item col-span-3"><div style="font-size: 2.5rem; font-weight:800; color:var(--primary);">4</div><h3>Acompañamiento</h3><p>Soporte continuo + capacitación.</p></div>
       </div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal" style="text-align:center;"><div class="eyebrow">Testimonios</div><h2>Resultados que ya sienten tus clientes</h2></div>
-        <div class="testimonials-grid">
-          <article class="testimonial-card reveal"><p>“Implementamos el sistema POS y menú QR, las ventas aumentaron un 30% en el primer mes. El soporte es excelente.”</p><div class="testimonial-author"><div class="author-avatar">CM</div><div><strong>Carlos Martínez</strong><br><small>La Casona Restaurant</small></div></div></article>
-          <article class="testimonial-card reveal"><p>“El control de inventario nos ayudó a reducir pérdidas en un 25%. La mejor inversión que hicimos.”</p><div class="testimonial-author"><div class="author-avatar">MR</div><div><strong>María Rodríguez</strong><br><small>Distribuidora Los Andes</small></div></div></article>
-          <article class="testimonial-card reveal"><p>“El soporte TI es rápido y efectivo. Resuelven cualquier problema en minutos.”</p><div class="testimonial-author"><div class="author-avatar">JS</div><div><strong>Juan Silva</strong><br><small>Hotel Boutique Valpo</small></div></div></article>
-          <article class="testimonial-card reveal"><p>“El menú digital QR transformó la experiencia. Los pedidos llegaban más rápido a la cocina.”</p><div class="testimonial-author"><div class="author-avatar">FG</div><div><strong>Felipe González</strong><br><small>Café Central</small></div></div></article>
-        </div>
+    <!-- PLANES PRECIOS -->
+    <section id="planes" class="container" style="margin: 64px auto;">
+      <div class="reveal" style="text-align: center;"><span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px;">Planes flexibles</span><h2>Escala según tu operación</h2></div>
+      <div class="bento-grid">
+        <div class="bento-item col-span-4 price-card"><h3>Inicial</h3><div class="price">199.900 CLP</div><ul style="margin-top: 16px;"><li>✔️ Landing page profesional</li><li>✔️ Enlace WhatsApp</li><li>✔️ Soporte básico</li></ul><a href="https://wa.me/56972001109" class="btn btn-outline" style="width:100%; margin-top:24px;">Consultar</a></div>
+        <div class="bento-item col-span-4 featured price-card"><div style="background: var(--primary); border-radius: 60px; display: inline-block; padding: 4px 12px; font-size:0.8rem;">Más popular</div><h3>Operación PRO</h3><div class="price">399.900 CLP</div><ul><li>✔️ Menú QR o POS incluido</li><li>✔️ Configuración completa</li><li>✔️ Capacitación + soporte prioritario</li></ul><a href="https://wa.me/56972001109" class="btn btn-primary" style="width:100%;">Cotizar PRO</a></div>
+        <div class="bento-item col-span-4 price-card"><h3>Control Total</h3><div class="price">699.900 CLP</div><ul><li>✔️ POS + QR + Inventario</li><li>✔️ Automatizaciones</li><li>✔️ Soporte 24/7 + escalamiento</li></ul><a href="https://wa.me/56972001109" class="btn btn-outline" style="width:100%;">Hablar con asesor</a></div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-header reveal" style="text-align:center;"><div class="eyebrow">FAQ</div><h2>Preguntas frecuentes</h2></div>
-        <div class="faq-grid">
-          <div class="faq-item open reveal"><button class="faq-question"><span>¿Ofrecen soporte técnico después de la instalación?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner"><p>Sí, todos nuestros planes incluyen soporte técnico. Dependiendo del plan, puedes tener soporte básico, prioritario o 24/7.</p></div></div></div>
-          <div class="faq-item reveal"><button class="faq-question"><span>¿Cuánto tiempo toma la implementación?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner"><p>Generalmente entre 3 a 7 días hábiles para tener el sistema funcionando.</p></div></div></div>
-          <div class="faq-item reveal"><button class="faq-question"><span>¿Puedo comenzar con un plan pequeño y después actualizar?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner"><p>Por supuesto. Nuestros planes escalan junto con tu negocio.</p></div></div></div>
-          <div class="faq-item reveal"><button class="faq-question"><span>¿Trabajan solo con restaurantes?</span><i class="fas fa-chevron-down"></i></button><div class="faq-answer"><div class="faq-answer-inner"><p>También trabajamos con comercios y empresas que necesitan orden y soporte TI confiable.</p></div></div></div>
-        </div>
+    <!-- TESTIMONIOS BENTO ASIMÉTRICO -->
+    <section class="container" style="margin: 64px auto;">
+      <div class="reveal" style="text-align: center;"><span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px;">Testimonios reales</span><h2>Resultados que impulsan confianza</h2></div>
+      <div class="bento-grid">
+        <div class="bento-item col-span-7"><i class="fas fa-quote-left" style="color: var(--primary); opacity: 0.6;"></i><p style="font-size:1.1rem; margin: 12px 0;">“Implementamos POS y menú QR, las ventas aumentaron 30%. El soporte es impecable.”</p><strong>Carlos Martínez</strong> – La Casona Restaurant</div>
+        <div class="bento-item col-span-5"><i class="fas fa-quote-left" style="color: var(--primary); opacity: 0.6;"></i><p>“El control de inventario redujo pérdidas en un 25%. Mejor inversión del año.”</p><strong>María Rodríguez</strong> – Distribuidora Los Andes</div>
+        <div class="bento-item col-span-5"><i class="fas fa-quote-left"></i><p>“Soporte TI resolutivo y rápido. Disponibilidad 24/7.”</p><strong>Juan Silva</strong> – Hotel Boutique Valpo</div>
+        <div class="bento-item col-span-7"><i class="fas fa-quote-left"></i><p>“El menú QR mejoró la experiencia del cliente y la eficiencia del equipo.”</p><strong>Felipe González</strong> – Café Central</div>
       </div>
     </section>
 
-    <!-- CONTACTO FINAL -->
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="cta-section reveal">
-          <div class="eyebrow" style="display:inline-block;">Conversión directa</div>
-          <h2>¿Listo para transformar tu negocio?</h2>
-          <p>Contáctanos hoy y descubre cómo podemos ayudarte a vender más y operar mejor.</p>
-          <div class="cta-buttons">
-            <a href="https://wa.me/56972001109" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Correo</a>
-          </div>
+    <!-- FAQ ACCORDION -->
+    <section id="faq" class="container" style="margin: 64px auto;">
+      <div style="text-align: center; margin-bottom: 40px;"><span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px;">FAQ</span><h2>Resolvemos tus dudas</h2></div>
+      <div class="bento-grid" style="grid-template-columns: repeat(2,1fr);">
+        <div class="bento-item"><button class="faq-question">¿Ofrecen soporte post-instalación? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Sí, todos los planes incluyen soporte técnico. El plan PRO tiene prioridad y el Control Total 24/7.</p></div></div>
+        <div class="bento-item"><button class="faq-question">¿Cuánto dura la implementación? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Entre 3 y 7 días hábiles, dependiendo del alcance del proyecto.</p></div></div>
+        <div class="bento-item"><button class="faq-question">¿Puedo escalar el plan después? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Por supuesto, nuestros planes son flexibles y crecen contigo.</p></div></div>
+        <div class="bento-item"><button class="faq-question">¿Solo para restaurantes? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Trabajamos con comercios, hoteles, distribuidores y cualquier negocio que necesite orden y soporte TI.</p></div></div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL CONVERSIÓN -->
+    <section id="contacto" class="container" style="margin: 64px auto;">
+      <div class="glass-card" style="padding: 64px 32px; text-align: center;">
+        <span style="background: var(--primary-soft); padding: 4px 16px; border-radius: 60px;">Empieza hoy</span>
+        <h2 style="margin: 24px 0 16px;">¿Listo para transformar tu negocio?</h2>
+        <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">Contáctanos y descubre cómo podemos aumentar tus ventas y optimizar tu operación.</p>
+        <div class="hero-buttons" style="margin-top: 32px;">
+          <a href="https://wa.me/56972001109" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ahora</a>
+          <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Correo comercial</a>
         </div>
       </div>
     </section>
@@ -835,69 +532,109 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-logo"><div class="footer-brand"><div class="logo-icon" style="width:40px;height:40px;"><i class="fas fa-chart-line"></i></div><strong>DESOPORTE.CL</strong></div><p>Tecnología aplicada al crecimiento de tu negocio. Sistemas POS, menú QR, inventario y soporte TI profesional.</p></div>
-        <div><h4>Enlaces rápidos</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#soluciones">Soluciones</a></li><li><a href="#clientes">Clientes</a></li><li><a href="#presencia">Presencia</a></li><li><a href="#planes">Planes</a></li></ul></div>
-        <div><h4>Contacto</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/56972001109">+56 9 7200 1109</a></li><li><i class="fas fa-envelope"></i> <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com">ingesistem.alfredo.sanhueza@gmail.com</a></li><li><i class="fas fa-map-marker-alt"></i> Valparaíso, Chile</li></ul></div>
+        <div><div class="logo" style="margin-bottom: 16px;"><div class="logo-icon"><i class="fas fa-chart-line"></i></div><strong>DESOPORTE.CL</strong></div><p>Tecnología aplicada al crecimiento de tu negocio. POS, QR, inventario y soporte TI.</p></div>
+        <div><h4>Recursos</h4><ul style="list-style: none;"><li><a href="#soluciones">Soluciones</a></li><li><a href="#planes">Planes</a></li><li><a href="#faq">Ayuda</a></li></ul></div>
+        <div><h4>Contacto</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/56972001109">+56 9 7200 1109</a></li><li><i class="fas fa-envelope"></i> <a href="mailto:ingesistem.alfredo.sanhueza@gmail.com">Email</a></li><li>Valparaíso, Chile</li></ul></div>
       </div>
-      <div class="footer-bottom"><p>&copy; <span id="year"></span> DESOPORTE.CL - Todos los derechos reservados</p></div>
+      <div class="footer-bottom" style="text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);">&copy; 2025 DESOPORTE.CL – SaaS para negocios en Chile</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/56972001109" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/56972001109" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
   <script>
-    (() => {
+    (function() {
+      // Toggle tema (modo oscuro/claro elegante) siempre en modo oscuro premium, pero mantenemos toggle
       const html = document.documentElement;
-      const themeToggle = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
-      const menuToggle = document.getElementById('menuToggle');
-      const navLinks = document.getElementById('navLinks');
-      const anchors = [...document.querySelectorAll('.nav-links a')];
-      const sections = [...document.querySelectorAll('section[id]')];
-      const faqItems = [...document.querySelectorAll('.faq-item')];
-      const reveals = [...document.querySelectorAll('.reveal')];
-      const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const dark = window.matchMedia('(prefers-color-scheme: dark)');
-      let currentTheme = dark.matches ? 'dark' : 'light';
-
-      function setTheme(theme) {
-        html.setAttribute('data-theme', theme);
-        themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      let theme = localStorage.getItem('theme') || 'dark';
+      function setTheme(t) {
+        html.setAttribute('data-theme', t);
+        icon.className = t === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        localStorage.setItem('theme', t);
       }
-      setTheme(currentTheme);
-      themeToggle.onclick = () => setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      setTheme(theme);
+      if (toggle) toggle.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+      
+      // menú mobile
+      const menuBtn = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      if(menuBtn) menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+      document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-      menuToggle.onclick = () => { navLinks.classList.toggle('open'); };
-      anchors.forEach(a => a.addEventListener('click', ()=>{
-        if(window.innerWidth <= 860) navLinks.classList.remove('open');
-      }));
-      document.addEventListener('click', (e) => { if(!e.target.closest('.nav') && navLinks.classList.contains('open') && window.innerWidth <= 860) navLinks.classList.remove('open');});
-
-      faqItems.forEach(item => {
+      // FAQ accordion
+      document.querySelectorAll('.faq-item').forEach(item => {
         const btn = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
         btn.addEventListener('click', () => {
-          const open = item.classList.contains('open');
-          faqItems.forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question').setAttribute('aria-expanded','false'); });
-          if(!open) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+          const isOpen = answer.style.maxHeight;
+          document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+          if (!isOpen) answer.style.maxHeight = answer.scrollHeight + "px";
+          else answer.style.maxHeight = null;
         });
       });
 
-      if(!rm.matches) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
-        }, { threshold: 0.12, rootMargin: '0px 0px -20px 0px' });
-        reveals.forEach(r => observer.observe(r));
-      } else reveals.forEach(r => r.classList.add('in'));
+      // REVEAL animaciones con stagger y cinematic
+      const revealElements = document.querySelectorAll('.reveal, .bento-item, .stat-card, .glass-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, idx) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            if(entry.target.classList.contains('bento-item')) entry.target.style.setProperty('--i', idx % 8);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      revealElements.forEach(el => observer.observe(el));
 
-      function activeNav() {
+      // tilt suave en cards principales
+      const tiltCards = document.querySelectorAll('.bento-item, .glass-card');
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotX = (y - centerY) / 36;
+          const rotY = (centerX - x) / 36;
+          card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+
+      // active menu highlight en scroll
+      const sections = Array.from(document.querySelectorAll('section[id]'));
+      const navAnchors = document.querySelectorAll('.nav-links a');
+      function updateActive() {
         let current = '';
-        const scroll = window.scrollY + 130;
-        sections.forEach(s => { if(scroll >= s.offsetTop && scroll < s.offsetTop + s.offsetHeight) current = s.id; });
-        anchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
+        const scrollPos = window.scrollY + 160;
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+          if (scrollPos >= top && scrollPos < bottom) current = section.id;
+        });
+        navAnchors.forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === `#${current}`) a.classList.add('active');
+        });
       }
-      activeNav();
-      window.addEventListener('scroll', activeNav, { passive: true });
-      document.getElementById('year').innerText = new Date().getFullYear();
+      window.addEventListener('scroll', updateActive);
+      updateActive();
+
+      // smooth scroll interno
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === "#" || href === "") return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
     })();
   </script>
 </body>
